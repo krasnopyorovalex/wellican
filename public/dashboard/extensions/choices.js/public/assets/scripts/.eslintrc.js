@@ -8,8 +8,8 @@ const { settings } = require('../../../.eslintrc.json');
 settings.polyfills.push(
   'Symbol.toStringTag',
   'Symbol.for',
-  'Object.getOwnPropertySymbols',
-  'Object.getOwnPropertyDescriptors',
+  'Objects.getOwnPropertySymbols',
+  'Objects.getOwnPropertyDescriptors',
   'Promise', // Promise is gate checked
 );
 

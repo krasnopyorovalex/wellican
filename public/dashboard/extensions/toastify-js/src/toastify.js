@@ -12,7 +12,7 @@
     root.Toastify = factory();
   }
 })(this, function(global) {
-  // Object initialization
+  // Objects initialization
   var Toastify = function(options) {
       // Returning a new init object
       return new Toastify.lib.init(options);

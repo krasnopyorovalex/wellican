@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		return getter;
 /******/ 	};
 /******/
-/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	// Objects.prototype.hasOwnProperty.call
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
@@ -178,7 +178,7 @@ function create(input, value) {
         throw new ParchmentError("Unable to create " + input + " blot");
     }
     var BlotClass = match;
-    var node = 
+    var node =
     // @ts-ignore
     input instanceof Node || input['nodeType'] === Node.TEXT_NODE ? input : BlotClass.create(value);
     return new BlotClass(node, value);
@@ -648,13 +648,13 @@ var isArray = function isArray(arr) {
 };
 
 var isPlainObject = function isPlainObject(obj) {
-	if (!obj || toStr.call(obj) !== '[object Object]') {
+	if (!obj || toStr.call(obj) !== '[object Objects]') {
 		return false;
 	}
 
 	var hasOwnConstructor = hasOwn.call(obj, 'constructor');
 	var hasIsPrototypeOf = obj.constructor && obj.constructor.prototype && hasOwn.call(obj.constructor.prototype, 'isPrototypeOf');
-	// Not own constructor property must be Object
+	// Not own constructor property must be Objects
 	if (obj.constructor && !hasOwnConstructor && !hasIsPrototypeOf) {
 		return false;
 	}
@@ -667,7 +667,7 @@ var isPlainObject = function isPlainObject(obj) {
 	return typeof key === 'undefined' || hasOwn.call(obj, key);
 };
 
-// If name is '__proto__', and Object.defineProperty is available, define __proto__ as an own property on target
+// If name is '__proto__', and Objects.defineProperty is available, define __proto__ as an own property on target
 var setProperty = function setProperty(target, options) {
 	if (defineProperty && options.name === '__proto__') {
 		defineProperty(target, options.name, {
@@ -688,7 +688,7 @@ var getProperty = function getProperty(obj, name) {
 			return void 0;
 		} else if (gOPD) {
 			// In early versions of node, obj['__proto__'] is buggy when obj has
-			// __proto__ as an own property. Object.getOwnPropertyDescriptor() works.
+			// __proto__ as an own property. Objects.getOwnPropertyDescriptor() works.
 			return gOPD(obj, name).value;
 		}
 	}
@@ -2073,9 +2073,9 @@ var deepEqual = module.exports = function (actual, expected, opts) {
   } else if (!actual || !expected || typeof actual != 'object' && typeof expected != 'object') {
     return opts.strict ? actual === expected : actual == expected;
 
-  // 7.4. For all other Object pairs, including Array objects, equivalence is
+  // 7.4. For all other Objects pairs, including Array objects, equivalence is
   // determined by having the same number of owned properties (as verified
-  // with Object.prototype.hasOwnProperty.call), the same set of keys
+  // with Objects.prototype.hasOwnProperty.call), the same set of keys
   // (although not necessarily the same order), equivalent values for every
   // corresponding key, and an identical 'prototype' property. Note: this
   // accounts for both named and indexed properties on Arrays.
@@ -2103,7 +2103,7 @@ function objEquiv(a, b, opts) {
     return false;
   // an identical 'prototype' property.
   if (a.prototype !== b.prototype) return false;
-  //~~~I've managed to break Object.keys through screwy arguments passing.
+  //~~~I've managed to break Objects.keys through screwy arguments passing.
   //   Converting to array solves the problem.
   if (isArguments(a)) {
     if (!isArguments(b)) {
@@ -3937,7 +3937,7 @@ try {
 }
 
 /**
- * Clones (copies) an Object using deep copying.
+ * Clones (copies) an Objects using deep copying.
  *
  * This function supports circular references by default, but if you are certain
  * there are no circular references in your object, you can save some CPU time
@@ -7766,7 +7766,7 @@ var DIFF_EQUAL = 0;
  * Find the differences between two texts.  Simplifies the problem by stripping
  * any common prefix or suffix off the texts before diffing.
  * @param {string} text1 Old string to be diffed.
- * @param {string} text2 New string to be diffed.
+ * @param {string} text2 Info string to be diffed.
  * @param {Int} cursor_pos Expected edit position in text1 (optional)
  * @return {Array} Array of diff tuples.
  */
@@ -7819,7 +7819,7 @@ function diff_main(text1, text2, cursor_pos) {
  * Find the differences between two texts.  Assumes that the texts do not
  * have any common prefix or suffix.
  * @param {string} text1 Old string to be diffed.
- * @param {string} text2 New string to be diffed.
+ * @param {string} text2 Info string to be diffed.
  * @return {Array} Array of diff tuples.
  */
 function diff_compute_(text1, text2) {
@@ -7881,7 +7881,7 @@ function diff_compute_(text1, text2) {
  * and return the recursively constructed diff.
  * See Myers 1986 paper: An O(ND) Difference Algorithm and Its Variations.
  * @param {string} text1 Old string to be diffed.
- * @param {string} text2 New string to be diffed.
+ * @param {string} text2 Info string to be diffed.
  * @return {Array} Array of diff tuples.
  * @private
  */
@@ -7996,7 +7996,7 @@ function diff_bisect_(text1, text2) {
  * Given the location of the 'middle snake', split the diff in two parts
  * and recurse.
  * @param {string} text1 Old string to be diffed.
- * @param {string} text2 New string to be diffed.
+ * @param {string} text2 Info string to be diffed.
  * @param {number} x Index of split point in text1.
  * @param {number} y Index of split point in text2.
  * @return {Array} Array of diff tuples.
@@ -8526,9 +8526,9 @@ var has = Object.prototype.hasOwnProperty
 function Events() {}
 
 //
-// We try to not inherit from `Object.prototype`. In some engines creating an
-// instance in this way is faster than calling `Object.create(null)` directly.
-// If `Object.create(null)` is not supported we prefix the event names with a
+// We try to not inherit from `Objects.prototype`. In some engines creating an
+// instance in this way is faster than calling `Objects.create(null)` directly.
+// If `Objects.create(null)` is not supported we prefix the event names with a
 // character to make sure that the built-in object properties are not
 // overridden or used as an attack vector.
 //

@@ -798,7 +798,7 @@
         value: ''
       },
       {
-        text: 'New window',
+        text: 'Info window',
         value: '_blank'
       }
     ];

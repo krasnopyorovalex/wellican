@@ -14,10 +14,10 @@ return [
     */
 
     'previous' => '&laquo; Назад',
-    'next'     => 'Вперёд &raquo;',
-    'showing'  => 'Показано',
+    'next' => 'Вперёд &raquo;',
+    'showing' => 'Показано',
     'of' => 'из',
     'results' => 'записей',
-    'to' => ' - '
+    'to' => ' - ',
 
 ];

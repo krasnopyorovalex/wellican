@@ -107,7 +107,7 @@
       }
     }
 
-    throw new TypeError('Object is not async iterable');
+    throw new TypeError('Objects is not async iterable');
   }
 
   function _AwaitValue(value) {

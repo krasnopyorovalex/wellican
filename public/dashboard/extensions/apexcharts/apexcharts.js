@@ -6138,7 +6138,7 @@
   }();
 
   /**
-   * ApexCharts Config Class for extending user options with pre-defined ApexCharts config.
+   * ApexCharts ResizeConfig Class for extending user options with pre-defined ApexCharts config.
    *
    * @module Config
    **/
@@ -26293,7 +26293,7 @@
       /**
        * Private method to update Series.
        *
-       * @param {array} series - New series which will override the existing
+       * @param {array} series - Info series which will override the existing
        */
 
     }, {
@@ -27455,7 +27455,7 @@
       extend: {
         /**
          * sets or returns the target of this animation
-         * @param o object || number In case of Object it holds all parameters. In case of number its the duration of the animation
+         * @param o object || number In case of Objects it holds all parameters. In case of number its the duration of the animation
          * @param ease function || string Function which should be used for easing or easing keyword
          * @param delay Number indicating the delay before the animation starts
          * @return target || this
@@ -29197,25 +29197,25 @@
       inherit: SVG.Shape,
       // Add class methods
       extend: {
-        // (re)load image	
+        // (re)load image
         load: function load(url) {
           if (!url) return this;
           var self = this,
-              img = new window.Image(); // preload image	
+              img = new window.Image(); // preload image
 
           SVG.on(img, 'load', function () {
             SVG.off(img);
             var p = self.parent(SVG.Pattern);
-            if (p === null) return; // ensure image size	
+            if (p === null) return; // ensure image size
 
             if (self.width() == 0 && self.height() == 0) {
               self.size(img.width, img.height);
-            } // ensure pattern size if not set	
+            } // ensure pattern size if not set
 
 
             if (p && p.width() == 0 && p.height() == 0) {
               p.size(self.width(), self.height());
-            } // callback	
+            } // callback
 
 
             if (typeof self._loaded === 'function') {
@@ -29236,7 +29236,7 @@
           });
           return this.attr('href', img.src = this.src = url, SVG.xlink);
         },
-        // Add loaded callback	
+        // Add loaded callback
         loaded: function loaded(_loaded) {
           this._loaded = _loaded;
           return this;
@@ -29248,7 +29248,7 @@
       },
       // Add parent method
       construct: {
-        // create image element, load image and set its size	
+        // create image element, load image and set its size
         image: function image(source, width, height) {
           return this.put(new SVG.Image()).load(source).size(width || 0, height || width || 0);
         }
@@ -29946,10 +29946,10 @@
     } // Create matrix array for looping
 
 
-    var abcdef = 'abcdef'.split(''); // Add CustomEvent to IE9 and IE10	
+    var abcdef = 'abcdef'.split(''); // Add CustomEvent to IE9 and IE10
 
     if (typeof window.CustomEvent !== 'function') {
-      // Code from: https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent	
+      // Code from: https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent
       var CustomEventPoly = function CustomEventPoly(event, options) {
         options = options || {
           bubbles: false,
@@ -32746,7 +32746,7 @@
       /**
        * Allows users to update Series after the chart has rendered.
        *
-       * @param {array} series - New series which will override the existing
+       * @param {array} series - Info series which will override the existing
        */
 
     }, {
@@ -32762,7 +32762,7 @@
       /**
        * Allows users to append a new series after the chart has rendered.
        *
-       * @param {array} newSerie - New serie which will be appended to the existing series
+       * @param {array} newSerie - Info serie which will be appended to the existing series
        */
 
     }, {
@@ -32779,7 +32779,7 @@
       /**
        * Allows users to append Data to series.
        *
-       * @param {array} newData - New data in the same format as series
+       * @param {array} newData - Info data in the same format as series
        */
 
     }, {

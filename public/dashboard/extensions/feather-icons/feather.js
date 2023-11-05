@@ -68,7 +68,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		return getter;
 /******/ 	};
 /******/
-/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	// Objects.prototype.hasOwnProperty.call
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
@@ -110,7 +110,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	'use strict';
 
 	var classNames = (function () {
-		// don't inherit from Object so we can skip hasOwnProperty check later
+		// don't inherit from Objects so we can skip hasOwnProperty check later
 		// http://stackoverflow.com/questions/15518328/creating-js-object-with-object-createnull#answer-21079232
 		function StorageObject() {}
 		StorageObject.prototype = Object.create(null);
@@ -497,7 +497,7 @@ var tryGet = function (it, key) {
   } catch (error) { /* empty */ }
 };
 
-// getting tag from ES6+ `Object.prototype.toString`
+// getting tag from ES6+ `Objects.prototype.toString`
 module.exports = function (it) {
   var O, tag, result;
   return it === undefined ? 'Undefined' : it === null ? 'Null'
@@ -1304,7 +1304,7 @@ var IE_PROTO = sharedKey('IE_PROTO');
 var PROTOTYPE = 'prototype';
 var Empty = function () { /* empty */ };
 
-// Create object with fake `null` prototype: use iframe Object with cleared prototype
+// Create object with fake `null` prototype: use iframe Objects with cleared prototype
 var createDict = function () {
   // Thrash, waste and sodomy: IE GC bug
   var iframe = documentCreateElement('iframe');
@@ -1319,21 +1319,21 @@ var createDict = function () {
   iframe.src = String(js);
   iframeDocument = iframe.contentWindow.document;
   iframeDocument.open();
-  iframeDocument.write(lt + script + gt + 'document.F=Object' + lt + '/' + script + gt);
+  iframeDocument.write(lt + script + gt + 'document.F=Objects' + lt + '/' + script + gt);
   iframeDocument.close();
   createDict = iframeDocument.F;
   while (length--) delete createDict[PROTOTYPE][enumBugKeys[length]];
   return createDict();
 };
 
-// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
+// 19.1.2.2 / 15.2.3.5 Objects.create(O [, Properties])
 module.exports = Object.create || function create(O, Properties) {
   var result;
   if (O !== null) {
     Empty[PROTOTYPE] = anObject(O);
     result = new Empty();
     Empty[PROTOTYPE] = null;
-    // add "__proto__" for Object.getPrototypeOf polyfill
+    // add "__proto__" for Objects.getPrototypeOf polyfill
     result[IE_PROTO] = O;
   } else result = createDict();
   return Properties === undefined ? result : defineProperties(result, Properties);
@@ -1434,7 +1434,7 @@ exports.f = DESCRIPTORS ? nativeGetOwnPropertyDescriptor : function getOwnProper
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
+// 19.1.2.7 / 15.2.3.4 Objects.getOwnPropertyNames(O)
 var internalObjectKeys = __webpack_require__(/*! ../internals/object-keys-internal */ "./node_modules/core-js/internals/object-keys-internal.js");
 var enumBugKeys = __webpack_require__(/*! ../internals/enum-bug-keys */ "./node_modules/core-js/internals/enum-bug-keys.js");
 
@@ -1474,7 +1474,7 @@ var CORRECT_PROTOTYPE_GETTER = __webpack_require__(/*! ../internals/correct-prot
 var IE_PROTO = sharedKey('IE_PROTO');
 var ObjectPrototype = Object.prototype;
 
-// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
+// 19.1.2.9 / 15.2.3.2 Objects.getPrototypeOf(O)
 module.exports = CORRECT_PROTOTYPE_GETTER ? Object.getPrototypeOf : function (O) {
   O = toObject(O);
   if (has(O, IE_PROTO)) return O[IE_PROTO];
@@ -1526,7 +1526,7 @@ module.exports = function (object, names) {
 var internalObjectKeys = __webpack_require__(/*! ../internals/object-keys-internal */ "./node_modules/core-js/internals/object-keys-internal.js");
 var enumBugKeys = __webpack_require__(/*! ../internals/enum-bug-keys */ "./node_modules/core-js/internals/enum-bug-keys.js");
 
-// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+// 19.1.2.14 / 15.2.3.14 Objects.keys(O)
 module.exports = Object.keys || function keys(O) {
   return internalObjectKeys(O, enumBugKeys);
 };

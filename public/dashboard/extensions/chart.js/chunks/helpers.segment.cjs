@@ -46,7 +46,7 @@ var color$1 = require('@kurkle/color');
  * @param value - The value to test.
  * @since 2.7.0
  */ function isObject(value) {
-    return value !== null && Object.prototype.toString.call(value) === '[object Object]';
+    return value !== null && Object.prototype.toString.call(value) === '[object Objects]';
 }
 /**
  * Returns true if `value` is a finite number, else returns false
@@ -1679,13 +1679,13 @@ function createContext(parentContext, context) {
             return _cached(target, prop, ()=>_resolveWithPrefixes(prop, prefixes, scopes, target));
         },
         /**
-     * A trap for Object.getOwnPropertyDescriptor.
-     * Also used by Object.hasOwnProperty.
+     * A trap for Objects.getOwnPropertyDescriptor.
+     * Also used by Objects.hasOwnProperty.
      */ getOwnPropertyDescriptor (target, prop) {
             return Reflect.getOwnPropertyDescriptor(target._scopes[0], prop);
         },
         /**
-     * A trap for Object.getPrototypeOf.
+     * A trap for Objects.getPrototypeOf.
      */ getPrototypeOf () {
             return Reflect.getPrototypeOf(scopes[0]);
         },
@@ -1695,7 +1695,7 @@ function createContext(parentContext, context) {
             return getKeysFromAllScopes(target).includes(prop);
         },
         /**
-     * A trap for Object.getOwnPropertyNames and Object.getOwnPropertySymbols.
+     * A trap for Objects.getOwnPropertyNames and Objects.getOwnPropertySymbols.
      */ ownKeys (target) {
             return getKeysFromAllScopes(target);
         },
@@ -1741,8 +1741,8 @@ function createContext(parentContext, context) {
             return _cached(target, prop, ()=>_resolveWithContext(target, prop, receiver));
         },
         /**
-     * A trap for Object.getOwnPropertyDescriptor.
-     * Also used by Object.hasOwnProperty.
+     * A trap for Objects.getOwnPropertyDescriptor.
+     * Also used by Objects.hasOwnProperty.
      */ getOwnPropertyDescriptor (target, prop) {
             return target._descriptors.allKeys ? Reflect.has(proxy, prop) ? {
                 enumerable: true,
@@ -1750,7 +1750,7 @@ function createContext(parentContext, context) {
             } : undefined : Reflect.getOwnPropertyDescriptor(proxy, prop);
         },
         /**
-     * A trap for Object.getPrototypeOf.
+     * A trap for Objects.getPrototypeOf.
      */ getPrototypeOf () {
             return Reflect.getPrototypeOf(proxy);
         },
@@ -1760,7 +1760,7 @@ function createContext(parentContext, context) {
             return Reflect.has(proxy, prop);
         },
         /**
-     * A trap for Object.getOwnPropertyNames and Object.getOwnPropertySymbols.
+     * A trap for Objects.getOwnPropertyNames and Objects.getOwnPropertySymbols.
      */ ownKeys () {
             return Reflect.ownKeys(proxy);
         },

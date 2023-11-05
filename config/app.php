@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Moscow',
 
     /*
     |--------------------------------------------------------------------------
@@ -169,6 +169,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\SearchProvider::class,
+        App\Providers\ViewServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -186,6 +188,6 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
-    'currency_icon' => env('CURRENCY_ICON', '')
+    'currency_icon' => env('CURRENCY_ICON', ''),
 
 ];

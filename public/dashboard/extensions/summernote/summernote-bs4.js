@@ -1,5 +1,5 @@
 /*!
- * 
+ *
  * Super simple WYSIWYG editor v0.8.20
  * https://summernote.org
  *
@@ -208,7 +208,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1145__;
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -222,14 +222,14 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1145__;
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -242,7 +242,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1145__;
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -254,12 +254,12 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1145__;
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -270,7 +270,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1145__;
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -299,7 +299,7 @@ function validFontName(fontName) {
 }
 
 function isFontInstalled(fontName) {
-  var testFontName = fontName === 'Comic Sans MS' ? 'Courier New' : 'Comic Sans MS';
+  var testFontName = fontName === 'Comic Sans MS' ? 'Courier Info' : 'Comic Sans MS';
   var testText = 'mmmmmmmmmmwwwww';
   var testSize = '200px';
   var canvas = document.createElement('canvas');
@@ -337,7 +337,7 @@ var inputEventName = isMSIE ? 'DOMCharacterDataModified DOMSubtreeModified DOMNo
 /**
  * @class core.env
  *
- * Object which check platform and agent
+ * Objects which check platform and agent
  *
  * @singleton
  * @alternateClassName env
@@ -3223,7 +3223,7 @@ var WrappedRange = /*#__PURE__*/function () {
 
 /* harmony default export */ const range = ({
   /**
-   * create Range Object From arguments or Browser Selection
+   * create Range Objects From arguments or Browser Selection
    *
    * @param {Node} sc - start container
    * @param {Number} so - start offset
@@ -3437,7 +3437,7 @@ var KEY_MAP = {
 /**
  * @class core.key
  *
- * Object for keycodes.
+ * Objects for keycodes.
  *
  * @singleton
  * @alternateClassName key
@@ -4399,7 +4399,7 @@ var TableResultAction = function TableResultAction(startPoint, where, action, do
   /**
    * Create action cell object.
    *
-   * @param {object} virtualTableCellObj Object of specific position on virtual table.
+   * @param {object} virtualTableCellObj Objects of specific position on virtual table.
    * @param {enum} resultAction Action to be applied in that item.
    */
 
@@ -9773,7 +9773,7 @@ var HintPopover = /*#__PURE__*/function () {
     hintSelect: 'after',
     hintDirection: 'bottom',
     styleTags: ['p', 'blockquote', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-    fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Helvetica Neue', 'Helvetica', 'Impact', 'Lucida Grande', 'Tahoma', 'Times New Roman', 'Verdana'],
+    fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier Info', 'Helvetica Neue', 'Helvetica', 'Impact', 'Lucida Grande', 'Tahoma', 'Times Info Roman', 'Verdana'],
     fontNamesIgnoreCheck: [],
     addDefaultFonts: true,
     fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36'],

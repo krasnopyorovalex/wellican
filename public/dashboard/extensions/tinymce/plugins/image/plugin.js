@@ -803,7 +803,7 @@
     };
     const deepMerge = baseMerge(deep);
 
-    var global$1 = tinymce.util.Tools.resolve('tinymce.util.ImageUploader');
+    var global$1 = tinymce.util.Tools.resolve('tinymce.util.Uploader');
 
     var global = tinymce.util.Tools.resolve('tinymce.util.Tools');
 

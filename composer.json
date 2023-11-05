@@ -5,12 +5,14 @@
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "guzzlehttp/guzzle": "^7.8",
+        "intervention/image": "^3.2",
         "laravel/fortify": "^1.18",
         "laravel/framework": "^10.29",
         "laravel/tinker": "^2.8",
-        "spatie/laravel-permission": "^6.0"
+        "spatie/laravel-permission": "^6.0",
+        "ext-pdo": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.9",
@@ -19,6 +21,7 @@
         "laravel/sail": "^1.18",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
+        "phpstan/phpstan": "^1.10",
         "phpunit/phpunit": "^10.1",
         "roave/security-advisories": "dev-latest",
         "spatie/laravel-ignition": "^2.0"
@@ -49,6 +52,9 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "pint": [
+            "@php ./vendor/bin/pint -v"
         ]
     },
     "extra": {

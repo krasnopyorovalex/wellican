@@ -4,5 +4,5 @@ namespace Domain\Contracts\Persistence;
 
 interface Command
 {
-    public function handle(): void;
+    public function handle(): DatabaseResource;
 }

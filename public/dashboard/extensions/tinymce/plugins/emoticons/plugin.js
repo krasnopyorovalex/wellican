@@ -310,7 +310,7 @@
       food_and_drink: 'Food and Drink',
       activity: 'Activity',
       travel_and_places: 'Travel and Places',
-      objects: 'Objects',
+      objects: 'Object',
       flags: 'Flags',
       user: 'User Defined'
     };
