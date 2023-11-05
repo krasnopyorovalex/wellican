@@ -148,4 +148,13 @@ return [
 
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Limits
+    |--------------------------------------------------------------------------
+    */
+    'per_page' => env('PER_PAGE', 10),
+    'per_page_admin' => env('PER_PAGE_ADMIN', 10),
+
+    'when_querying_for_longer_than' => env('WHEN_QUERYING_FOR_LONGER_THAN', 500),
 ];
