@@ -3,7 +3,12 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Locations;
+use App\Models\Objects;
+use App\Models\ObjectTypes;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +17,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+         User::factory()->create([
+             'name' => 'Test User',
+             'email' => 'test@example.com',
+         ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+         foreach (['Квартиры', 'Коммерческая недвижимость', 'Дома, коттеджи, таунхаусы', 'Земельные участки'] as $item) {
+             ObjectTypes::factory()->create([
+                 'name' => $item,
+                 'alias' => Str::slug($item, '-')
+             ]);
+         }
+
+         Locations::factory()->count(50)->create();
+
+         Objects::factory()->count(100)->create();
     }
 }

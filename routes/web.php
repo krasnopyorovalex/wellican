@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::pattern('alias', '[\da-z-&A-Z]+');
+Route::pattern('id', '[\d]+');
+
+Route::get('/', static function () {
+    return view('layouts.admin');
 });
+
+require_once(base_path('routes/dashboard.php'));

@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use Domain\Contracts\Persistence\Handler;
+use Domain\Persistence\CommandHandler;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(Handler::class, CommandHandler::class);
     }
 
     /**
@@ -19,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Paginator::useBootstrapFive();
+
+        Blade::include('includes.input', 'input');
+        Blade::include('includes.select', 'select');
     }
 }
