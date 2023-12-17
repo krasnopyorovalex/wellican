@@ -1,7 +1,48 @@
-body {
-    background: #ccc;
+@font-face {
+    font-family: "Gilroy400";
+    src: url("../font/Gilroy-Regular.ttf");
+    src: url("../font/Gilroy-Regular.woff");
+}
 
-    h1 {
-        background: red;
+@font-face {
+    font-family: "Gilroy500";
+    src: url("../font/Gilroy-Medium.ttf");
+    src: url("../font/Gilroy-Medium.woff");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Gilroy600";
+    src: url("../font/Gilroy-Semibold.ttf");
+    src: url("../font/Gilroy-Semibold.woff");
+    font-weight: 600;
+}
+
+body {
+    font-family: "Gilroy400", sans-serif !important;
+}
+
+.top_main {
+    min-height: 300px;
+    background: url("../images/slider/slide1.jpg");
+    position: relative;
+    &:before {
+        content: "";
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        background: linear-gradient(
+            180deg,
+            rgba(28, 23, 39, 0.84) 26.69%,
+            rgba(40, 41, 45, 0) 117.71%
+        );
+    }
+
+    .lorem {
+        color: #fff;
+    }
+
+    .container {
+        position: relative;
     }
 }
