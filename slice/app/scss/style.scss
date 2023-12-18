@@ -18,8 +18,32 @@
     font-weight: 600;
 }
 
+.button {
+    border-radius: 4px;
+    background: #a67c52;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+        0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    font-size: 15px;
+    font-family: Gilroy500, sans-serif;
+    height: 55px;
+    display: inline-flex;
+    text-transform: uppercase;
+    color: #fff;
+    align-items: center;
+    padding: 0 22px;
+
+
+    &.middle {
+        height: 40px;
+    }
+}
+
 body {
     font-family: "Gilroy400", sans-serif !important;
+}
+
+a {
+    text-decoration: none;
 }
 
 .top_main {
@@ -44,5 +68,133 @@ body {
 
     .container {
         position: relative;
+    }
+
+    .top_bar {
+        display: flex;
+        padding-top: 18px;
+        .first_level {
+            list-style-type: none;
+            display: flex;
+            padding: 0;
+            margin: auto;
+            padding-left: 76px;
+            li {
+                font-size: 16px;
+                margin: 0 24px;
+                border-bottom: 1px solid transparent;
+                transition: all ease 0.2s;
+                position: relative;
+                &:before,
+                &:after {
+                    content: "";
+                }
+                &:before {
+                    height: 10px;
+                    position: absolute;
+                    width: 100%;
+                    display: none;
+                    bottom: -5px;
+                }
+
+                &:after {
+                    height: 24px;
+                    position: absolute;
+                    width: 24px;
+                    right: -27px;
+                    background: url("../images/expand_more.svg") no-repeat;
+                    visibility: hidden;
+                }
+                a {
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+
+                &:hover {
+                    border-bottom: 1px solid #fff;
+                    &:before {
+                        display: block;
+                    }
+                    .sub {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+
+                &:has(ul.sub) {
+                    &:hover {
+                        // background: red;
+                        &:after {
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+            .sub {
+                position: absolute;
+                left: 0;
+                top: 32px;
+                width: max-content;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                text-align: left;
+                border-radius: 4px;
+                background: #fff;
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 0s, opacity 0.2s linear;
+                overflow: hidden;
+                li {
+                    padding: 0;
+                    margin: 0;
+                    border-bottom: none;
+                    a {
+                        color: #1d1d1b;
+                        text-transform: none;
+                        display: block;
+                        padding: 6px 16px;
+                        &:hover {
+                            background: #c7b389;
+                        }
+                    }
+                }
+            }
+        }
+
+        .favorites {
+            margin-left: auto;
+            padding-top: 13px;
+            a {
+                margin-left: 15px;
+            }
+        }
+    }
+
+    .slogan {
+        padding: 137px 0 160px;
+        p {
+            font-size: 82px;
+            font-style: normal;
+            font-family: Gilroy600, sans-serif;
+            line-height: 89px;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0 206px;
+        }
+        span {
+            font-size: 28px;
+            font-style: normal;
+            line-height: 44px;
+            text-align: center;
+            display: block;
+            color: #fff;
+            padding: 0 302px;
+            padding-top: 20px;
+        }
+    }
+    .call_box {
+        padding-top: 40px;
     }
 }
