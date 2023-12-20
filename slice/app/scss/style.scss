@@ -46,6 +46,49 @@ a {
     text-decoration: none;
 }
 
+
+.section_head {
+    overflow: hidden;
+    text-align: center;
+    span {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 29px;
+        display: block;
+        margin: -13px auto 0;
+        max-width: 472px;
+        position: relative;
+
+    }
+}
+.section_head > h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    font-family: Gilroy500, sans-serif;
+    line-height: 57px; /* 142.5% */
+    text-transform: uppercase;
+}
+.section_head > h2:before, .section_head > h2:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    border-bottom: 1px solid #D0C1A0;
+    width: 100vw;
+    margin: 0 20px;
+}
+.section_head > h2:before{
+    right: 100%;
+}
+.section_head > h2:after{
+    left: 100%;
+}
+
+.color {
+    background-color: #ccc;
+}
+
 .top_main {
     min-height: 300px;
     background: url("../images/slider/slide1.jpg");
@@ -196,5 +239,18 @@ a {
     }
     .call_box {
         padding-top: 40px;
+    }
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.estate_types {
+    padding-top: 40px;
+    .figure {
+        img {
+            width: 196px;
+        }
     }
 }
