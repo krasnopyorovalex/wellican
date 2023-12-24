@@ -20,7 +20,7 @@
 
 .button {
     border-radius: 4px;
-    background: #a67c52;
+    background: #d9a06b;
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
         0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
     font-size: 15px;
@@ -31,7 +31,10 @@
     color: #fff;
     align-items: center;
     padding: 0 22px;
-
+    transition: all ease 0.2s;
+    &:hover {
+        background: #AF743DFF;
+    }
 
     &.middle {
         height: 40px;
@@ -247,10 +250,56 @@ a {
 }
 
 .estate_types {
-    padding-top: 40px;
+    padding: 40px 0 90px;
     .figure {
+        display: block;
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        transition: all .25s ease-in-out;
+        &:before {
+            content: '';
+            position: absolute;
+            background: linear-gradient(0deg, rgba(28, 23, 39, 0.59) 22.28%, rgba(40, 41, 45, 0.00) 101.18%);
+            width: 100%;
+            height: 100%;
+            transition: opacity .25s ease-in-out;
+        }
+        &:hover {
+            &:before {
+                opacity: 0.5;
+            }
+            strong {
+                border-bottom: 1px solid #fff;
+            }
+        }
         img {
             width: 196px;
         }
+        strong {
+            position: absolute;
+            bottom: 28px;
+            z-index: 1;
+            font-family: Gilroy500, sans-serif;
+            line-height: 28px;
+            letter-spacing: 0.54px;
+            text-transform: uppercase;
+            font-size: 16px;
+            color: #FFF;
+            left: 0;
+            font-weight: normal;
+            text-align: left;
+            height: 57px;
+            margin: 0 17px 0 17px;
+            text-shadow: 1px 1px 1px #0b0b0b;
+            border-bottom: 1px solid transparent;
+
+            .highlight {
+                font-style: normal;
+                color: #DBA671;
+            }
+        }
     }
 }
+
+
