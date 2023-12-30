@@ -124,11 +124,11 @@ a {
             list-style-type: none;
             display: flex;
             padding: 0;
-            margin: auto;
-            padding-left: 76px;
+            margin: auto 0;
+            padding-left: 20px;
             li {
                 font-size: 16px;
-                margin: 0 24px;
+                margin: 0 22px;
                 border-bottom: 1px solid transparent;
                 transition: all ease 0.2s;
                 position: relative;
@@ -211,9 +211,23 @@ a {
 
         .favorites {
             margin-left: auto;
-            padding-top: 13px;
+            padding-top: 12px;
             a {
                 margin-left: 15px;
+            }
+
+            .phone {
+                font-family: Gilroy600, sans-serif;
+                font-size: 18px;
+                line-height: normal;
+                color: #fff;
+                position: relative;
+                top: 2px;
+
+                img {
+                    position: relative;
+                    top: -2px;
+                }
             }
         }
     }
