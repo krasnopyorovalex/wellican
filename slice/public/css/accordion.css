@@ -1,0 +1,64 @@
+* {
+  border-radius: 0;
+  box-shadow: none;
+}
+*:focus-visible {
+  outline: none;
+}
+
+.accordion {
+  padding-top: 25px;
+}
+.accordion .accordion-button, .accordion .accordion-body {
+  background-color: #20233E;
+}
+.accordion .accordion-button {
+  font-family: Gilroy600, sans-serif;
+  padding: 2px 20px;
+  padding-right: 0;
+  border-radius: 20px 20px 0 0;
+}
+.accordion .accordion-button.collapsed {
+  border-radius: 20px;
+}
+.accordion .accordion-button:not(.collapsed) {
+  border-radius: 20px 20px 0 0;
+}
+.accordion .accordion-item {
+  border: none;
+  background: none;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.87);
+  line-height: 151%; /* 30.2px */
+  letter-spacing: 0.15px;
+}
+.accordion .accordion-item:last-of-type .accordion-button {
+  border-radius: 20px;
+}
+.accordion .accordion-item:last-of-type .accordion-button:not(.collapsed) {
+  border-radius: 20px 20px 0 0;
+}
+.accordion .accordion-button:focus {
+  box-shadow: none;
+}
+.accordion .accordion-button {
+  color: rgba(255, 255, 255, 0.87);
+}
+.accordion .accordion-button:not(.collapsed) {
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.87);
+}
+.accordion .accordion-body {
+  border-radius: 0 0 20px 20px;
+}
+.accordion .accordion-body ol {
+  padding-right: 40px;
+}
+.accordion .accordion-body ol li {
+  padding-bottom: 7px;
+}
+.accordion .accordion-button::after {
+  width: 48px;
+  height: 48px;
+  background: url("../images/arrow-accordion-icon.svg");
+}
