@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Wellican</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link href="../public/css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="top_bar">
+                        <a class="logo" href="index.html"
+                            ><img src="../public/images/logo.svg" alt=""
+                        /></a>
+                        <ul class="first_level">
+                            <li>
+                                <a href="catalog.html">Типы недвижимости</a>
+                                <ul class="sub">
+                                    <li><a href="/">Коттеджные посёлки</a></li>
+                                    <li>
+                                        <a href="/">Многоквартирные дома</a>
+                                    </li>
+                                    <li><a href="/">Новостройки</a></li>
+                                    <li>
+                                        <a href="/">Комерческая недвижимость</a>
+                                    </li>
+                                    <li><a href="/">Земельные участки</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/">Объекты в продаже</a></li>
+                            <li><a href="/">Услуги </a></li>
+                            <li><a href="/">Все об ипотеке</a></li>
+                            <li><a href="/">Контакты</a></li>
+                        </ul>
+                        <div class="favorites">
+                            <span class="phone"
+                                ><img
+                                    src="../public/images/top_phone_icon.svg"
+                                    alt=""
+                                />
+                                +7 (978) 939-33-33</span
+                            >
+                            <a href="/"
+                                ><img
+                                    src="../public/images/comparison_icon.svg"
+                                    alt=""
+                            /></a>
+                            <a href="/"
+                                ><img
+                                    src="../public/images/favorites_icon.svg"
+                                    alt=""
+                            /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumbs_box">
+                            <ul>
+                                <li><a href="index.html">Главная</a></li>
+                                <li class="active">Каталог недвижимости</li>
+                            </ul>
+                        </div>
+
+                        <div class="head_title_box">
+                            <h1 class="head_title">Каталог недвижимости</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container text-center estate_types">
+                <div class="row gx-2">
+                    <div class="col-2">
+                        <a href="/" class="figure">
+                            <img
+                                src="../public/images/estate-types/type1.jpg"
+                                alt=""
+                            />
+                            <strong class="estate_type_title"
+                                >недвижимость от wellican</strong
+                            >
+                        </a>
+                    </div>
+                    <div class="col-2">
+                        <a href="/" class="figure">
+                            <img
+                                src="../public/images/estate-types/type2.jpg"
+                                alt=""
+                            />
+                            <strong class="estate_type_title">
+                                Коттеджные поселки
+                            </strong>
+                        </a>
+                    </div>
+                    <div class="col-2">
+                        <a href="/" class="figure">
+                            <img
+                                src="../public/images/estate-types/type3.jpg"
+                                alt=""
+                            />
+                            <strong class="estate_type_title"
+                                >многоквартирные дома</strong
+                            >
+                        </a>
+                    </div>
+                    <div class="col-2">
+                        <a href="/" class="figure">
+                            <img
+                                src="../public/images/estate-types/type4.jpg"
+                                alt=""
+                            />
+                            <strong class="estate_type_title"
+                                >новостройки</strong
+                            >
+                        </a>
+                    </div>
+                    <div class="col-2">
+                        <a href="/" class="figure">
+                            <img
+                                src="../public/images/estate-types/type5.jpg"
+                                alt=""
+                            />
+                            <strong class="estate_type_title"
+                                >комерческая недвижимость</strong
+                            >
+                        </a>
+                    </div>
+                    <div class="col-2">
+                        <a href="/" class="figure">
+                            <img
+                                src="../public/images/estate-types/type6.jpg"
+                                alt=""
+                            />
+                            <strong class="estate_type_title"
+                                >земельные участки</strong
+                            >
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--     start filters       -->
+            <div class="container text-center filters_box">
+                <div class="row gx-2">
+                    <div class="col-xl-12">
+                        <div class="form_box">
+                            <form class="row g-3 gx-4">
+                                <div class="col-md-3">
+                                    <select id="input_city" class="form-select">
+                                        <option disabled selected>
+                                            Населеный пункт
+                                        </option>
+                                        <option>Симферополь</option>
+                                        <option>Ялта</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <select
+                                        id="input_property_type"
+                                        class="form-select"
+                                    >
+                                        <option disabled selected>
+                                            Тип недвижимости
+                                        </option>
+                                        <option>
+                                            Дома, Котеджи, таунхаусы
+                                        </option>
+                                        <option>Квартиры</option>
+                                        <option>Земельные участки</option>
+                                        <option>
+                                            Комерческая недвижимость
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <select
+                                        id="input_purchase_type"
+                                        class="form-select"
+                                    >
+                                        <option disabled selected>
+                                            Тип приобритения
+                                        </option>
+                                        <option>Купить</option>
+                                        <option>Снять</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3 text-lg-start">
+                                    <button type="submit" class="btn">
+                                        Найти
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="sort_box">
+                            <button
+                                class="btn btn-secondary dropdown-toggle"
+                                type="button"
+                                id="sort_button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                Сортировать объекты
+                            </button>
+                            <ul
+                                class="dropdown-menu"
+                                aria-labelledby="sort_button"
+                            >
+                                <li>
+                                    <a class="dropdown-item" href="#"
+                                        >По умолчанию</a
+                                    >
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"
+                                        >По дате</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--     end of filters       -->
+
+<!--      objects list      -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="objects_list">
+                            <div class="object">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--      end of objects list      -->
+        </main>
+
+        <footer class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content">
+                            Телефон: <br />
+                            <strong>+7 (978) 939-33-33</strong>
+                            <span>Крым, Красные пещеры</span>
+                            <div>
+                                <a href="#"
+                                    ><img src="../public/images/footer/vk.svg"
+                                /></a>
+                                <a href="#"
+                                    ><img
+                                        src="../public/images/footer/whats.svg"
+                                /></a>
+                                <a href="#"
+                                    ><img
+                                        src="../public/images/footer/viber.svg"
+                                /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copy">© 2024, Wellican Бюро недвижимости</div>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="../public/js/main.js"></script>
+    </body>
+</html>
