@@ -104,3 +104,14 @@ main {
     text-align: right;
     padding-top: 20px;
 }
+
+.objects_list {
+    .object {
+        display: flex;
+        min-height: 300px;
+    }
+
+    .gallery {
+        width: 600px;
+    }
+}

@@ -20,10 +20,11 @@ function initFillColorForTypeTitle(): void {
     }
 }
 
-function initCarousel() {
+function initReviewsCarousel() {
     let items = document.querySelectorAll(".carousel .carousel-item");
+    const reviews_container = document.getElementById("reviews");
 
-    if (items.length) {
+    if (items.length && reviews_container) {
         items.forEach((el) => {
             const minPerSlide = 3;
             let next: Element = el.nextElementSibling;
@@ -40,7 +41,51 @@ function initCarousel() {
     }
 }
 
+function initGallForObject(): void {
+    const cat_objects_container: HTMLElement =
+        document.getElementById("cat_objects");
+
+    if (cat_objects_container) {
+        const windowRef = window as any;
+
+        const bootstrap = windowRef.bootstrap;
+
+        const objects_list: NodeList = document.querySelectorAll(".object");
+
+        objects_list.forEach((item, index) => {
+            const it = item as HTMLElement;
+            const carouselEl = it.firstElementChild.firstElementChild;
+            carouselEl.id = "carouselExampleFade" + index;
+
+            const carouselElPrevBt = carouselEl.getElementsByClassName(
+                "carousel-control-prev"
+            )[0] as Node;
+
+            const carouselElNextBt = carouselEl.getElementsByClassName(
+                "carousel-control-next"
+            )[0] as Node;
+
+            const myCarousel = document.querySelector(
+                "#carouselExampleFade" + index
+            );
+
+            const carousel = new bootstrap.Carousel(myCarousel, {
+                window: false,
+                ride: false,
+            }) as any;
+
+            carouselElPrevBt.addEventListener("click", () => {
+                carousel.prev();
+            });
+            carouselElNextBt.addEventListener("click", () => {
+                carousel.next();
+            });
+        });
+    }
+}
+
 (() => {
-    initCarousel();
+    initReviewsCarousel();
     initFillColorForTypeTitle();
+    initGallForObject();
 })();
