@@ -102,16 +102,107 @@ main {
 
 .sort_box {
     text-align: right;
-    padding-top: 20px;
+    padding-top: 65px;
 }
 
 .objects_list {
+    padding-top: 11px;
     .object {
         display: flex;
         min-height: 300px;
+        background: #fff;
+        font-size: 18px;
+        color: #000;
+        margin-bottom: 60px;
+        border-radius: 24px;
+        overflow: hidden;
     }
 
     .gallery {
         width: 600px;
+        position: relative;
+    }
+
+    .is_wellican_chose {
+        width: 77px;
+        height: 94px;
+        position: absolute;
+        z-index: 99999;
+        left: 40px;
+        top: 0;
+        background: url("../images/catalog/wellican_chose.png") no-repeat center center;
+    }
+
+    .description {
+        flex: 1;
+        padding-left: 50px;
+        padding-top: 30px;
+        position: relative;
+    }
+    .more {
+        font-size: 14px;
+        display: block;
+        border-radius: 4px 4px 0px 0px;
+        background: #A67C52;
+        position: absolute;
+        bottom: 0;
+        left: 50px;
+        padding: 8px 22px;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .head {
+        display: flex;
+        a {
+            color: #000;
+        }
+    }
+
+    .indicators {
+        display: flex;
+        padding-right: 25px;
+        margin-left: auto;
+        button {
+            width: 33px;
+            height: 33px;
+            border: none;
+            margin-left: 21px;
+        }
+        .favorite {
+            background: url("../images/catalog/favorite_icon.svg") no-repeat center center;
+        }
+        .compare {
+            background: url("../images/catalog/compare_icon.svg") no-repeat center center;
+        }
+    }
+    .area {
+
+        strong {
+            font-weight: normal;
+            font-family: Gilroy500, sans-serif;
+        }
+    }
+    .location {
+        background: url("../images/catalog/location_icon.svg") no-repeat left center;
+        padding-left: 25px;
+        margin: 25px 0;
+    }
+    .text {
+        padding-bottom: 73px;
+        padding-right: 30px;
+    }
+}
+
+
+#cat_objects {
+    .carousel {
+        height: 100%;
+    }
+    .carousel-inner {
+        height: 100%;
+    }
+    .carousel-item {
+        height: 100%;
     }
 }

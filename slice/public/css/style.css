@@ -99,37 +99,37 @@
 
 /* medium and up screens */
 @media (min-width: 768px) {
-  .carousel-inner .carousel-item-end.active,
-  .carousel-inner .carousel-item-next {
+  #reviews .carousel-inner .carousel-item-end.active,
+  #reviews .carousel-inner .carousel-item-next {
     transform: translateX(33%);
   }
-  .carousel-inner .carousel-item-start.active,
-  .carousel-inner .carousel-item-prev {
+  #reviews .carousel-inner .carousel-item-start.active,
+  #reviews .carousel-inner .carousel-item-prev {
     transform: translateX(-33%);
   }
 }
-.carousel-inner .carousel-item-end,
-.carousel-inner .carousel-item-start {
+#reviews .carousel-inner .carousel-item-end,
+#reviews .carousel-inner .carousel-item-start {
   transform: translateX(0);
 }
 
-.carousel-item {
+#reviews .carousel-item {
   height: 334px;
 }
-.carousel-item .card {
+#reviews .carousel-item .card {
   height: 100%;
   border: none;
   background: none;
 }
-.carousel-item .card .card-img-overlay {
+#reviews .carousel-item .card .card-img-overlay {
   display: flex;
   flex-flow: column;
   padding: 0;
 }
-.carousel-item .card .review_box {
+#reviews .carousel-item .card .review_box {
   display: flex;
   flex-flow: column;
-  background: #20233E;
+  background: #20233e;
   height: 100%;
   color: #fff;
   padding: 30px;
@@ -137,33 +137,31 @@
   width: 368px;
   border-radius: 22px;
 }
-.carousel-item .card .user {
+#reviews .carousel-item .card .user {
   display: flex;
 }
-.carousel-item .card .user_desc {
+#reviews .carousel-item .card .user_desc {
   text-align: left;
   padding-left: 20px;
 }
-.carousel-item .card .user_desc .name {
+#reviews .carousel-item .card .user_desc .name {
   font-size: 24px;
   font-family: Gilroy500, sans-serif;
   line-height: 40px;
 }
-.carousel-item .card .desc {
+#reviews .carousel-item .card .desc {
   font-size: 14px;
   font-family: Gilroy500, sans-serif;
   line-height: 26px;
   padding-top: 20px;
 }
-
-.carousel.slide {
+#reviews .carousel.slide {
   padding: 0 45px;
 }
-
-.carousel-control-next, .carousel-control-prev {
+#reviews .carousel-control-next,
+#reviews .carousel-control-prev {
   width: auto;
 }
-
 .head_title_box {
   overflow: hidden;
 }
@@ -257,7 +255,98 @@ main .estate_types .figure img {
 
 .sort_box {
   text-align: right;
-  padding-top: 20px;
+  padding-top: 65px;
+}
+
+.objects_list {
+  padding-top: 11px;
+}
+.objects_list .object {
+  display: flex;
+  min-height: 300px;
+  background: #fff;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 60px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.objects_list .gallery {
+  width: 600px;
+  position: relative;
+}
+.objects_list .is_wellican_chose {
+  width: 77px;
+  height: 94px;
+  position: absolute;
+  z-index: 99999;
+  left: 40px;
+  top: 0;
+  background: url("../images/catalog/wellican_chose.png") no-repeat center center;
+}
+.objects_list .description {
+  flex: 1;
+  padding-left: 50px;
+  padding-top: 30px;
+  position: relative;
+}
+.objects_list .more {
+  font-size: 14px;
+  display: block;
+  border-radius: 4px 4px 0px 0px;
+  background: #A67C52;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  padding: 8px 22px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.objects_list .head {
+  display: flex;
+}
+.objects_list .head a {
+  color: #000;
+}
+.objects_list .indicators {
+  display: flex;
+  padding-right: 25px;
+  margin-left: auto;
+}
+.objects_list .indicators button {
+  width: 33px;
+  height: 33px;
+  border: none;
+  margin-left: 21px;
+}
+.objects_list .indicators .favorite {
+  background: url("../images/catalog/favorite_icon.svg") no-repeat center center;
+}
+.objects_list .indicators .compare {
+  background: url("../images/catalog/compare_icon.svg") no-repeat center center;
+}
+.objects_list .area strong {
+  font-weight: normal;
+  font-family: Gilroy500, sans-serif;
+}
+.objects_list .location {
+  background: url("../images/catalog/location_icon.svg") no-repeat left center;
+  padding-left: 25px;
+  margin: 25px 0;
+}
+.objects_list .text {
+  padding-bottom: 73px;
+  padding-right: 30px;
+}
+
+#cat_objects .carousel {
+  height: 100%;
+}
+#cat_objects .carousel-inner {
+  height: 100%;
+}
+#cat_objects .carousel-item {
+  height: 100%;
 }
 
 .button {

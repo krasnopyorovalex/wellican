@@ -13,9 +13,10 @@ function initFillColorForTypeTitle() {
                     : lastWord);
     }
 }
-function initCarousel() {
+function initReviewsCarousel() {
     let items = document.querySelectorAll(".carousel .carousel-item");
-    if (items.length) {
+    const reviews_container = document.getElementById("reviews");
+    if (items.length && reviews_container) {
         items.forEach((el) => {
             const minPerSlide = 3;
             let next = el.nextElementSibling;
@@ -31,7 +32,34 @@ function initCarousel() {
         });
     }
 }
+function initGallForObject() {
+    const cat_objects_container = document.getElementById("cat_objects");
+    if (cat_objects_container) {
+        const windowRef = window;
+        const bootstrap = windowRef.bootstrap;
+        const objects_list = document.querySelectorAll(".object");
+        objects_list.forEach((item, index) => {
+            const it = item;
+            const carouselEl = it.firstElementChild.firstElementChild;
+            carouselEl.id = "carouselExampleFade" + index;
+            const carouselElPrevBt = carouselEl.getElementsByClassName("carousel-control-prev")[0];
+            const carouselElNextBt = carouselEl.getElementsByClassName("carousel-control-next")[0];
+            const myCarousel = document.querySelector("#carouselExampleFade" + index);
+            const carousel = new bootstrap.Carousel(myCarousel, {
+                window: false,
+                ride: false,
+            });
+            carouselElPrevBt.addEventListener("click", () => {
+                carousel.prev();
+            });
+            carouselElNextBt.addEventListener("click", () => {
+                carousel.next();
+            });
+        });
+    }
+}
 (() => {
-    initCarousel();
+    initReviewsCarousel();
     initFillColorForTypeTitle();
+    initGallForObject();
 })();
