@@ -1,3 +1,12 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 // Разукрашиваем элемент в заголовке типов недвижимсоти
 function initFillColorForTypeTitle() {
     const estateTypeTitleList = document.querySelectorAll(".estate_type_title");
@@ -58,8 +67,34 @@ function initGallForObject() {
         });
     }
 }
+function addFavorite() {
+    console.log("addFavorite");
+}
+function initMap() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const object_view_container = document.getElementById("object_view");
+        if (object_view_container) {
+            const windowRef = window;
+            const ymaps = windowRef.ymaps;
+            yield ymaps.ready();
+            const current_obj_coords = [44.869998, 34.344011];
+            const myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: current_obj_coords,
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 10,
+            });
+            myMap.geoObjects.add(new ymaps.Placemark(current_obj_coords));
+        }
+    });
+}
 (() => {
     initReviewsCarousel();
     initFillColorForTypeTitle();
     initGallForObject();
+    initMap();
 })();

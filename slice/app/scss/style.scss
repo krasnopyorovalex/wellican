@@ -2,6 +2,7 @@
 @import "accordion";
 @import "carousel";
 @import "catalog";
+@import "object_view";
 
 .button {
     border-radius: 20px;
@@ -612,6 +613,10 @@ header {
             padding: 50px 0 0;
         }
     }
+}
+
+.footer {
+    padding-top: 80px;
 }
 
 .footer_content {

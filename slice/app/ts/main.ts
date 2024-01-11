@@ -84,8 +84,39 @@ function initGallForObject(): void {
     }
 }
 
+function addFavorite(): void {
+    console.log("addFavorite");
+}
+
+async function initMap() {
+    const object_view_container: HTMLElement =
+        document.getElementById("object_view");
+    if (object_view_container) {
+        const windowRef = window as any;
+
+        const ymaps = windowRef.ymaps;
+        await ymaps.ready();
+
+        const current_obj_coords = [44.869998, 34.344011];
+
+        const myMap = new ymaps.Map("map", {
+            // Координаты центра карты.
+            // Порядок по умолчанию: «широта, долгота».
+            // Чтобы не определять координаты центра карты вручную,
+            // воспользуйтесь инструментом Определение координат.
+            center: current_obj_coords,
+            // Уровень масштабирования. Допустимые значения:
+            // от 0 (весь мир) до 19.
+            zoom: 10,
+        });
+
+        myMap.geoObjects.add(new ymaps.Placemark(current_obj_coords));
+    }
+}
+
 (() => {
     initReviewsCarousel();
     initFillColorForTypeTitle();
     initGallForObject();
+    initMap();
 })();
