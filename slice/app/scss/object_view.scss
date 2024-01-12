@@ -68,6 +68,17 @@
     .left_part_object_view {
         width: 800px;
         margin-right: 40px;
+        position: relative;
+
+        .is_wellican_chose {
+            width: 77px;
+            height: 94px;
+            position: absolute;
+            z-index: 99999;
+            left: 40px;
+            top: 0;
+            background: url("../images/catalog/wellican_chose.png") no-repeat center center;
+        }
     }
     .shorts {
         display: flex;
