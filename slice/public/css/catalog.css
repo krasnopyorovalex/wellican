@@ -1,0 +1,186 @@
+.head_title_box {
+  overflow: hidden;
+}
+
+.head_title {
+  text-transform: uppercase;
+  position: relative;
+  font-family: Gilroy500, sans-serif;
+  color: #fff;
+  display: inline-block;
+  font-size: 30px;
+  line-height: 57px;
+}
+
+.head_title:before,
+.head_title:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  border-bottom: 1px solid #d0c1a0;
+  width: 100vw;
+  margin: 0 20px;
+}
+
+.head_title:before {
+  right: 100%;
+}
+
+.head_title:after {
+  left: 100%;
+}
+
+.breadcrumbs_box {
+  padding-top: 60px;
+}
+.breadcrumbs_box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.breadcrumbs_box ul li {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+}
+.breadcrumbs_box ul li a {
+  color: rgba(255, 255, 255, 0.4);
+}
+.breadcrumbs_box ul li a:hover {
+  text-decoration: underline;
+}
+.breadcrumbs_box ul li.active {
+  color: #fff;
+}
+.breadcrumbs_box ul li:after {
+  content: "/";
+  display: inline-block;
+  padding: 0 8px;
+}
+.breadcrumbs_box ul li:last-of-type:after {
+  display: none;
+}
+
+main .estate_types .figure {
+  height: 181px;
+}
+main .estate_types .figure img {
+  margin-top: -60px;
+}
+
+.form_box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 30px;
+}
+.form_box .btn {
+  border-radius: 4px;
+  background: #A67C52;
+  width: 173px;
+  color: #fff;
+}
+
+#sort_button {
+  background: url("../images/catalog/sort_icon.svg") no-repeat 0 9px;
+  color: #fff;
+  border: none;
+  background-size: 15px;
+  padding-left: 23px;
+  font-size: 14px;
+}
+
+.sort_box {
+  text-align: right;
+  padding-top: 65px;
+}
+
+.objects_list {
+  padding-top: 11px;
+}
+.objects_list .object {
+  display: flex;
+  min-height: 300px;
+  background: #fff;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 60px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.objects_list .gallery {
+  width: 600px;
+  position: relative;
+}
+.objects_list .is_wellican_chose {
+  width: 77px;
+  height: 94px;
+  position: absolute;
+  z-index: 99999;
+  left: 40px;
+  top: 0;
+  background: url("../images/catalog/wellican_chose.png") no-repeat center center;
+}
+.objects_list .description {
+  flex: 1;
+  padding-left: 50px;
+  padding-top: 30px;
+  position: relative;
+}
+.objects_list .more {
+  font-size: 14px;
+  display: block;
+  border-radius: 4px 4px 0px 0px;
+  background: #A67C52;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  padding: 8px 22px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.objects_list .head {
+  display: flex;
+}
+.objects_list .head a {
+  color: #000;
+}
+.objects_list .indicators {
+  display: flex;
+  padding-right: 25px;
+  margin-left: auto;
+}
+.objects_list .indicators button {
+  width: 33px;
+  height: 33px;
+  border: none;
+  margin-left: 21px;
+}
+.objects_list .indicators .favorite {
+  background: url("../images/catalog/favorite_icon.svg") no-repeat center center;
+}
+.objects_list .indicators .compare {
+  background: url("../images/catalog/compare_icon.svg") no-repeat center center;
+}
+.objects_list .area strong {
+  font-weight: normal;
+  font-family: Gilroy500, sans-serif;
+}
+.objects_list .location {
+  background: url("../images/catalog/location_icon.svg") no-repeat left center;
+  padding-left: 25px;
+  margin: 25px 0;
+}
+.objects_list .text {
+  padding-bottom: 73px;
+  padding-right: 30px;
+}
+
+#cat_objects .carousel {
+  height: 100%;
+}
+#cat_objects .carousel-inner {
+  height: 100%;
+}
+#cat_objects .carousel-item {
+  height: 100%;
+}
