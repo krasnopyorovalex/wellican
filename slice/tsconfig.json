@@ -2,6 +2,7 @@
     "files": ["app/ts/main.ts"],
     "compilerOptions": {
         "noImplicitAny": true,
-        "target": "es5"
+        "noUnusedLocals": true,
+        "target": "es2015"
     }
 }

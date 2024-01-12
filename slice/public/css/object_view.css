@@ -1,0 +1,255 @@
+#object_view {
+  background: #fff;
+  padding: 32px 40px 40px;
+  margin-top: 25px;
+  border-radius: 24px;
+}
+#object_view .top__object_view {
+  font-size: 16px;
+}
+#object_view .article {
+  font-weight: normal;
+  padding-bottom: 23px;
+  display: block;
+}
+#object_view .location {
+  background: url("../images/catalog/location_icon.svg") no-repeat left center;
+  padding-left: 25px;
+}
+#object_view .location span {
+  color: #1E68D7;
+  padding-left: 10px;
+  cursor: pointer;
+}
+#object_view .buttons {
+  padding-top: 23px;
+  display: flex;
+}
+#object_view .buttons button {
+  background: none;
+  border-radius: 4px;
+  border: 1px solid #A6ABBE;
+  font-size: 12px;
+  font-family: Gilroy500, sans-serif;
+  line-height: 26px;
+  letter-spacing: 0.46px;
+  color: #333;
+  margin-right: 15px;
+  padding: 0 22px;
+  transition: all ease 0.3s;
+}
+#object_view .buttons button:hover {
+  border: 1px solid #A67C52;
+}
+#object_view .buttons .favorite {
+  background: url("../images/object_view/favorite.svg") no-repeat center left 20px;
+  padding-left: 50px;
+}
+#object_view .buttons .compare {
+  background: url("../images/object_view/compare.svg") no-repeat center left 20px;
+  padding-left: 50px;
+}
+#object_view .buttons .share {
+  background: url("../images/object_view/share_link.svg") no-repeat center left 20px;
+  padding-left: 50px;
+}
+#object_view .middle__object_view {
+  display: flex;
+  padding-top: 30px;
+}
+#object_view .left_part_object_view {
+  width: 800px;
+  margin-right: 40px;
+}
+#object_view .shorts {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+#object_view .shorts img {
+  width: 23%;
+}
+#object_view .description {
+  padding-top: 20px;
+}
+#object_view .options {
+  padding: 40px 0 0;
+  max-width: 600px;
+}
+#object_view .options ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#object_view .options ul li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+#object_view .options ul li:last-child {
+  border: none;
+}
+#object_view .options strong {
+  font-weight: normal;
+}
+#object_view .option_box {
+  padding-bottom: 40px;
+}
+#object_view .option_head {
+  font-family: Gilroy500, sans-serif;
+  line-height: 26px;
+  letter-spacing: 0.15px;
+  font-size: 24px;
+  display: block;
+  padding-bottom: 10px;
+}
+#object_view .option_value {
+  margin-left: auto;
+}
+#object_view .right_part_object_view {
+  flex: 1;
+  overflow: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  height: max-content;
+  top: 40px;
+}
+#object_view .consultation {
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  background: #EEEBEB;
+}
+#object_view .consultation .head {
+  color: #1B142B;
+  font-family: Gilroy600, sans-serif;
+  font-size: 24px;
+  padding-bottom: 7px;
+}
+#object_view .consultation .desc {
+  display: block;
+  font-size: 14px;
+  padding-bottom: 25px;
+}
+#object_view .consultation .button {
+  border: none;
+  margin-top: 20px;
+}
+#object_view .mortgage_box {
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  background: #EEEBEB;
+  margin-top: 40px;
+}
+#object_view .mortgage_box .head {
+  color: #1B142B;
+  font-family: Gilroy600, sans-serif;
+  font-size: 24px;
+  padding-bottom: 7px;
+}
+#object_view .mortgage_box .desc {
+  display: block;
+  font-size: 14px;
+  padding-bottom: 25px;
+}
+#object_view .mortgage_box strong {
+  color: #1E68D7;
+  font-weight: normal;
+  text-align: center;
+  display: block;
+  font-size: 18px;
+  font-family: Gilroy500, sans-serif;
+  padding-bottom: 20px;
+}
+#object_view .mortgage_box button {
+  border: none;
+  margin: 0 auto;
+  display: flex;
+}
+#object_view .news_promotions {
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  background: #EEEBEB;
+  margin-top: 40px;
+}
+#object_view .news_promotions .head {
+  font-size: 20px;
+  font-family: Gilroy600, sans-serif;
+  padding-bottom: 20px;
+}
+#object_view .news_promotions ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#object_view .news_promotions ul li {
+  padding-bottom: 20px;
+}
+#object_view .news_promotions ul li:last-of-type {
+  padding-bottom: 0;
+}
+#object_view .news_promotions ul li a {
+  display: flex;
+  color: #393939;
+  padding-right: 25px;
+  background: url("../images/object_view/more_news.svg") no-repeat right 0 center;
+  transition: all ease 0.3s;
+}
+#object_view .news_promotions ul li a:hover {
+  background-position: right -5px center;
+}
+#object_view .news_promotions ul li span {
+  color: #7C7C7C;
+  font-size: 14px;
+}
+#object_view .to_back {
+  display: inline-flex;
+  color: #333;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#object_view .to_back:before {
+  content: "";
+  width: 36px;
+  height: 30px;
+  background: url("../images/object_view/to_back.svg") no-repeat right;
+  transform: rotate(-180deg);
+  transition: all ease 0.3s;
+}
+#object_view .to_back:hover:before {
+  background-position: right -5px center;
+}
+#object_view .similar_objects {
+  padding-top: 40px;
+}
+#object_view .similar_objects .head {
+  font-size: 40px;
+  font-style: normal;
+  font-family: Gilroy500, sans-serif;
+  padding-bottom: 20px;
+}
+#object_view .similar_objects .list {
+  display: flex;
+  justify-content: space-between;
+}
+#object_view .similar_objects .list a {
+  color: #333;
+  display: flex;
+  flex-flow: column;
+  width: 377px;
+}
+#object_view .similar_objects .list img {
+  width: 377px;
+  border-radius: 24px;
+}
+#object_view .similar_objects .list span {
+  display: block;
+  font-size: 23px;
+  font-family: Gilroy500, sans-serif;
+  line-height: 38px;
+  width: 100%;
+  padding-top: 10px;
+}

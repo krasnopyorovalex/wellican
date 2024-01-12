@@ -19,31 +19,32 @@
         padding: 2px 20px;
         padding-right: 0;
 
-        border-radius: 20px 20px 0 0;
+        border-radius: 0;
 
         &.collapsed,  {
-            border-radius: 20px;
+            border-radius: 0;
         }
 
         &:not(.collapsed) {
-            border-radius: 20px 20px 0 0;
+            border-radius: 0;
         }
 
     }
 
     .accordion-item {
         border: none;
-        background: none;
+        background: #20233E;
         margin-bottom: 30px;
         color: rgba(255, 255, 255, 0.87);
         line-height: 151%; /* 30.2px */
         letter-spacing: 0.15px;
+        border-radius: 20px;
 
         &:last-of-type {
             .accordion-button {
-                border-radius: 20px;
+                border-radius: 0;
                 &:not(.collapsed) {
-                    border-radius: 20px 20px 0 0;
+                    border-radius: 0;
                 }
             }
         }
@@ -57,6 +58,7 @@
 
     .accordion-button {
         color: rgba(255, 255, 255, 0.87);
+        background: none;
     }
     .accordion-button:not(.collapsed) {
         box-shadow: none;
@@ -64,7 +66,8 @@
     }
 
     .accordion-body {
-        border-radius: 0 0 20px 20px;
+        border-radius: 0;
+        background: none;
         ol {
             padding-right: 40px;
             li {
