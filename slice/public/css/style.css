@@ -231,13 +231,12 @@ main .estate_types .figure {
 main .estate_types .figure img {
   margin-top: -60px;
 }
-
-.form_box {
+main .form_box {
   background: #fff;
   border-radius: 10px;
   padding: 20px 30px;
 }
-.form_box .btn {
+main .form_box .btn {
   border-radius: 4px;
   background: #A67C52;
   width: 173px;
@@ -411,6 +410,16 @@ main .estate_types .figure img {
 #object_view .left_part_object_view {
   width: 800px;
   margin-right: 40px;
+  position: relative;
+}
+#object_view .left_part_object_view .is_wellican_chose {
+  width: 77px;
+  height: 94px;
+  position: absolute;
+  z-index: 99999;
+  left: 40px;
+  top: 0;
+  background: url("../images/catalog/wellican_chose.png") no-repeat center center;
 }
 #object_view .shorts {
   display: flex;
@@ -603,6 +612,16 @@ main .estate_types .figure img {
   line-height: 38px;
   width: 100%;
   padding-top: 10px;
+}
+
+#page_view {
+  background: #fff;
+  padding: 32px 40px 40px;
+  margin-top: 25px;
+  border-radius: 24px;
+}
+#page_view .top__object_view {
+  font-size: 16px;
 }
 
 .button {
@@ -800,6 +819,27 @@ header .top_bar .favorites .phone img {
   position: relative;
   top: -2px;
 }
+header .filter_on_main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .form_box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 30px;
+  max-width: 1000px;
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding-left: 54px;
+}
+header .form_box .btn {
+  border-radius: 4px;
+  background: #A67C52;
+  width: 173px;
+  color: #fff;
+}
 
 .top_main {
   min-height: 300px;
@@ -820,7 +860,7 @@ header .top_bar .favorites .phone img {
   position: relative;
 }
 .top_main .slogan {
-  padding: 137px 0 160px;
+  padding: 100px 0 160px;
 }
 .top_main .slogan p {
   font-size: 82px;

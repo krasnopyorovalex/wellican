@@ -210,6 +210,31 @@ header {
             }
         }
     }
+
+    .filter_on_main {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form_box {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px 30px;
+        max-width: 1000px;
+        position: absolute;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        padding-left: 54px;
+
+
+        .btn {
+            border-radius: 4px;
+            background: #A67C52;
+            width: 173px;
+            color: #fff;
+        }
+    }
 }
 
 .top_main {
@@ -237,7 +262,7 @@ header {
     }
 
     .slogan {
-        padding: 137px 0 160px;
+        padding: 100px 0 160px;
         p {
             font-size: 82px;
             font-style: normal;
