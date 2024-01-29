@@ -346,6 +346,8 @@ main .form_box .btn {
 }
 #cat_objects .carousel-item {
   height: 100%;
+  transition: none;
+  cursor: pointer;
 }
 
 #object_view {
@@ -418,16 +420,58 @@ main .form_box .btn {
   position: absolute;
   z-index: 99999;
   left: 40px;
-  top: 0;
+  top: -1px;
   background: url("../images/catalog/wellican_chose.png") no-repeat center center;
 }
-#object_view .shorts {
+#object_view .main_photo {
+  height: 350px;
   display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+#object_view .main_photo img {
+  min-width: 100%;
+}
+#object_view .carousel-item {
+  height: 100%;
+  transition: none;
+}
+#object_view .carousel {
+  position: static;
+}
+#object_view .carousel-control-next, #object_view .carousel-control-prev {
+  opacity: initial;
+}
+#object_view .carousel-control-prev-icon, #object_view .carousel-control-next-icon {
+  width: 44px;
+  height: 44px;
+}
+#object_view .carousel-control-prev-icon {
+  background: url("../images/object_view/caroulsel-prev.svg") no-repeat right 0 center;
+}
+#object_view .carousel-control-next-icon {
+  background: url("../images/object_view/carousel-next.svg") no-repeat right 0 center;
+}
+#object_view .shorts {
+  display: grid;
   justify-content: space-between;
-  padding-top: 20px;
+  height: 107px;
+  overflow: hidden;
+  grid-template-columns: 23% 23% 23% 23%;
 }
 #object_view .shorts img {
-  width: 23%;
+  width: 100%;
+}
+#object_view .shorts a {
+  display: flex;
+  align-items: center;
+  height: 107px;
+  overflow: hidden;
+  border-radius: 20px;
 }
 #object_view .description {
   padding-top: 20px;
