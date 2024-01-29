@@ -57,6 +57,10 @@ function initGallForObject(): void {
             const carouselEl = it.firstElementChild.firstElementChild;
             carouselEl.id = "carouselExampleFade" + index;
 
+            console.dir(carouselEl);
+
+            const carouselItemDivEl = carouselEl.firstElementChild;
+
             const carouselElPrevBt = carouselEl.getElementsByClassName(
                 "carousel-control-prev"
             )[0] as Node;
@@ -80,6 +84,9 @@ function initGallForObject(): void {
             carouselElNextBt.addEventListener("click", () => {
                 carousel.next();
             });
+            carouselItemDivEl.addEventListener("click", () => {
+                carousel.next();
+            });
         });
     }
 }
@@ -88,29 +95,59 @@ function addFavorite(): void {
     console.log("addFavorite");
 }
 
-async function initMap() {
+function initObjectViewScripts() {
     const object_view_container: HTMLElement =
         document.getElementById("object_view");
     if (object_view_container) {
-        const windowRef = window as any;
+        const initObjectGallCarousel = () => {
+            const windowRef = window as any;
 
-        const ymaps = windowRef.ymaps;
-        await ymaps.ready();
+            const bootstrap = windowRef.bootstrap;
 
-        const current_obj_coords = [44.869998, 34.344011];
+            const myCarousel = document.querySelector("#carouselObjectView");
 
-        const myMap = new ymaps.Map("map", {
-            // Координаты центра карты.
-            // Порядок по умолчанию: «широта, долгота».
-            // Чтобы не определять координаты центра карты вручную,
-            // воспользуйтесь инструментом Определение координат.
-            center: current_obj_coords,
-            // Уровень масштабирования. Допустимые значения:
-            // от 0 (весь мир) до 19.
-            zoom: 10,
-        });
+            if (myCarousel?.children?.length) {
+                const carIndicators = myCarousel.children[0];
+                const carInner = myCarousel.children[1];
 
-        myMap.geoObjects.add(new ymaps.Placemark(current_obj_coords));
+                carInner.children[0].classList.add("active");
+                carIndicators.children[0].classList.add("active");
+            }
+
+            new bootstrap.Carousel(myCarousel, {
+                window: false,
+                ride: false,
+            });
+        };
+
+        initObjectGallCarousel();
+
+        const initMap = async () => {
+            const windowRef = window as any;
+            const ymaps = windowRef.ymaps;
+            await ymaps.ready();
+
+            const mapSelector: HTMLElement = document.querySelector("#map");
+
+            const { latitude, longitude } = mapSelector.dataset;
+
+            const current_obj_coords = [longitude, latitude];
+
+            const myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: current_obj_coords,
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 10,
+            });
+
+            myMap.geoObjects.add(new ymaps.Placemark(current_obj_coords));
+        };
+
+        initMap();
     }
 }
 
@@ -118,5 +155,5 @@ async function initMap() {
     initReviewsCarousel();
     initFillColorForTypeTitle();
     initGallForObject();
-    initMap();
+    initObjectViewScripts();
 })();

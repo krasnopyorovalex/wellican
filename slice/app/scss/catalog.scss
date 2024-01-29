@@ -206,5 +206,7 @@ main {
     }
     .carousel-item {
         height: 100%;
+        transition: none;
+        cursor: pointer;
     }
 }
