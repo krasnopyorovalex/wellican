@@ -67,13 +67,12 @@ main .estate_types .figure {
 main .estate_types .figure img {
   margin-top: -60px;
 }
-
-.form_box {
+main .form_box {
   background: #fff;
   border-radius: 10px;
   padding: 20px 30px;
 }
-.form_box .btn {
+main .form_box .btn {
   border-radius: 4px;
   background: #A67C52;
   width: 173px;
@@ -183,4 +182,6 @@ main .estate_types .figure img {
 }
 #cat_objects .carousel-item {
   height: 100%;
+  transition: none;
+  cursor: pointer;
 }

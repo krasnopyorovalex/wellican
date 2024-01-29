@@ -63,9 +63,11 @@
                             легко и быстро
                         </span>
                         <div class="call_box">
-                            <a class="button middle" href=""
+                            <a data-bs-toggle="modal" data-bs-target="#amoForm" class="button middle" href=""
                                 >СВЯЗАТЬСЯ С НАМИ</a
                             >
+
+<!--                            <button type="button" class="btn btn-primary"  data-bs-whatever="@mdo">Open modal for @mdo</button>-->
                         </div>
                     </div>
                 </div>
@@ -809,7 +811,7 @@
                             <div class="bid">от 0,01%</div>
                             <div class="from_years">до 30 лет</div>
                             <div class="bt_box">
-                                <a href="#" class="button middle">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#amoForm" class="button middle">
                                     Оставить заявку
                                 </a>
                             </div>
@@ -829,7 +831,7 @@
                             <div class="bid">от 0,01%</div>
                             <div class="from_years">до 30 лет</div>
                             <div class="bt_box">
-                                <a href="#" class="button middle">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#amoForm" class="button middle">
                                     Оставить заявку
                                 </a>
                             </div>
@@ -850,7 +852,7 @@
                             <div class="bid">от 0,01%</div>
                             <div class="from_years">до 30 лет</div>
                             <div class="bt_box">
-                                <a href="#" class="button middle">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#amoForm" class="button middle">
                                     Оставить заявку
                                 </a>
                             </div>
@@ -1055,7 +1057,7 @@
                                     <span class="consultation__label">Мы поможем реализовать мечту</span>
                                 </div>
                                 <div class="right">
-                                    <a href="#" class="button white">записаться на консультацию</a>
+                                    <a href="#" class="button white" data-bs-toggle="modal" data-bs-target="#amoForm">записаться на консультацию</a>
                                 </div>
                             </div>
                         </div>
@@ -1089,11 +1091,34 @@
             </div>
         </footer>
 
+
+        <div class="modal fade" id="amoForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close_box">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-header">
+                        <div class="modal-title" id="exampleModalLabel">Запись на консультацию</div>
+                    </div>
+                    <div class="modal-body">
+                        <script>!function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"1276170",hash:"7da7f219422578fc1ba4fae62f117a24",locale:"ru"}),a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}}(window,0,"amo_forms_","params","load","loaded");</script><script id="amoforms_script_1276170" async="async" charset="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1706205136"></script>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"
         ></script>
+
+
 
         <script src="../public/js/main.js"></script>
     </body>

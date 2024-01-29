@@ -76,16 +76,62 @@
             position: absolute;
             z-index: 99999;
             left: 40px;
-            top: 0;
+            top: -1px;
             background: url("../images/catalog/wellican_chose.png") no-repeat center center;
         }
     }
-    .shorts {
+
+    .main_photo {
+        height: 350px;
         display: flex;
-        justify-content: space-between;
-        padding-top: 20px;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 20px;
+        border-radius: 20px;
         img {
-            width: 23%;
+            min-width: 100%;
+        }
+    }
+
+    .carousel-item {
+        height: 100%;
+        transition: none;
+    }
+    .carousel {
+        position: static;
+    }
+    .carousel-control-next, .carousel-control-prev {
+        opacity: initial;
+    }
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        width: 44px;
+        height: 44px;
+    }
+    .carousel-control-prev-icon {
+        background: url("../images/object_view/caroulsel-prev.svg") no-repeat right 0 center;
+    }
+    .carousel-control-next-icon {
+        background: url("../images/object_view/carousel-next.svg") no-repeat right 0 center;
+    }
+
+    .shorts {
+        display: grid;
+        justify-content: space-between;
+        height: 107px;
+        overflow: hidden;
+        grid-template-columns: 23% 23% 23% 23%;
+        img {
+            width: 100%;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            height: 107px;
+            overflow: hidden;
+            border-radius: 20px;
         }
     }
 

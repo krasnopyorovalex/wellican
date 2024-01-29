@@ -51,6 +51,8 @@ function initGallForObject() {
             const it = item;
             const carouselEl = it.firstElementChild.firstElementChild;
             carouselEl.id = "carouselExampleFade" + index;
+            console.dir(carouselEl);
+            const carouselItemDivEl = carouselEl.firstElementChild;
             const carouselElPrevBt = carouselEl.getElementsByClassName("carousel-control-prev")[0];
             const carouselElNextBt = carouselEl.getElementsByClassName("carousel-control-next")[0];
             const myCarousel = document.querySelector("#carouselExampleFade" + index);
@@ -64,20 +66,42 @@ function initGallForObject() {
             carouselElNextBt.addEventListener("click", () => {
                 carousel.next();
             });
+            carouselItemDivEl.addEventListener("click", () => {
+                carousel.next();
+            });
         });
     }
 }
 function addFavorite() {
     console.log("addFavorite");
 }
-function initMap() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const object_view_container = document.getElementById("object_view");
-        if (object_view_container) {
+function initObjectViewScripts() {
+    const object_view_container = document.getElementById("object_view");
+    if (object_view_container) {
+        const initObjectGallCarousel = () => {
+            var _a;
+            const windowRef = window;
+            const bootstrap = windowRef.bootstrap;
+            const myCarousel = document.querySelector("#carouselObjectView");
+            if ((_a = myCarousel === null || myCarousel === void 0 ? void 0 : myCarousel.children) === null || _a === void 0 ? void 0 : _a.length) {
+                const carIndicators = myCarousel.children[0];
+                const carInner = myCarousel.children[1];
+                carInner.children[0].classList.add("active");
+                carIndicators.children[0].classList.add("active");
+            }
+            new bootstrap.Carousel(myCarousel, {
+                window: false,
+                ride: false,
+            });
+        };
+        initObjectGallCarousel();
+        const initMap = () => __awaiter(this, void 0, void 0, function* () {
             const windowRef = window;
             const ymaps = windowRef.ymaps;
             yield ymaps.ready();
-            const current_obj_coords = [44.869998, 34.344011];
+            const mapSelector = document.querySelector("#map");
+            const { latitude, longitude } = mapSelector.dataset;
+            const current_obj_coords = [longitude, latitude];
             const myMap = new ymaps.Map("map", {
                 // Координаты центра карты.
                 // Порядок по умолчанию: «широта, долгота».
@@ -89,12 +113,13 @@ function initMap() {
                 zoom: 10,
             });
             myMap.geoObjects.add(new ymaps.Placemark(current_obj_coords));
-        }
-    });
+        });
+        initMap();
+    }
 }
 (() => {
     initReviewsCarousel();
     initFillColorForTypeTitle();
     initGallForObject();
-    initMap();
+    initObjectViewScripts();
 })();
