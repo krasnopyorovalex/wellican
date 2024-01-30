@@ -101,7 +101,7 @@ function initObjectViewScripts() {
             yield ymaps.ready();
             const mapSelector = document.querySelector("#map");
             const { latitude, longitude } = mapSelector.dataset;
-            const current_obj_coords = [longitude, latitude];
+            const current_obj_coords = [latitude, longitude];
             const myMap = new ymaps.Map("map", {
                 // Координаты центра карты.
                 // Порядок по умолчанию: «широта, долгота».

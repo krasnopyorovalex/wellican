@@ -6,7 +6,7 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="{{ route('admin.home') }}"><img src="{{ asset('dashboard/compiled/svg/logo.svg') }}"
+                        <a href="{{ route('admin.home') }}"><img src="{{ asset('dashboard/compiled/png/logo.png') }}"
                                                                  alt="Logo"></a>
                     </div>
                     <h1 class="auth-title">Войти в систему</h1>
