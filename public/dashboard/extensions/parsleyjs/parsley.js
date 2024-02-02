@@ -270,7 +270,7 @@
       // jQuery treats $.when() and $.when(singlePromise) differently; let's avoid that and add spurious elements
       return $.when.apply($, _toConsumableArray(promises).concat([42, 42]));
     },
-    // Object.create polyfill, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create#Polyfill
+    // Objects.create polyfill, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create#Polyfill
     objectCreate: Object.create || function () {
       var Object = function Object() {};
 

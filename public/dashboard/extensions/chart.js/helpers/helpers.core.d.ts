@@ -93,7 +93,7 @@ export interface MergeOptions {
  * Recursively deep copies `source` properties into `target` with the given `options`.
  * IMPORTANT: `target` is not cloned and will be updated with `source` properties.
  * @param target - The target object in which all sources are merged into.
- * @param source - Object(s) to merge into `target`.
+ * @param source - Objects(s) to merge into `target`.
  * @param [options] - Merging options:
  * @param [options.merger] - The merge method (key, target, source, options)
  * @returns The `target` object.
@@ -109,7 +109,7 @@ export declare function merge<T>(target: T, source: AnyObject[], options?: Merge
  * Recursively deep copies `source` properties into `target` *only* if not defined in target.
  * IMPORTANT: `target` is not cloned and will be updated with `source` properties.
  * @param target - The target object in which all sources are merged into.
- * @param source - Object(s) to merge into `target`.
+ * @param source - Objects(s) to merge into `target`.
  * @returns The `target` object.
  */
 export declare function mergeIf<T>(target: T, source: []): T;

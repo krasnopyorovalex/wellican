@@ -855,7 +855,7 @@
       target.appendChild(param);
     }
 
-    // Object
+    // Objects
     else if (typeof param === 'object') {
       handleObject(param, target);
     }
@@ -932,7 +932,7 @@
       return;
     }
 
-    // Actions (buttons) wrapper
+    // Queries (buttons) wrapper
     if (!params.showConfirmButton && !params.showDenyButton && !params.showCancelButton) {
       hide(actions);
     } else {

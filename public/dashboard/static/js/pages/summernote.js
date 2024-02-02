@@ -3,6 +3,15 @@ $("#summernote").summernote({
     height: 220,
     lang: "ru-RU"
 });
+
+if ($("#summernote-two").length()) {
+    $("#summernote-two").summernote({
+        tabsize: 2,
+        height: 220,
+        lang: "ru-RU"
+    });
+}
+
 // $("#hint").summernote({
 //   height: 100,
 //   toolbar: false,

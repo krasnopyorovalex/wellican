@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Entities\Object\Enums;
+namespace Domain\Entities\Object\Enums;
 
 enum TypePurchase: string
 {
-    case Buy = 'Buy';
-    case Rent = 'Rent';
+    case Buy = 'buy';
+    case Rent = 'rent';
 }

@@ -207,7 +207,7 @@ declare class Chart {
     getActiveElements(): any[];
     /**
        * Set active (hovered) elements
-       * @param {array} activeElements New active data points
+       * @param {array} activeElements Info active data points
        */
     setActiveElements(activeElements: any[]): void;
     /**
