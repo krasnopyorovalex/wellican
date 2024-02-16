@@ -6,10 +6,10 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="{{ route('admin.home') }}"><img src="{{ asset('dashboard/compiled/png/logo.png') }}"
+                        <a href="{{ route('admin.home') }}"><img src="{{ asset('dashboard/static/images/sign_Wellican_violet.png') }}"
                                                                  alt="Logo"></a>
                     </div>
-                    <h1 class="auth-title">Войти в систему</h1>
+                    <h4 class="auth-title">Войти в админ панель</h4>
                     <p class="auth-subtitle mb-5">
                         Войдите в систему, используя свои данные, которые вы ввели при регистрации
                     </p>
