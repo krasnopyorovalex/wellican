@@ -1,4 +1,3 @@
-
 let isChooseEstateType: boolean = null;
 
 // Разукрашиваем элемент в заголовке типов недвижимсоти
@@ -154,14 +153,16 @@ function initObjectViewScripts() {
 }
 
 function addListenerToAdditionalFilters() {
-    const additional_filters_button = document.querySelector("#additional_filters_button");
+    const additional_filters_button = document.querySelector(
+        "#additional_filters_button",
+    );
 
     additional_filters_button.addEventListener("click", toggleButton, false);
 
     function toggleButton(event) {
         event.preventDefault();
-        if(!isChooseEstateType) {
-            alert('Уточните тип недвижимости');
+        if (!isChooseEstateType) {
+            alert("Уточните тип недвижимости");
             return;
         }
         const additional_filters: HTMLElement = document.querySelector(
@@ -169,10 +170,7 @@ function addListenerToAdditionalFilters() {
         );
         additional_filters.hidden = !additional_filters.hidden;
     }
-
 }
-
-
 
 function initFiltersBox() {
     const filters_box: HTMLElement = document.querySelector(".filters_box");
@@ -183,27 +181,33 @@ function initFiltersBox() {
         );
 
         additional_filters.hidden = true;
-        const selectElement: HTMLFormElement = document.querySelector("#input_property_type");
+        const selectElement: HTMLFormElement = document.querySelector(
+            "#input_property_type",
+        );
 
-
-        const flats_filters: HTMLElement = filters_box.querySelector("#flats_filters");
-        const cottagesHouses_filters: HTMLElement = filters_box.querySelector("#cottagesHouses_filters");
-        const land_filters: HTMLElement = filters_box.querySelector("#land_filters");
-        const commercial_filters: HTMLElement = filters_box.querySelector("#commercial_filters");
+        const flats_filters: HTMLElement =
+            filters_box.querySelector("#flats_filters");
+        const cottagesHouses_filters: HTMLElement = filters_box.querySelector(
+            "#cottagesHouses_filters",
+        );
+        const land_filters: HTMLElement =
+            filters_box.querySelector("#land_filters");
+        const commercial_filters: HTMLElement = filters_box.querySelector(
+            "#commercial_filters",
+        );
 
         const resetBoxes = () => {
             const box_list: NodeList = filters_box.querySelectorAll(".box");
-            box_list.forEach((it: HTMLElement, index) => {
+            box_list.forEach((it: HTMLElement) => {
                 it.hidden = true;
             });
         };
 
         resetBoxes();
 
-
         const propertyTypeValue = Number(selectElement.value);
 
-        if(isNaN(propertyTypeValue)) {
+        if (isNaN(propertyTypeValue)) {
             isChooseEstateType = null;
         } else {
             isChooseEstateType = !!propertyTypeValue;
@@ -218,18 +222,15 @@ function initFiltersBox() {
             resetBoxes();
 
             switchFilters(elTarget.value);
-
         });
-
 
         function switchFilters(type: string) {
             switch (type) {
-
                 case "1":
                     flats_filters.hidden = false;
                     break;
                 case "4":
-                    cottagesHouses_filters.hidden = false
+                    cottagesHouses_filters.hidden = false;
                     break;
                 case "5":
                     land_filters.hidden = false;
@@ -239,11 +240,50 @@ function initFiltersBox() {
                     break;
                 default:
                     resetBoxes();
-
             }
         }
 
+        initMultiSelectedScript();
+    }
+}
 
+function initMultiSelectedScript() {
+    const multi_selected_box_list = document.querySelectorAll(
+        ".multi_selected_box",
+    );
+    if (multi_selected_box_list.length) {
+        multi_selected_box_list.forEach((multi_selected_box) => {
+            const allCheckboxesLabels =
+                multi_selected_box.querySelectorAll(".form-check-label");
+            const selected_area =
+                multi_selected_box.querySelector(".selected_area");
+
+            let checksValues: string[] = [];
+
+            allCheckboxesLabels.forEach((label: HTMLElement, index) => {
+                const inputCheckbox = label.firstElementChild;
+                inputCheckbox.addEventListener("change", (ev) => {
+                    const elTarget = ev.target as HTMLFormElement;
+
+                    const isExistEl =
+                        checksValues.indexOf(elTarget.value) === -1;
+
+                    if (!isExistEl) {
+                        checksValues = checksValues.filter((item) => {
+                            return item !== elTarget.value;
+                        });
+                    } else {
+                        checksValues.push(elTarget.value);
+                    }
+
+                    if (checksValues.length) {
+                        selected_area.innerHTML = `Выбрано: ${checksValues.length}`;
+                    } else {
+                        selected_area.innerHTML = `Выбрать`;
+                    }
+                });
+            });
+        });
     }
 }
 
@@ -255,4 +295,3 @@ function initFiltersBox() {
     initFiltersBox();
     addListenerToAdditionalFilters();
 })();
-

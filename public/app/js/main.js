@@ -162,7 +162,7 @@ function addListenerToAdditionalFilters() {
     function toggleButton(event) {
         event.preventDefault();
         if (!isChooseEstateType) {
-            alert('Уточните тип недвижимости');
+            alert("Уточните тип недвижимости");
             return;
         }
         var additional_filters = document.querySelector(".additional_filters");
@@ -181,7 +181,7 @@ function initFiltersBox() {
         var commercial_filters_1 = filters_box.querySelector("#commercial_filters");
         var resetBoxes_1 = function () {
             var box_list = filters_box.querySelectorAll(".box");
-            box_list.forEach(function (it, index) {
+            box_list.forEach(function (it) {
                 it.hidden = true;
             });
         };
@@ -218,6 +218,38 @@ function initFiltersBox() {
                     resetBoxes_1();
             }
         }
+        initMultiSelectedScript();
+    }
+}
+function initMultiSelectedScript() {
+    var multi_selected_box_list = document.querySelectorAll(".multi_selected_box");
+    if (multi_selected_box_list.length) {
+        multi_selected_box_list.forEach(function (multi_selected_box) {
+            var allCheckboxesLabels = multi_selected_box.querySelectorAll(".form-check-label");
+            var selected_area = multi_selected_box.querySelector(".selected_area");
+            var checksValues = [];
+            allCheckboxesLabels.forEach(function (label, index) {
+                var inputCheckbox = label.firstElementChild;
+                inputCheckbox.addEventListener("change", function (ev) {
+                    var elTarget = ev.target;
+                    var isExistEl = checksValues.indexOf(elTarget.value) === -1;
+                    if (!isExistEl) {
+                        checksValues = checksValues.filter(function (item) {
+                            return item !== elTarget.value;
+                        });
+                    }
+                    else {
+                        checksValues.push(elTarget.value);
+                    }
+                    if (checksValues.length) {
+                        selected_area.innerHTML = "\u0412\u044B\u0431\u0440\u0430\u043D\u043E: ".concat(checksValues.length);
+                    }
+                    else {
+                        selected_area.innerHTML = "\u0412\u044B\u0431\u0440\u0430\u0442\u044C";
+                    }
+                });
+            });
+        });
     }
 }
 (function () {
