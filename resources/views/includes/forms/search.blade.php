@@ -34,5 +34,43 @@
     </div>
     <div class="col-md-3 text-lg-start">
         <button type="submit" class="btn">Найти</button>
+        <button class="btn">Сбросить</button>
+    </div>
+
+
+    <button id="additional_filters_button">Расширеный поиск</button>
+
+    <div class="additional_filters">
+        <div class="box" id="flats_filters">
+            <h1>Квартиры</h1>
+            <div class="row">
+                <div class="col-md-3">
+                    <select id="input_flat_type" class="form-select" name="flat_type">
+                        <option disabled selected>Все</option>
+                        <option value="Вторичка">Вторичка</option>
+                        <option value="Новостройки">Новостройки</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="box" id="cottagesHouses_filters">
+            <h1>
+                ДОМА, КОТЕДЖИ, ТАУНХАУСЫ
+            </h1>
+        </div>
+        <div class="box" id="land_filters">
+            <h1>
+                Участки
+            </h1>
+        </div>
+        <div class="box" id="commercial_filters">
+            <h1>
+
+                КОМЕРЧЕСКАЯ НЕДВИЖИМОСТЬ
+
+            </h1>
+        </div>
     </div>
 </form>
+
+
