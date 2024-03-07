@@ -569,6 +569,15 @@ main .form_box {
   .multi_selected_box .dropdown-menu {
     padding: 5px 10px; }
 
+#additional_filters_button {
+  border: none;
+  display: inline-block;
+  background: url(../images/additional_filters_icon.svg) no-repeat right;
+  padding-right: 24px;
+  font-size: 14px; }
+  #additional_filters_button:hover {
+    text-decoration: underline; }
+
 .button {
   border-radius: 20px;
   background: #d9a06b;

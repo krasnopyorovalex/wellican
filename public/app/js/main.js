@@ -166,14 +166,17 @@ function addListenerToAdditionalFilters() {
             return;
         }
         var additional_filters = document.querySelector(".additional_filters");
+        additional_filters_button.innerHTML = !additional_filters.hidden ? 'Показать рассширенный поиск' : 'Скрыть рассширенный поиск';
         additional_filters.hidden = !additional_filters.hidden;
     }
 }
 function initFiltersBox() {
     var filters_box = document.querySelector(".filters_box");
-    if (filters_box) {
-        var additional_filters = document.querySelector(".additional_filters");
+    var additional_filters = document.querySelector(".additional_filters");
+    if (additional_filters) {
         additional_filters.hidden = true;
+    }
+    if (filters_box) {
         var selectElement = document.querySelector("#input_property_type");
         var flats_filters_1 = filters_box.querySelector("#flats_filters");
         var cottagesHouses_filters_1 = filters_box.querySelector("#cottagesHouses_filters");
@@ -228,7 +231,7 @@ function initMultiSelectedScript() {
             var allCheckboxesLabels = multi_selected_box.querySelectorAll(".form-check-label");
             var selected_area = multi_selected_box.querySelector(".selected_area");
             var checksValues = [];
-            allCheckboxesLabels.forEach(function (label, index) {
+            allCheckboxesLabels.forEach(function (label) {
                 var inputCheckbox = label.firstElementChild;
                 inputCheckbox.addEventListener("change", function (ev) {
                     var elTarget = ev.target;
