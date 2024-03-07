@@ -7,9 +7,9 @@ namespace Domain\Persistence\Storage\Resources;
 use Domain\Contracts\Persistence\DatabaseResource;
 use Illuminate\Database\Eloquent\Model;
 
-final class SingleRecourse implements DatabaseResource
+final readonly class SingleRecourse implements DatabaseResource
 {
-    public function __construct(private readonly Model $model)
+    public function __construct(private Model $model)
     {
     }
 

@@ -22,15 +22,19 @@ class SearchRequest extends FormRequest
     {
         return [
             'name' => ['nullable', 'max:128', 'string'],
-            'price' => ['nullable', 'gt:0', 'max:4_294_967_295', 'numeric'],
+            'price_from' => ['nullable', 'gt:0', 'max:4294967295', 'numeric'],
+            'price_to' => ['nullable', 'gt:0', 'max:4294967295', 'numeric'],
+            'square_from' => ['nullable', 'gt:0', 'max:999999999.9', 'numeric'],
+            'square_to' => ['nullable', 'gt:0', 'max:999999999.9', 'numeric'],
             'type_purchase' => ['nullable', Rule::enum(TypePurchase::class)],
             'is_premium' => ['nullable', Rule::enum(IsPremium::class)],
             'type_id' => ['nullable', 'numeric', 'exists:object_types,id'],
             'location_id' => ['nullable', 'numeric', 'exists:locations,id'],
             'sort' => ['nullable', 'string', Rule::enum(Sort::class)],
-            'filterOptions' => ['nullable', 'array'],
-            'filterOptions.*' => ['nullable', 'numeric', 'exists:filters,id'],
-            'filterOptions.*.*' => ['nullable', 'array'],
+            'options' => ['nullable', 'array'],
+            'options.*' => ['nullable', 'array'],
+            'between' => ['nullable', 'array'],
+            'between.*' => ['nullable', 'array'],
         ];
     }
 }

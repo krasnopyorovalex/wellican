@@ -21,8 +21,8 @@ class UpdateObjectRequest extends StoreObjectRequest
             'alias' => ['required', 'max:255', 'string', Rule::unique('objects')->ignore($this->id)],
             'articul' => ['required', 'max:32', 'string', Rule::unique('objects')->ignore($this->id)],
             'filters' => ['array', 'nullable'],
-            'filters.*' => ['array', 'nullable'],
-            'filters.*.*' => ['numeric', 'nullable'],
+            'filters.*' => ['numeric', 'nullable'],
+            //'filters.*.*' => ['numeric', 'nullable'],
         ]);
     }
 }

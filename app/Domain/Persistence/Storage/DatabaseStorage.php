@@ -13,9 +13,9 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-final class DatabaseStorage implements Storage
+final readonly class DatabaseStorage implements Storage
 {
-    public function __construct(private readonly Handler $handler)
+    public function __construct(private Handler $handler)
     {
     }
 

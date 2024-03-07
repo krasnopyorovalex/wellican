@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Domain\Persistence\Storage\ValueObjects;
 
-final class Select
+final readonly class Select
 {
-    public function __construct(private readonly string $selectCols)
+    public function __construct(private string $selectCols)
     {
 
     }

@@ -9,12 +9,14 @@ use Domain\Contracts\Http\Request;
 final class FilterRequest extends Request
 {
     protected string $name;
+    protected string $tpl;
 
     public function toDatabase(): array
     {
         return array_filter([
             'parent_id' => $this->parentId ?? 0,
             'name' => $this->name,
+            'tpl' => $this->tpl,
         ]);
     }
 

@@ -16,13 +16,13 @@ use Domain\Persistence\Storage\Resources\SingleRecourse;
 use Domain\Services\ImageResizer\ValueObjects\ResizeConfig;
 use Illuminate\Http\UploadedFile;
 
-class StoreObjectImageCommand implements Command
+readonly class StoreObjectImageCommand implements Command
 {
     public function __construct(
-        private readonly Uploader $uploader,
-        private readonly Resizer $resizer,
-        private readonly UploadedFile $uploadedFile,
-        private readonly Objects $object
+        private Uploader $uploader,
+        private Resizer $resizer,
+        private UploadedFile $uploadedFile,
+        private Objects $object
     ) {
     }
 

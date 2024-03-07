@@ -48,103 +48,35 @@
                 </div>
             </div>
         @endif
-        <div class="container-fluid">
-            <div class="row">
-                <div class="section_head">
-                    <h2>лучшие предложения от Wellican</h2>
-                    <span>Мы подобрали для вас самые выгодные варианты на рынке недвижимости</span>
+        @if(count($premiumObjects))
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="section_head">
+                        <h2>Лучшие предложения от Wellican</h2>
+                        <span>Мы подобрали для вас самые выгодные варианты на рынке недвижимости</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container best_propose">
-            <div class="row">
-                <div class="col">
-                    <div class="objects">
-                        <div class="object">
-                            <a href="#" class="figure">
-                                <img src="{{ asset('app/images/best-propose/object1.jpg') }}" alt="" />
-                                <strong class="desc">
-                                        <span>дома в коттеджном посёлке
-                                            “тургеневские дачи”
-                                        </span>
-                                    <label>в продаже</label>
-                                </strong>
-                            </a>
-                        </div>
-                        <div class="object">
-                            <a href="#" class="figure">
-                                <img
-                                    src="{{ asset('app/images/best-propose/object2.jpg') }}"
-                                    alt=""
-                                />
-                                <strong class="desc">
-                                        <span
-                                        >дом в коттеджном посёлке “Лучи”
-                                        </span>
-                                    <label>в продаже</label>
-                                </strong>
-                            </a>
-                        </div>
-                        <div class="object">
-                            <a href="#" class="figure">
-                                <img
-                                    src="{{ asset('app/images/best-propose/object3.jpg') }}"
-                                    alt=""
-                                />
-                                <strong class="desc">
-                                    <span>частный дом в верхней кутузовке</span>
-                                    <label>строится</label>
-                                </strong>
-                            </a>
-                        </div>
-
-                        <div class="object">
-                            <a href="#" class="figure">
-                                <img
-                                    src="{{ asset('app/images/best-propose/object4.jpg') }}"
-                                    alt=""
-                                />
-                                <strong class="desc">
-                                        <span
-                                        >3-х комнатная квартира в ЖК “Альфа”
-                                        </span>
-                                    <label>в продаже</label>
-                                </strong>
-                            </a>
-                        </div>
-                        <div class="object">
-                            <a href="#" class="figure">
-                                <img
-                                    src="{{ asset('app/images/best-propose/object5.jpg') }}"
-                                    alt=""
-                                />
-                                <strong class="desc">
-                                        <span
-                                        >частный дом в КОТТЕДЖНОМ ПОСЁЛКЕ
-                                        </span>
-                                    <label>в продаже</label>
-                                </strong>
-                            </a>
-                        </div>
-                        <div class="object">
-                            <a href="#" class="figure">
-                                <img
-                                    src="{{ asset('app/images/best-propose/object6.jpg') }}"
-                                    alt=""
-                                />
-                                <strong class="desc">
-                                        <span
-                                        >частный дом в КОТТЕДЖНОМ
-                                            ПОСЁЛКЕ</span
-                                        >
-                                    <label>строится</label>
-                                </strong>
-                            </a>
+            <div class="container best_propose">
+                <div class="row">
+                    <div class="col">
+                        <div class="objects">
+                            @foreach($premiumObjects as $premiumObject)
+                                <div class="object">
+                                    <a href="{{ route('object.show', $premiumObject->alias) }}" class="figure">
+                                        @if(isset($premiumObject->images[0])) <img src="{{ asset($premiumObject->images[0]->url) }}" alt="{{ $premiumObject->images[0]->alt }}" />@endif
+                                        <strong class="desc">
+                                            <span>{{ $premiumObject->name }}</span>
+                                            <label>в продаже</label>
+                                        </strong>
+                                    </a>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
     </div>
 
     <div class="section blue">

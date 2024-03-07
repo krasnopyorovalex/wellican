@@ -13,11 +13,11 @@ use Domain\Services\Search\Contracts\Searchable;
 use Domain\Services\Search\Filters\StackFilters;
 use Domain\Services\Search\ValueObjects\Param;
 
-class SearchQuery implements Command
+readonly class SearchQuery implements Command
 {
     public function __construct(
-        private readonly Searchable $searchable,
-        private readonly StackFilters $stackFilters
+        private Searchable $searchable,
+        private StackFilters $stackFilters
     ) {
     }
 

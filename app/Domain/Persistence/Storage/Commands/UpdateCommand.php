@@ -11,12 +11,12 @@ use Domain\Contracts\Persistence\SyncOptions;
 use Domain\Persistence\Storage\Resources\SingleRecourse;
 use Illuminate\Database\Eloquent\Model;
 
-final class UpdateCommand implements Command
+final readonly class UpdateCommand implements Command
 {
     public function __construct(
-        private readonly Request $request,
-        private readonly Model $model,
-        private readonly ?SyncOptions $syncOptions = null
+        private Request $request,
+        private Model $model,
+        private ?SyncOptions $syncOptions = null
     ) {
     }
 

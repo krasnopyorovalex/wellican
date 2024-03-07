@@ -8,7 +8,7 @@ use Domain\Contracts\Persistence\SyncOptions;
 
 final class FilterOptions implements SyncOptions
 {
-    private const METHOD_FOR_SYNC = 'filterOptions';
+    private const string METHOD_FOR_SYNC = 'filterOptions';
 
     public function __construct(private readonly array $options)
     {
@@ -18,8 +18,8 @@ final class FilterOptions implements SyncOptions
     {
         $values = [];
 
-        foreach ($this->options as $options) {
-            $values = array_merge(array_filter($options), $values);
+        foreach (array_filter($this->options) as $key => $value) {
+            $values[$value] = ['filter_id' => $key];
         }
 
         return $values;

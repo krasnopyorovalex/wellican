@@ -44,4 +44,15 @@
         padding: 5px 10px;
     }
 }
-//#dee2e6
+
+#additional_filters_button {
+    border: none;
+    display: inline-block;
+    background: url(../images/additional_filters_icon.svg) no-repeat right;
+    padding-right: 24px;
+    font-size: 14px;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+

@@ -9,9 +9,9 @@ use Domain\Services\ImageResizer\ValueObjects\Config;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManager;
 
-final class InterventionImageResizer implements ImageResizer
+final readonly class InterventionImageResizer implements ImageResizer
 {
-    public function __construct(private readonly ImageManager $imageManager)
+    public function __construct(private ImageManager $imageManager)
     {
     }
 

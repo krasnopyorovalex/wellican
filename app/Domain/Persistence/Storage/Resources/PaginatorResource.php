@@ -7,9 +7,9 @@ namespace Domain\Persistence\Storage\Resources;
 use Domain\Contracts\Persistence\DatabaseResource;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
-final class PaginatorResource implements DatabaseResource
+final readonly class PaginatorResource implements DatabaseResource
 {
-    public function __construct(private readonly LengthAwarePaginator $collection)
+    public function __construct(private LengthAwarePaginator $collection)
     {
     }
 

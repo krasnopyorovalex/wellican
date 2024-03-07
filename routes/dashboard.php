@@ -48,13 +48,13 @@ Route::group(['prefix' => '_root', 'middleware' => 'auth', 'as' => 'admin.'], st
         Route::delete('{id}', 'destroy')->name('object-images.destroy');
     });
 
-    Route::controller(FilterOptionController::class)->prefix('filter-options')->group(function () {
-        Route::get('{filterId}', 'index')->name('filter-options.index');
-        Route::post('{filterId}', 'store')->name('filter-options.store');
-        Route::get('{filterId}/create', 'create')->name('filter-options.create');
-        Route::get('{id}/edit', 'edit')->name('filter-options.edit');
-        Route::put('{id}', 'update')->name('filter-options.update');
-        Route::delete('{id}', 'destroy')->name('filter-options.destroy');
+    Route::controller(FilterOptionController::class)->prefix('options')->group(function () {
+        Route::get('{filterId}', 'index')->name('options.index');
+        Route::post('{filterId}', 'store')->name('options.store');
+        Route::get('{filterId}/create', 'create')->name('options.create');
+        Route::get('{id}/edit', 'edit')->name('options.edit');
+        Route::put('{id}', 'update')->name('options.update');
+        Route::delete('{id}', 'destroy')->name('options.destroy');
     });
 
     Route::resource('images', ImageController::class)->parameters(['images' => 'id'])->only(['update', 'destroy']);

@@ -14,12 +14,12 @@ use Domain\Persistence\Storage\Resources\SingleRecourse;
 use Domain\Services\ImageUploader\DataTransferObjects\FileUpload;
 use Illuminate\Database\Eloquent\Model;
 
-final class DestroyFileCommand implements Command
+final readonly class DestroyFileCommand implements Command
 {
     public function __construct(
-        private readonly Uploader $uploader,
-        private readonly Request $request,
-        private readonly Model $model
+        private Uploader $uploader,
+        private Request $request,
+        private Model $model
     ) {
     }
 

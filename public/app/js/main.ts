@@ -168,19 +168,21 @@ function addListenerToAdditionalFilters() {
         const additional_filters: HTMLElement = document.querySelector(
             ".additional_filters",
         );
+        additional_filters_button.innerHTML = !additional_filters.hidden ? 'Показать рассширенный поиск' : 'Скрыть рассширенный поиск';
         additional_filters.hidden = !additional_filters.hidden;
     }
 }
 
 function initFiltersBox() {
     const filters_box: HTMLElement = document.querySelector(".filters_box");
+    const additional_filters: HTMLElement = document.querySelector(
+        ".additional_filters",
+    );
+    if (additional_filters) {
+        additional_filters.hidden = true;
+    }
 
     if (filters_box) {
-        const additional_filters: HTMLElement = document.querySelector(
-            ".additional_filters",
-        );
-
-        additional_filters.hidden = true;
         const selectElement: HTMLFormElement = document.querySelector(
             "#input_property_type",
         );
@@ -260,7 +262,7 @@ function initMultiSelectedScript() {
 
             let checksValues: string[] = [];
 
-            allCheckboxesLabels.forEach((label: HTMLElement, index) => {
+            allCheckboxesLabels.forEach((label: HTMLElement) => {
                 const inputCheckbox = label.firstElementChild;
                 inputCheckbox.addEventListener("change", (ev) => {
                     const elTarget = ev.target as HTMLFormElement;

@@ -11,4 +11,11 @@ return [
             'contacts' => 'Контакты',
         ],
     ],
+    'filters' => [
+        'tpl' => [
+            'line_checkboxes' => 'Чекбоксы в ряд',
+            'select_checkboxes' => 'Чекбоксы как select',
+            'from_to' => 'От...до',
+        ],
+    ],
 ];

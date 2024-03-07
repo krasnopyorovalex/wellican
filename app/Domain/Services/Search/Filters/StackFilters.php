@@ -12,7 +12,7 @@ final class StackFilters implements Apply
 {
     private array $filters = [];
 
-    public function setFilter(Filter $filter)
+    public function setFilter(Filter $filter): void
     {
         $this->filters[] = $filter;
     }
