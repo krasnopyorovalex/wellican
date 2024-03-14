@@ -52,8 +52,8 @@
                 </div>
             </div>
         </div>
-        @yield('slogan')
     </div>
+    @yield('slogan')
 </header>
 
 @yield('content')

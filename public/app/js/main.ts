@@ -289,7 +289,20 @@ function initMultiSelectedScript() {
     }
 }
 
+function initSlideshowsOnMain() {
+    const windowRef = window as any;
+
+    const bootstrap = windowRef.bootstrap;
+
+    const myCarousel = document.querySelector('#headerSlider')
+    new bootstrap.Carousel(myCarousel, {
+        interval: 10000,
+        ride: "carousel",
+    });
+}
+
 (() => {
+    initSlideshowsOnMain();
     initReviewsCarousel();
     initFillColorForTypeTitle();
     initGallForList();

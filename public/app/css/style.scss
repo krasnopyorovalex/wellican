@@ -8,8 +8,10 @@
 .button {
     border-radius: 20px;
     background: #d9a06b;
-    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
-        0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 3px 1px -2px rgba(0, 0, 0, 0.2),
+        0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 5px 0px rgba(0, 0, 0, 0.12);
     font-size: 15px;
     font-family: Gilroy500, sans-serif;
     height: 55px;
@@ -46,7 +48,6 @@
 body {
     font-family: "Gilroy400", sans-serif !important;
     background: linear-gradient(172deg, #130e1a 6.25%, #0f2337 142.16%);
-
 }
 
 a {
@@ -171,7 +172,9 @@ header {
                 background: #fff;
                 visibility: hidden;
                 opacity: 0;
-                transition: visibility 0s, opacity 0.2s linear;
+                transition:
+                    visibility 0s,
+                    opacity 0.2s linear;
                 overflow: hidden;
                 li {
                     padding: 0;
@@ -229,24 +232,25 @@ header {
         border: 1px solid rgba(0, 0, 0, 0.12);
         padding-left: 54px;
 
-
         .btn {
             border-radius: 4px;
-            background: #A67C52;
+            background: #a67c52;
             width: 173px;
             color: #fff;
         }
     }
 }
 
+
+
 .top_main {
     min-height: 300px;
-    background: url("../images/slider/slide1.jpg");
     position: relative;
     &:before {
         content: "";
         width: 100%;
         position: absolute;
+        z-index: 1;
         height: 100%;
         background: linear-gradient(
             180deg,
@@ -261,10 +265,12 @@ header {
 
     .container {
         position: relative;
+        z-index: 2;
     }
 
     .slogan {
         padding: 100px 0 160px;
+        text-align: center;
         p {
             font-size: 82px;
             font-style: normal;
@@ -678,7 +684,6 @@ header {
     margin-top: 50px;
     color: #fff;
 }
-
 
 #amoForm {
     iframe {

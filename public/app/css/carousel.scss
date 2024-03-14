@@ -101,3 +101,38 @@
     }
 
 }
+
+
+#headerSlider {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+
+    .carousel-inner {
+        height: 100%;
+    }
+
+    .carousel-item {
+        cursor: pointer;
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 300ms;
+        transform: none;
+    }
+
+    .carousel-item.active,
+    .carousel-item-next.carousel-item-start,
+    .carousel-item-prev.carousel-item-end {
+        z-index: 1;
+        opacity: 1;
+    }
+
+    .active.carousel-item-start,
+    .active.carousel-item-end {
+        z-index: 0;
+        opacity: 0;
+        transition: opacity 0s;
+    }
+
+}

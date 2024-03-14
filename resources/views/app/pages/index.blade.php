@@ -1,6 +1,19 @@
 @extends('layouts.app', ['headerClass' => 'top_main'])
 
 @section('slogan')
+
+<div id="headerSlider">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{ asset('app/images/slider/slide1.jpg') }}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ asset('app/images/slider/slide2.jpg') }}" class="d-block w-100" alt="...">
+        </div>
+    </div>
+</div>
+
+<div class="container">
     <div class="row">
         <div class="slogan">
             <p>Найди дом своей мечты с нами</p>
@@ -20,6 +33,7 @@
 
         </div>
     </div>
+</div>
 @endsection
 
 @section('content')
@@ -679,7 +693,7 @@
     </div>
     <!--   end ipoteka     -->
 
-    <!--    carousel    -->
+<!--        carousel    -->
     <div id="reviews" class="section blue">
         <div class="container-fluid">
             <div class="row">
@@ -696,7 +710,7 @@
                     class="carousel slide"
                     data-bs-ride="carousel"
                 >
-                    <div class="carousel-inner" role="listbox">
+                    <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="col-md-4">
                                 <div class="card">
@@ -799,6 +813,7 @@
                         href="#recipeCarousel"
                         role="button"
                         data-bs-slide="prev"
+                        data-bs-target="#recipeCarousel"
                     >
                             <span
                                 class="carousel-control-prev-icon"
@@ -810,6 +825,7 @@
                         href="#recipeCarousel"
                         role="button"
                         data-bs-slide="next"
+                        data-bs-target="#recipeCarousel"
                     >
                             <span
                                 class="carousel-control-next-icon"
@@ -872,7 +888,7 @@
                             </div>
                         </div>
                     </div>
-                    <iframe src="https://yandex.ru/map-widget/v1/?ll=37.62,55.75&z=12&um=constructor%3A6df29adfc412c4fc0e3031b9e31cf22aed5cfd97810f5eb4241f36604b43f7bf&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=37.62,55.75&z=12&um=constructor%3A6df29adfc412c4fc0e3031b9e31cf22aed5cfd97810f5eb4241f36604b43f7bf&amp;source=constructor" width="500" height="400" ></iframe>
                 </div>
             </div>
         </div>

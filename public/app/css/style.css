@@ -127,6 +127,30 @@
 #reviews .carousel-control-prev {
   width: auto; }
 
+#headerSlider {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 0; }
+  #headerSlider .carousel-inner {
+    height: 100%; }
+  #headerSlider .carousel-item {
+    cursor: pointer;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 300ms;
+    transform: none; }
+  #headerSlider .carousel-item.active,
+  #headerSlider .carousel-item-next.carousel-item-start,
+  #headerSlider .carousel-item-prev.carousel-item-end {
+    z-index: 1;
+    opacity: 1; }
+  #headerSlider .active.carousel-item-start,
+  #headerSlider .active.carousel-item-end {
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0s; }
+
 .head_title_box {
   overflow: hidden; }
 
@@ -754,26 +778,28 @@ header .form_box {
   padding-left: 54px; }
   header .form_box .btn {
     border-radius: 4px;
-    background: #A67C52;
+    background: #a67c52;
     width: 173px;
     color: #fff; }
 
 .top_main {
   min-height: 300px;
-  background: url("../images/slider/slide1.jpg");
   position: relative; }
   .top_main:before {
     content: "";
     width: 100%;
     position: absolute;
+    z-index: 1;
     height: 100%;
     background: linear-gradient(180deg, rgba(28, 23, 39, 0.84) 26.69%, rgba(40, 41, 45, 0) 117.71%); }
   .top_main .lorem {
     color: #fff; }
   .top_main .container {
-    position: relative; }
+    position: relative;
+    z-index: 2; }
   .top_main .slogan {
-    padding: 100px 0 160px; }
+    padding: 100px 0 160px;
+    text-align: center; }
     .top_main .slogan p {
       font-size: 82px;
       font-style: normal;
