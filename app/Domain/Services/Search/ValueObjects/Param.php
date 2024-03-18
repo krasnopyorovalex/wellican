@@ -6,12 +6,12 @@ namespace Domain\Services\Search\ValueObjects;
 
 use Illuminate\Database\Eloquent\Builder;
 
-class Param
+readonly class Param
 {
     public function __construct(
-        private readonly Builder $builder,
-        private readonly string $key,
-        private readonly mixed $param
+        private Builder $builder,
+        private string $key,
+        private mixed $param
     ) {
 
     }

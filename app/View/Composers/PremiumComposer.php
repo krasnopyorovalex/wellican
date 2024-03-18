@@ -4,17 +4,18 @@ declare(strict_types=1);
 
 namespace App\View\Composers;
 
-use App\Domain\Entities\ObjectType\Requests\ObjectTypeRequest;
 use Domain\Contracts\Persistence\Storage;
-use Domain\Entities\ObjectType\ObjectType;
+use Domain\Entities\Object\Enums\IsPremium;
+use Domain\Entities\Object\Objects;
+use Domain\Entities\Object\Requests\ObjectRequest;
 use Domain\Persistence\Storage\Queries\GetAllQuery;
 use Domain\Persistence\Storage\ValueObjects\WithRelations;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\View\View;
 
-class ObjectTypeComposer
+class PremiumComposer
 {
-    private static Collection $collection;
+    private static LengthAwarePaginator $collection;
 
     public function __construct(private readonly Storage $storage)
     {
@@ -27,10 +28,14 @@ class ObjectTypeComposer
     {
         if (! isset(self::$collection)) {
             self::$collection = $this->storage->getAll(
-                new GetAllQuery(ObjectTypeRequest::fromArray([]), new ObjectType(), new WithRelations(['image', 'filters.options']))
+                new GetAllQuery(
+                    ObjectRequest::fromArray(['isPremium' => IsPremium::Yes->value, 'limit' => 6]),
+                    new Objects(),
+                    new WithRelations(['images'])
+                )
             );
         }
 
-        $view->with('objectTypes', self::$collection);
+        $view->with('premiumObjects', self::$collection);
     }
 }

@@ -12,12 +12,12 @@ use Domain\Persistence\Storage\Resources\PaginatorResource;
 use Domain\Persistence\Storage\ValueObjects\WithRelations;
 use Illuminate\Database\Eloquent\Model;
 
-final class GetAllQuery implements Command
+final readonly class GetAllQuery implements Command
 {
     public function __construct(
-        private readonly Request $request,
-        private readonly Model $model,
-        private readonly ?WithRelations $withRelations = null
+        private Request $request,
+        private Model $model,
+        private ?WithRelations $withRelations = null
     ) {
     }
 

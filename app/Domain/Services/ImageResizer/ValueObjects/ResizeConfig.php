@@ -6,12 +6,12 @@ namespace Domain\Services\ImageResizer\ValueObjects;
 
 use Domain\Services\ImageUploader\DataTransferObjects\FileUpload;
 
-final class ResizeConfig
+final readonly class ResizeConfig
 {
     public function __construct(
-        private readonly FileUpload $imageUpload,
-        private readonly int $width,
-        private readonly int $height,
+        private FileUpload $imageUpload,
+        private int $width,
+        private int $height,
     ) {
 
     }

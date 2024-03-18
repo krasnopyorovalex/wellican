@@ -12,11 +12,11 @@ use Domain\Entities\ObjectImage\ObjectImage;
 use Domain\Persistence\Storage\Resources\SingleRecourse;
 use Domain\Services\ImageUploader\DataTransferObjects\FileUpload;
 
-class DestroyObjectImageCommand implements Command
+readonly class DestroyObjectImageCommand implements Command
 {
     public function __construct(
-        private readonly Uploader $uploader,
-        private readonly ObjectImage $objectImage
+        private Uploader $uploader,
+        private ObjectImage $objectImage
     ) {
     }
 

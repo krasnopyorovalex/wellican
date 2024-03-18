@@ -10,12 +10,12 @@ class FilterOptionRequest extends Request
 {
     protected int $filterId;
 
-    protected string $name;
+    protected string $value;
 
     public function toDatabase(): array
     {
         return array_filter([
-            'name' => $this->name,
+            'value' => $this->value,
             'filter_id' => $this->filterId ?? 0,
         ]);
     }

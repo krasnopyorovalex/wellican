@@ -65,7 +65,8 @@ final class ObjectRequest extends Request
     {
         return array_filter(array_merge(
             parent::toWhere(),
-            ['type_id' => $this->typeId ?? false]
+            ['type_id' => $this->typeId ?? 0],
+            ['is_premium' => $this->isPremium ?? '']
         ));
     }
 }

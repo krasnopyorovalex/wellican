@@ -8,9 +8,9 @@ use Domain\Entities\Object\ObjectFilters;
 use Domain\Services\Search\Contracts\Filter;
 use Illuminate\Database\Eloquent\Builder;
 
-final class FilterOptionsFilter extends Filter
+final class OptionsFilter extends Filter
 {
-    protected string $key = 'filter_options';
+    protected string $key = 'options';
 
     public function filter(Builder $builder, mixed $value): void
     {
@@ -27,6 +27,8 @@ final class FilterOptionsFilter extends Filter
             ->havingRaw('COUNT(`object_id`) = '.count($value))
             ->get();
 
-        $builder->whereIn('id', $collection->toArray());
+        $collection->count()
+            ? $builder->whereIn('id', $collection->map(fn ($item) => $item->object_id)->toArray())
+            : $builder->where('type_id', 0);
     }
 }

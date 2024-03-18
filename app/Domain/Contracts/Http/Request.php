@@ -9,7 +9,7 @@ use ReflectionProperty;
 
 abstract class Request
 {
-    public const EMPTY_VALUES = [
+    public const array EMPTY_VALUES = [
         'limit' => 0,
         'offset' => 0,
     ];

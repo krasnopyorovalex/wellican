@@ -7,9 +7,9 @@ namespace Domain\Persistence\Storage\Resources;
 use Domain\Contracts\Persistence\DatabaseResource;
 use Illuminate\Database\Eloquent\Collection;
 
-final class CollectionResource implements DatabaseResource
+final readonly class CollectionResource implements DatabaseResource
 {
-    public function __construct(private readonly Collection $collection)
+    public function __construct(private Collection $collection)
     {
     }
 

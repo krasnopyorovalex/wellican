@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Domain\Persistence\Storage\ValueObjects;
 
-final class WithRelations
+final readonly class WithRelations
 {
-    public function __construct(private readonly array $with)
+    public function __construct(private array $with)
     {
 
     }

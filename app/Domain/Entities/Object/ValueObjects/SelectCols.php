@@ -6,7 +6,7 @@ namespace App\Domain\Entities\Object\ValueObjects;
 
 final class SelectCols
 {
-    public const COLS = '
+    public const string COLS = '
         id,
         alias,
         articul,

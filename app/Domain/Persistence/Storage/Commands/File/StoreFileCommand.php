@@ -12,12 +12,12 @@ use Domain\Persistence\Configs\FilePath;
 use Domain\Persistence\Storage\Resources\SingleRecourse;
 use Illuminate\Database\Eloquent\Model;
 
-final class StoreFileCommand implements Command
+final readonly class StoreFileCommand implements Command
 {
     public function __construct(
-        private readonly Uploader $uploader,
-        private readonly FileConfig $fileConfig,
-        private readonly Model $model
+        private Uploader $uploader,
+        private FileConfig $fileConfig,
+        private Model $model
     ) {
     }
 

@@ -13,11 +13,11 @@ use Exception;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Log;
 
-final class MySqlSearch implements Search
+final readonly class MySqlSearch implements Search
 {
     public function __construct(
-        private readonly Handler $handler,
-        private readonly StackFilters $stackFilters
+        private Handler $handler,
+        private StackFilters $stackFilters
     ) {
     }
 

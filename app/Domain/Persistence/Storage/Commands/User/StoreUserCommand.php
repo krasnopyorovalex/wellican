@@ -12,12 +12,12 @@ use Domain\Persistence\Storage\Resources\SingleRecourse;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Permission\Traits\HasRoles;
 
-class StoreUserCommand implements Command
+readonly class StoreUserCommand implements Command
 {
     public function __construct(
-        private readonly Request $request,
-        private readonly Model $model,
-        private readonly Role $role,
+        private Request $request,
+        private Model $model,
+        private Role $role,
     ) {
     }
 

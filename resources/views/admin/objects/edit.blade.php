@@ -189,11 +189,11 @@
                                             <div class="col-md-3 mb-4">
                                                 <h6>{{ $filter->name }}</h6>
                                                 <fieldset class="form-group">
-                                                    <select class="form-select" id="basicSelect" name="filters[{{ $filter->id }}][]">
+                                                    <select class="form-select" id="basicSelect" name="filters[{{ $filter->id }}]">
                                                         <option value="">Не выбрано</option>
                                                         @foreach($filter->options as $option)
                                                             <option value="{{ $option->id }}" @if($object->filterOptions->firstWhere('id', $option->id)) selected @endif>
-                                                                {{ $option->name }}
+                                                                {{ $option->value }}
                                                             </option>
                                                         @endforeach
                                                     </select>

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Domain\Persistence\Storage\ValueObjects;
 
-final class Id
+final readonly class Id
 {
-    public function __construct(private readonly int $value)
+    public function __construct(private int $value)
     {
     }
 

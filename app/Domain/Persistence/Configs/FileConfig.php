@@ -6,13 +6,13 @@ namespace Domain\Persistence\Configs;
 
 use Illuminate\Http\UploadedFile;
 
-final class FileConfig
+final readonly class FileConfig
 {
     public function __construct(
-        private readonly UploadedFile $uploadedFile,
-        private readonly int $imageableId,
-        private readonly string $imageableType,
-        private readonly bool $mustBeDestroyed = false
+        private UploadedFile $uploadedFile,
+        private int $imageableId,
+        private string $imageableType,
+        private bool $mustBeDestroyed = false
     ) {
 
     }
