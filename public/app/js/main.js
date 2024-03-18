@@ -48,28 +48,32 @@ function initGallForList() {
         const windowRef = window;
         const bootstrap = windowRef.bootstrap;
         const objects_list = document.querySelectorAll(".object");
-        objects_list.forEach((item, index) => {
-            const it = item;
-            const carouselEl = it.firstElementChild.firstElementChild;
-            carouselEl.id = "carouselExampleFade" + index;
-            const carouselItemDivEl = carouselEl.firstElementChild;
-            const carouselElPrevBt = carouselEl.getElementsByClassName("carousel-control-prev")[0];
-            const carouselElNextBt = carouselEl.getElementsByClassName("carousel-control-next")[0];
-            const myCarousel = document.querySelector("#carouselExampleFade" + index);
-            const carousel = new bootstrap.Carousel(myCarousel, {
-                window: false,
-                ride: false,
+        if (objects_list.length) {
+            objects_list.forEach((item, index) => {
+                const it = item;
+                const carouselEl = it.firstElementChild.firstElementChild;
+                if (carouselEl) {
+                    carouselEl.id = "carouselExampleFade" + index;
+                    const carouselItemDivEl = carouselEl.firstElementChild;
+                    const carouselElPrevBt = carouselEl.getElementsByClassName("carousel-control-prev")[0];
+                    const carouselElNextBt = carouselEl.getElementsByClassName("carousel-control-next")[0];
+                    const myCarousel = document.querySelector("#carouselExampleFade" + index);
+                    const carousel = new bootstrap.Carousel(myCarousel, {
+                        window: false,
+                        ride: false,
+                    });
+                    carouselElPrevBt.addEventListener("click", () => {
+                        carousel.prev();
+                    });
+                    carouselElNextBt.addEventListener("click", () => {
+                        carousel.next();
+                    });
+                    carouselItemDivEl.addEventListener("click", () => {
+                        carousel.next();
+                    });
+                }
             });
-            carouselElPrevBt.addEventListener("click", () => {
-                carousel.prev();
-            });
-            carouselElNextBt.addEventListener("click", () => {
-                carousel.next();
-            });
-            carouselItemDivEl.addEventListener("click", () => {
-                carousel.next();
-            });
-        });
+        }
     }
 }
 function addFavorite() {
@@ -83,16 +87,18 @@ function initObjectViewScripts() {
             const windowRef = window;
             const bootstrap = windowRef.bootstrap;
             const myCarousel = document.querySelector("#carouselObjectView");
-            if ((_a = myCarousel === null || myCarousel === void 0 ? void 0 : myCarousel.children) === null || _a === void 0 ? void 0 : _a.length) {
-                const carIndicators = myCarousel.children[0];
-                const carInner = myCarousel.children[1];
-                carInner.children[0].classList.add("active");
-                carIndicators.children[0].classList.add("active");
+            if (myCarousel) {
+                if ((_a = myCarousel === null || myCarousel === void 0 ? void 0 : myCarousel.children) === null || _a === void 0 ? void 0 : _a.length) {
+                    const carIndicators = myCarousel.children[0];
+                    const carInner = myCarousel.children[1];
+                    carInner.children[0].classList.add("active");
+                    carIndicators.children[0].classList.add("active");
+                }
+                new bootstrap.Carousel(myCarousel, {
+                    window: false,
+                    ride: false,
+                });
             }
-            new bootstrap.Carousel(myCarousel, {
-                window: false,
-                ride: false,
-            });
         };
         initObjectGallCarousel();
         // @ts-ignore
@@ -122,7 +128,9 @@ function initObjectViewScripts() {
 }
 function addListenerToAdditionalFilters() {
     const additional_filters_button = document.querySelector("#additional_filters_button");
-    additional_filters_button.addEventListener("click", toggleButton, false);
+    if (additional_filters_button) {
+        additional_filters_button.addEventListener("click", toggleButton, false);
+    }
     function toggleButton(event) {
         event.preventDefault();
         if (!isChooseEstateType) {
@@ -130,7 +138,9 @@ function addListenerToAdditionalFilters() {
             return;
         }
         const additional_filters = document.querySelector(".additional_filters");
-        additional_filters_button.innerHTML = !additional_filters.hidden ? 'Показать рассширенный поиск' : 'Скрыть рассширенный поиск';
+        additional_filters_button.innerHTML = !additional_filters.hidden
+            ? "Показать рассширенный поиск"
+            : "Скрыть рассширенный поиск";
         additional_filters.hidden = !additional_filters.hidden;
     }
 }
@@ -220,13 +230,15 @@ function initMultiSelectedScript() {
     }
 }
 function initSlideshowsOnMain() {
-    const windowRef = window;
-    const bootstrap = windowRef.bootstrap;
-    const myCarousel = document.querySelector('#headerSlider');
-    new bootstrap.Carousel(myCarousel, {
-        interval: 10000,
-        ride: "carousel",
-    });
+    const myCarousel = document.querySelector("#headerSlider");
+    if (myCarousel) {
+        const windowRef = window;
+        const bootstrap = windowRef.bootstrap;
+        new bootstrap.Carousel(myCarousel, {
+            interval: 10000,
+            ride: "carousel",
+        });
+    }
 }
 (() => {
     initSlideshowsOnMain();

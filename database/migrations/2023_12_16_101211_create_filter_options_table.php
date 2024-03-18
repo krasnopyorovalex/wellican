@@ -14,7 +14,7 @@ return new class() extends Migration
         Schema::create('filter_options', static function (Blueprint $table) {
             $table->smallIncrements('id');
             $table->unsignedTinyInteger('filter_id');
-            $table->string('name', 128);
+            $table->string('value', 128);
 
             $table->foreign('filter_id')
                 ->references('id')

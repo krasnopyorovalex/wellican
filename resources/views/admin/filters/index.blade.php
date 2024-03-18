@@ -49,7 +49,7 @@
                                                    type="button" class="btn btn-outline-info">
                                                     <i class="bi bi-pencil-fill"></i>
                                                 </a>
-                                                <a href="{{ route('admin.options.index', ['filterId' => $filter->id]) }}"
+                                                <a href="{{ route('admin.filter-options.index', ['filterId' => $filter->id]) }}"
                                                    data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Список занчений фильтра {{ $filter->name }}"
                                                    type="button" class="btn btn-outline-info">
                                                     <i class="bi bi-list"></i>

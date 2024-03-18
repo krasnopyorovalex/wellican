@@ -24,7 +24,7 @@ use Illuminate\Routing\Redirector;
 
 final class FiltersController extends Controller
 {
-    private const ROUTE_PLACEHOLDER = 'admin.filters.%s';
+    private const string ROUTE_PLACEHOLDER = 'admin.filters.%s';
 
     public function __construct(private readonly Storage $storage)
     {
