@@ -11,7 +11,7 @@
     <section class="section">
         <div class="row">
             <div class="col-12 mb-2">
-                <a href="{{ route('admin.options.create', $filter->id) }}" class="btn icon icon-left btn-primary">
+                <a href="{{ route('admin.filter-options.create', $filter->id) }}" class="btn icon icon-left btn-primary">
                     Добавить
                 </a>
             </div>
@@ -45,7 +45,7 @@
                                         </td>
                                         <td>
                                             <div class="btn-group btn-group-sm" role="group">
-                                                <a href="{{ route('admin.options.edit', ['id' => $filterOption->id]) }}"
+                                                <a href="{{ route('admin.filter-options.edit', ['id' => $filterOption->id]) }}"
                                                    type="button" class="btn btn-outline-info">
                                                     <i class="bi bi-pencil-fill"></i>
                                                 </a>
@@ -54,7 +54,7 @@
                                                 </button>
                                             </div>
                                             <form method="post"
-                                                  action="{{ route('admin.options.destroy', ['filterId' => $filter->id, 'id' => $filterOption->id]) }}"
+                                                  action="{{ route('admin.filter-options.destroy', ['filterId' => $filter->id, 'id' => $filterOption->id]) }}"
                                                   class="hiding form-destroy">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}

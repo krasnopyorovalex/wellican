@@ -23,11 +23,11 @@ final class BetweenFilter extends Filter
                 ->join('object_filters', 'filter_options.id', '=', 'object_filters.filter_option_id');
 
             if (isset($between['from'])) {
-                $filterOptionsBuilder->where('filter_options.value', '>=', $between['from']);
+                $filterOptionsBuilder->where('filter_options.value', '>=', (int) $between['from']);
             }
 
             if (isset($between['to'])) {
-                $filterOptionsBuilder->where('filter_options.value', '<=', $between['to']);
+                $filterOptionsBuilder->where('filter_options.value', '<=', (int) $between['to']);
             }
         }
 
