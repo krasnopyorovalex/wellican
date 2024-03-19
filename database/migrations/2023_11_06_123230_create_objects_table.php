@@ -17,6 +17,7 @@ return new class() extends Migration
             $table->id();
             $table->unsignedTinyInteger('type_id');
             $table->unsignedSmallInteger('location_id');
+            $table->unsignedSmallInteger('label_id');
             $table->string('alias')->unique();
             $table->string('articul', 32)->unique();
             $table->string('name');
@@ -38,6 +39,11 @@ return new class() extends Migration
             $table->foreign('location_id')
                 ->references('id')
                 ->on('locations')
+                ->restrictOnDelete();
+
+            $table->foreign('label_id')
+                ->references('id')
+                ->on('object_labels')
                 ->restrictOnDelete();
         });
     }

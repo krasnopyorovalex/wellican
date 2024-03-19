@@ -34,6 +34,7 @@ class StoreObjectRequest extends AdminRequest
             'longitude' => ['required', 'regex:/^(\+|-)?(?:180(?:(?:\.0{6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{6})?))$/'],
             'type_id' => ['required', 'numeric', 'exists:object_types,id'],
             'location_id' => ['required', 'numeric', 'exists:locations,id'],
+            'label_id' => ['required', 'numeric', 'exists:object_labels,id'],
             'description' => ['string'],
             'address' => ['required', 'string'],
             'is_premium' => ['required', Rule::enum(IsPremium::class)],

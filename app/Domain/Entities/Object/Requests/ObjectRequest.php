@@ -34,6 +34,8 @@ final class ObjectRequest extends Request
 
     protected int $locationId;
 
+    protected int $labelId;
+
     protected string $description;
 
     protected string $address;
@@ -55,6 +57,7 @@ final class ObjectRequest extends Request
             'longitude' => $this->longitude,
             'type_id' => $this->typeId,
             'location_id' => $this->locationId,
+            'label_id' => $this->labelId,
             'address' => $this->address,
             'description' => $this->description,
             'is_premium' => $this->isPremium,

@@ -25,7 +25,7 @@ readonly class SearchQuery implements Command
     {
         $builder = Objects::query()
             ->selectRaw(SelectCols::COLS)
-            ->with(['location', 'images', 'type']);
+            ->with(['location', 'images', 'type', 'label']);
 
         foreach ($this->searchable->getParams() as $key => $param) {
             $this->stackFilters->apply(new Param($builder, $key, $param));

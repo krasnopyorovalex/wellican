@@ -6,6 +6,7 @@ use Domain\Entities\Location\Location;
 use Domain\Entities\Object\Enums\IsPremium;
 use Domain\Entities\Object\Enums\TypePurchase;
 use Domain\Entities\Object\Objects;
+use Domain\Entities\ObjectLabel\ObjectLabel;
 use Domain\Entities\ObjectType\ObjectType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
@@ -32,6 +33,7 @@ class ObjectsFactory extends Factory
         return [
             'type_id' => ObjectType::query()->get()->random()->id,
             'location_id' => Location::query()->get()->random()->id,
+            'label_id' => ObjectLabel::query()->get()->random()->id,
             'alias' => fake()->unique()->slug(),
             'articul' => sprintf('%s-%s', fake()->countryCode(), uniqid()),
             'name' => fake()->streetAddress(),

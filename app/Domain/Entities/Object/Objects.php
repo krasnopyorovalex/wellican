@@ -8,6 +8,7 @@ use Database\Factories\ObjectsFactory;
 use Domain\Entities\FilterOption\FilterOption;
 use Domain\Entities\Location\Location;
 use Domain\Entities\ObjectImage\ObjectImage;
+use Domain\Entities\ObjectLabel\ObjectLabel;
 use Domain\Entities\ObjectType\ObjectType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -42,6 +43,11 @@ final class Objects extends Model
     public function location(): BelongsTo
     {
         return $this->belongsTo(Location::class);
+    }
+
+    public function label(): BelongsTo
+    {
+        return $this->belongsTo(ObjectLabel::class);
     }
 
     public function images(): HasMany

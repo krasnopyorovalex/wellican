@@ -44,7 +44,14 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
-                                        @select(['name' => 'location_id', 'label' => 'Населённый пункт', 'items' => $locations])
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                @select(['name' => 'location_id', 'label' => 'Населённый пункт', 'items' => $locations])
+                                            </div>
+                                            <div class="col-md-6">
+                                                @select(['name' => 'label_id', 'label' => 'Метка', 'items' => $objectLabels])
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="row">
