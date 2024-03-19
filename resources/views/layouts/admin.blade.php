@@ -60,6 +60,11 @@
                                     Объекты
                                 </a>
                             </li>
+                            <li class="submenu-item">
+                                <a href="{{ route('admin.object-labels.index') }}" class="submenu-link">
+                                    Метки
+                                </a>
+                            </li>
                         </ul>
                     </li>
 

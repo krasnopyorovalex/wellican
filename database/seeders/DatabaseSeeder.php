@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Domain\Entities\Location\Location;
 use Domain\Entities\Object\Objects;
+use Domain\Entities\ObjectLabel\ObjectLabel;
 use Domain\Entities\ObjectType\ObjectType;
 use Domain\Entities\Page\Enums\Template;
 use Domain\Entities\Page\Page;
@@ -38,11 +39,17 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
+        foreach (['Строится', 'В продаже'] as $item) {
+            ObjectLabel::factory()->create([
+                'name' => $item,
+            ]);
+        }
+
         Location::factory()->count(5)->create();
         Objects::factory()->count(5)->create();
 
         Page::factory()->create(['alias' => 'index']);
-        Page::factory()->create(['alias' => 'catalog', 'name' => 'Каталог', 'template' => Template::PAGE,]);
-        Page::factory()->create(['alias' => 'contacts', 'name' => 'Контакты', 'template' => Template::CONTACTS,]);
+        Page::factory()->create(['alias' => 'catalog', 'name' => 'Каталог', 'template' => Template::PAGE]);
+        Page::factory()->create(['alias' => 'contacts', 'name' => 'Контакты', 'template' => Template::CONTACTS]);
     }
 }

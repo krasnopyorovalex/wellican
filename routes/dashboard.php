@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\InfoController;
 use App\Http\Controllers\Admin\LocationController;
 use App\Http\Controllers\Admin\ObjectController;
 use App\Http\Controllers\Admin\ObjectImageController;
+use App\Http\Controllers\Admin\ObjectLabelController;
 use App\Http\Controllers\Admin\ObjectTypeController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PermissionController;
@@ -29,6 +30,7 @@ Route::group(['prefix' => '_root', 'middleware' => 'auth', 'as' => 'admin.'], st
     Route::resource('users', UserController::class)->parameters(['users' => 'id']);
     Route::resource('objects', ObjectController::class)->parameters(['objects' => 'id']);
     Route::resource('object-types', ObjectTypeController::class)->parameters(['object_types' => 'id']);
+    Route::resource('object-labels', ObjectLabelController::class)->parameters(['object_labels' => 'id']);
 
     Route::group(['prefix' => 'object-types'], static function () {
         Route::controller(FiltersController::class)->prefix('{parentId}/filters')->group(function () {

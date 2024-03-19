@@ -12,6 +12,7 @@ final class SelectCols
         articul,
         type_id,
         location_id,
+        label_id,
         name,
         address,
         type_purchase,
