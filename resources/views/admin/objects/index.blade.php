@@ -33,6 +33,7 @@
                                     <th>#</th>
                                     <th>Название</th>
                                     <th>Цена</th>
+                                    <th>Артикул</th>
                                     <th>Площадь</th>
                                     <th>Тип покупки</th>
                                     <th>Создан</th>
@@ -53,6 +54,9 @@
                                         </td>
                                         <td class="text-bold-500">
                                             <span class="badge bg-light-secondary">{{ $object->price }}</span>
+                                        </td>
+                                        <td class="text-bold-500">
+                                            <span class="badge bg-light-secondary">{{ $object->articul }}</span>
                                         </td>
                                         <td><span class="badge bg-light-secondary">{{ $object->square }} м<sup>2</sup></span></td>
                                         <td>{{ __(sprintf('entities.%s', $object->type_purchase)) }}</td>

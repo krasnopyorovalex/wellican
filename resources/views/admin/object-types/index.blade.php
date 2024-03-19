@@ -30,23 +30,26 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th></th>
                                     <th>Название</th>
                                     <th>alias</th>
                                     <th></th>
                                 </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="sortable-table" data-url="{{ route('admin.object_types.sortable') }}">
                                 @foreach($objectTypes as $objectType)
-                                    <tr>
-                                        <td>{{ request('page') > 1 ? request('page') * config('database.per_page_admin') - config('database.per_page_admin') + $loop->iteration : $loop->iteration }}</td>
+                                    <tr data-id="{{ $objectType->id }}" class="grid-item">
+                                        <td>
+                                            <button type="button" class="btn btn-info btn-move">
+                                                <i class="bi-arrows-move"></i>
+                                            </button>
+                                        </td>
                                         <td class="text-bold-500">
                                             {{ $objectType->name }}
                                         </td>
                                         <td class="text-bold-500">
                                             <span class="badge bg-light-secondary">{{ $objectType->alias }}</span>
                                         </td>
-
                                         <td>
                                             <div class="btn-group btn-group-sm" role="group">
                                                 <a href="{{ route('admin.object-types.edit', $objectType) }}"
@@ -82,3 +85,13 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('dashboard/extensions/toastify-js/src/toastify.js') }}"></script>
+    <script src="{{ asset('dashboard/extensions/sortable/sortable.js') }}"></script>
+    <script src="{{ asset('dashboard/static/js/sort_table.js') }}"></script>
+@endpush
+
+@push('css')
+    <link rel="stylesheet" href="{{ asset('dashboard/extensions/toastify-js/src/toastify.css') }}"/>
+@endpush

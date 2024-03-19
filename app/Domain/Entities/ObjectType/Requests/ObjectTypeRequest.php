@@ -12,12 +12,17 @@ final class ObjectTypeRequest extends Request
 
     protected string $description;
 
+    protected int $position;
+
+    protected string $orderBy = 'position';
+
     public function toDatabase(): array
     {
-        return [
-            'name' => $this->name,
-            'alias' => $this->alias,
-            'description' => $this->description,
-        ];
+        return array_filter([
+            'name' => $this->name ?? null,
+            'alias' => $this->alias ?? null,
+            'description' => $this->description ?? null,
+            'position' => $this->position ?? 0,
+        ]);
     }
 }
