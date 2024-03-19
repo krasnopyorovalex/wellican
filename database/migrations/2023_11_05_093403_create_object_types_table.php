@@ -16,6 +16,7 @@ return new class() extends Migration
             $table->string('name');
             $table->string('alias')->unique();
             $table->text('description');
+            $table->unsignedTinyInteger('position')->default(0);
         });
     }
 

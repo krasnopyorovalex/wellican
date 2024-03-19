@@ -18,4 +18,9 @@ return [
             'from_to' => 'From...to',
         ],
     ],
+    'object_types' => [
+        'sortable' => [
+            'success' => 'The order of the elements has been updated successfully',
+        ],
+    ],
 ];

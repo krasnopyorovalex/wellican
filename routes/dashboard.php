@@ -39,6 +39,8 @@ Route::group(['prefix' => '_root', 'middleware' => 'auth', 'as' => 'admin.'], st
             Route::put('{id}', 'update')->name('filters.update');
             Route::delete('{id}', 'destroy')->name('filters.destroy');
         });
+
+        Route::post('sort', [ObjectTypeController::class, 'sortable'])->name('object_types.sortable');
     });
 
     Route::controller(ObjectImageController::class)->prefix('object-images')->group(function () {
