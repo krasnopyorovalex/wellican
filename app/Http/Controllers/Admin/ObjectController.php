@@ -16,6 +16,8 @@ use Domain\Entities\Location\Requests\LocationRequest;
 use Domain\Entities\Object\Objects;
 use Domain\Entities\Object\Requests\ObjectRequest;
 use Domain\Entities\ObjectImage\Configs\ObjectImagePath;
+use Domain\Entities\ObjectLabel\ObjectLabel;
+use Domain\Entities\ObjectLabel\Requests\ObjectLabelRequest;
 use Domain\Entities\ObjectType\ObjectType;
 use Domain\Persistence\Storage\Commands\DestroyCommand;
 use Domain\Persistence\Storage\Commands\StoreCommand;
@@ -33,7 +35,7 @@ use Illuminate\Routing\Redirector;
 
 final class ObjectController extends Controller
 {
-    private const ROUTE_PLACEHOLDER = 'admin.objects.%s';
+    private const string ROUTE_PLACEHOLDER = 'admin.objects.%s';
 
     public function __construct(
         private readonly Storage $storage,
@@ -61,10 +63,14 @@ final class ObjectController extends Controller
         $locations = $this->storage->getAll(
             new GetAllQuery(LocationRequest::fromArray(DomainRequest::EMPTY_VALUES), new Location())
         );
+        $objectLabels = $this->storage->getAll(
+            new GetAllQuery(ObjectLabelRequest::fromArray(DomainRequest::EMPTY_VALUES), new ObjectLabel())
+        );
 
         return view(sprintf(self::ROUTE_PLACEHOLDER, 'create'), [
             'objectTypes' => $objectTypes,
             'locations' => $locations,
+            'objectLabels' => $objectLabels,
         ]);
     }
 
@@ -96,10 +102,15 @@ final class ObjectController extends Controller
             new GetAllQuery(LocationRequest::fromArray(DomainRequest::EMPTY_VALUES), new Location())
         );
 
+        $objectLabels = $this->storage->getAll(
+            new GetAllQuery(ObjectLabelRequest::fromArray(DomainRequest::EMPTY_VALUES), new ObjectLabel())
+        );
+
         return view('admin.objects.edit', [
             'object' => $object,
             'objectTypes' => $objectTypes,
             'locations' => $locations,
+            'objectLabels' => $objectLabels,
         ]);
     }
 

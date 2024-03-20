@@ -54,16 +54,20 @@
                                             </div>
 
                                             <div class="col-md-6 col-12">
-                                                @select(['name' => 'type_id', 'label' => 'Тип недвижимости', 'items' =>
-                                                $objectTypes, 'entity' => $object])
+                                                @select(['name' => 'type_id', 'label' => 'Тип недвижимости', 'items' => $objectTypes, 'entity' => $object])
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 @input(['name' => 'alias', 'label' => 'Alias', 'entity' => $object])
                                             </div>
                                             <div class="col-md-6 col-12">
-                                                @select(['name' => 'location_id', 'label' => 'Населённый пункт', 'items'
-                                                =>
-                                                $locations, 'entity' => $object])
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        @select(['name' => 'location_id', 'label' => 'Населённый пункт', 'items' => $locations, 'entity' => $object])
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        @select(['name' => 'label_id', 'label' => 'Метка', 'items' => $objectLabels, 'entity' => $object])
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="row">
