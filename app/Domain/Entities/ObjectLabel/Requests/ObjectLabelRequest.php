@@ -19,8 +19,6 @@ final class ObjectLabelRequest extends Request
 
     public function toWhere(): array
     {
-        return array_filter([
-            'id' => $this->id ?? 0,
-        ]);
+        return ['id' => $this->id];
     }
 }
