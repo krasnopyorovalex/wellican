@@ -19,7 +19,7 @@
 </head>
 <body>
 <header class="{{ $headerClass ?? '' }}">
-    <div class="container text-center">
+    <div class="container text-center top-menu">
         <div class="row">
             <div class="top_bar">
                 <a class="logo" href="{{ route('home') }}">
