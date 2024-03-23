@@ -201,18 +201,21 @@ function initFiltersBox() {
             "#input_property_type",
         );
 
-        const flats_filters: HTMLElement = filters_box.querySelector(
-            "#mnogokvartinye-doma",
-        );
+        const changeVisibleFilterBox = (alias: string) => {
+            resetBoxes();
+            const optionsList = [...selectElement.children].filter(
+                (it, index) => index,
+            );
 
-        const cottagesHouses_filters: HTMLElement = filters_box.querySelector(
-            "#doma-kottedzi-taunxausy",
-        );
-        const land_filters: HTMLElement =
-            filters_box.querySelector("#zemelnye-ucastki");
-        const commercial_filters: HTMLElement = filters_box.querySelector(
-            "#komercheskaja-nedvizhimost",
-        );
+            optionsList.forEach((option: HTMLFormElement) => {
+                if (alias === option.dataset?.alias) {
+                    const filterBoxEl = filters_box.querySelector(
+                        `#${option.dataset?.alias}`,
+                    ) as HTMLElement;
+                    filterBoxEl.hidden = false;
+                }
+            });
+        };
 
         const resetBoxes = () => {
             const box_list: NodeList = filters_box.querySelectorAll(".box");
@@ -229,7 +232,7 @@ function initFiltersBox() {
             isChooseEstateType = null;
         } else {
             isChooseEstateType = !!propertyTypeValue;
-            switchFilters(selectElement.value);
+            //  switchFilters(selectElement.value);
         }
 
         selectElement.addEventListener("change", (event) => {
@@ -238,31 +241,9 @@ function initFiltersBox() {
             const alias =
                 elTarget?.options[elTarget.selectedIndex].dataset?.alias;
 
+            changeVisibleFilterBox(alias);
             isChooseEstateType = !!elTarget;
-
-            resetBoxes();
-
-            switchFilters(alias);
         });
-
-        function switchFilters(type: ObjectTypesEnum) {
-            switch (type) {
-                case ObjectTypesEnum.flats:
-                    flats_filters.hidden = false;
-                    break;
-                case ObjectTypesEnum.houses:
-                    cottagesHouses_filters.hidden = false;
-                    break;
-                case ObjectTypesEnum.lands:
-                    land_filters.hidden = false;
-                    break;
-                case ObjectTypesEnum.commercial:
-                    commercial_filters.hidden = false;
-                    break;
-                default:
-                    resetBoxes();
-            }
-        }
 
         initMultiSelectedScript();
     }
@@ -330,10 +311,3 @@ function initSlideshowsOnMain() {
     initFiltersBox();
     addListenerToAdditionalFilters();
 })();
-
-enum ObjectTypesEnum {
-    houses = "doma-kottedzi-taunxausy",
-    lands = "zemelnye-ucastki",
-    flats = "mnogokvartinye-doma",
-    commercial = "komercheskaja-nedvizhimost",
-}
