@@ -201,8 +201,14 @@ function initFiltersBox() {
             "#input_property_type",
         );
 
-        const changeVisibleFilterBox = (alias: string) => {
+        const changeVisibleFilterBox = (event) => {
             resetBoxes();
+
+            const elTarget = event.target as HTMLFormElement;
+
+            const alias =
+                elTarget?.options[elTarget.selectedIndex].dataset?.alias;
+
             const optionsList = [...selectElement.children].filter(
                 (it, index) => index,
             );
@@ -215,6 +221,8 @@ function initFiltersBox() {
                     filterBoxEl.hidden = false;
                 }
             });
+
+            isChooseEstateType = !!elTarget;
         };
 
         const resetBoxes = () => {
@@ -235,15 +243,7 @@ function initFiltersBox() {
             //  switchFilters(selectElement.value);
         }
 
-        selectElement.addEventListener("change", (event) => {
-            const elTarget = event.target as HTMLFormElement;
-
-            const alias =
-                elTarget?.options[elTarget.selectedIndex].dataset?.alias;
-
-            changeVisibleFilterBox(alias);
-            isChooseEstateType = !!elTarget;
-        });
+        selectElement.addEventListener("change", changeVisibleFilterBox);
 
         initMultiSelectedScript();
     }
