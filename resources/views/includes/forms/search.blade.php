@@ -1,4 +1,4 @@
-<form class="row g-3 gx-4" action="" method="get">
+<form class="row g-3 gx-4" action="{{ $url ?? '' }}" method="get">
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

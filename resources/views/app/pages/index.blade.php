@@ -27,7 +27,7 @@
         <div class="col-xl-12">
             <div class="filter_on_main">
                 <div class="form_box">
-                    @include('includes.forms.search', ['selectedObjectType' => false])
+                    @include('includes.forms.search', ['selectedObjectType' => false, 'url' => route('page.show', ['alias' => 'catalog'])])
                 </div>
             </div>
 

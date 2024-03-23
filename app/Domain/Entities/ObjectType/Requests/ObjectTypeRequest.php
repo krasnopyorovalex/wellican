@@ -21,8 +21,8 @@ final class ObjectTypeRequest extends Request
         return array_filter([
             'name' => $this->name ?? null,
             'alias' => $this->alias ?? null,
-            'description' => $this->description ?? null,
-            'position' => $this->position ?? 0,
-        ]);
+            'description' => $this->description ?? '',
+            'position' => $this->position ?? null,
+        ], fn ($el) => ! is_null($el));
     }
 }

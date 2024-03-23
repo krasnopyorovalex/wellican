@@ -108,6 +108,7 @@ header {
             padding: 0;
             margin: auto 0;
             padding-left: 20px;
+
             li {
                 font-size: 16px;
                 margin: 0 22px;
@@ -147,12 +148,13 @@ header {
                     .sub {
                         visibility: visible;
                         opacity: 1;
+                        z-index: 10;
                     }
                 }
 
                 &:has(ul.sub) {
                     &:hover {
-                        // background: red;
+                        border-bottom: none;
                         &:after {
                             visibility: visible;
                         }
@@ -241,8 +243,6 @@ header {
     }
 }
 
-
-
 .top_main {
     min-height: 300px;
     position: relative;
@@ -266,6 +266,9 @@ header {
     .container {
         position: relative;
         z-index: 2;
+    }
+    .top-menu {
+        z-index: 3;
     }
 
     .slogan {

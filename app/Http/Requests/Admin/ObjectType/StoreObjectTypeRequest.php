@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 /**
  * @property string $name
  * @property string $description
+ * @property string alias
  */
 class StoreObjectTypeRequest extends AdminRequest
 {
@@ -20,7 +21,7 @@ class StoreObjectTypeRequest extends AdminRequest
     {
         return [
             'name' => ['required', 'max:255', 'string'],
-            'alias' => ['required', 'max:255', 'string', 'unique:locations'],
+            'alias' => ['required', 'max:255', 'string', 'unique:object_types'],
             'description' => ['string'],
         ];
     }

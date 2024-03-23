@@ -16,6 +16,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
+                            @include('includes.errors.list')
                             <form action="{{ route('admin.object-types.update', $objectType) }}" class="form" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('put')
