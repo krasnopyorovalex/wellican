@@ -201,15 +201,17 @@ function initFiltersBox() {
             "#input_property_type",
         );
 
-        const flats_filters: HTMLElement =
-            filters_box.querySelector("#flats_filters");
+        const flats_filters: HTMLElement = filters_box.querySelector(
+            "#mnogokvartinye-doma",
+        );
+
         const cottagesHouses_filters: HTMLElement = filters_box.querySelector(
-            "#cottagesHouses_filters",
+            "#doma-kottedzi-taunxausy",
         );
         const land_filters: HTMLElement =
-            filters_box.querySelector("#land_filters");
+            filters_box.querySelector("#zemelnye-ucastki");
         const commercial_filters: HTMLElement = filters_box.querySelector(
-            "#commercial_filters",
+            "#komercheskaja-nedvizhimost",
         );
 
         const resetBoxes = () => {
@@ -233,25 +235,28 @@ function initFiltersBox() {
         selectElement.addEventListener("change", (event) => {
             const elTarget = event.target as HTMLFormElement;
 
+            const alias =
+                elTarget?.options[elTarget.selectedIndex].dataset?.alias;
+
             isChooseEstateType = !!elTarget;
 
             resetBoxes();
 
-            switchFilters(elTarget.value);
+            switchFilters(alias);
         });
 
-        function switchFilters(type: string) {
+        function switchFilters(type: ObjectTypesEnum) {
             switch (type) {
-                case "1":
+                case ObjectTypesEnum.flats:
                     flats_filters.hidden = false;
                     break;
-                case "4":
+                case ObjectTypesEnum.houses:
                     cottagesHouses_filters.hidden = false;
                     break;
-                case "5":
+                case ObjectTypesEnum.lands:
                     land_filters.hidden = false;
                     break;
-                case "6":
+                case ObjectTypesEnum.commercial:
                     commercial_filters.hidden = false;
                     break;
                 default:
@@ -325,3 +330,10 @@ function initSlideshowsOnMain() {
     initFiltersBox();
     addListenerToAdditionalFilters();
 })();
+
+enum ObjectTypesEnum {
+    houses = "doma-kottedzi-taunxausy",
+    lands = "zemelnye-ucastki",
+    flats = "mnogokvartinye-doma",
+    commercial = "komercheskaja-nedvizhimost",
+}

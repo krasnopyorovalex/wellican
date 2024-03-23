@@ -26,7 +26,7 @@
                 Тип недвижимости
             </option>
             @foreach($objectTypes as $objectType)
-                <option value="{{ $objectType->id }}"
+                <option data-alias="{{$objectType->alias}}" value="{{ $objectType->id }}"
                         @if(request('type_id') == $objectType->id || ($selectedObjectType && $selectedObjectType->id === $objectType->id))selected @endif>
                     {{ $objectType->name }}
                 </option>
