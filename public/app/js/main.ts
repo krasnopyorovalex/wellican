@@ -327,4 +327,21 @@ function triggerEvent(el: HTMLFormElement, eventType: string) {
     initObjectViewScripts();
     initFiltersBox();
     addListenerToAdditionalFilters();
+
+
+
+
+    const reset_button = document.querySelector('#reset_button');
+
+    reset_button.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log(reset_button);
+
+        const input_property_type: HTMLFormElement = document.querySelector('#input_property_type');
+
+        input_property_type.selectedIndex = 0;
+
+    })
+
+
 })();

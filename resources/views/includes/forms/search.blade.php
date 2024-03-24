@@ -65,7 +65,7 @@
             </div>
             <div class="col-md-3 d-flex justify-content-between form_buttons">
                 <button type="submit" class="btn">Найти</button>
-                <button class="btn">Сбросить</button>
+                <button id="reset_button" class="btn">Сбросить</button>
             </div>
     </div>
 

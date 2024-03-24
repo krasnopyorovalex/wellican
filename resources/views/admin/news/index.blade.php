@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('pageName', 'Населённые пункты')
+@section('pageName', 'Новости')
 
 @section('breadcrumbs')
     <li class="breadcrumb-item active" aria-current="page">Новости</li>

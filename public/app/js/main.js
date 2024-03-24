@@ -248,4 +248,11 @@ function triggerEvent(el, eventType) {
     initObjectViewScripts();
     initFiltersBox();
     addListenerToAdditionalFilters();
+    const reset_button = document.querySelector('#reset_button');
+    reset_button.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log(reset_button);
+        const input_property_type = document.querySelector('#input_property_type');
+        input_property_type.selectedIndex = 0;
+    });
 })();
