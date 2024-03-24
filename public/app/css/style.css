@@ -201,10 +201,15 @@
       .breadcrumbs_box ul li:last-of-type:after {
         display: none; }
 
-main .estate_types .figure {
-  height: 181px; }
-  main .estate_types .figure img {
-    margin-top: -60px; }
+main .estate_types {
+  display: flex;
+  justify-content: space-between; }
+  main .estate_types .figure {
+    height: 181px; }
+    main .estate_types .figure img {
+      margin-top: -60px; }
+  main .estate_types .estate_box {
+    width: 18%; }
 main .form_box {
   background: #fff;
   border-radius: 10px;
@@ -212,8 +217,11 @@ main .form_box {
   main .form_box .btn {
     border-radius: 4px;
     background: #a67c52;
-    width: 143px;
+    width: 133px;
     color: #fff; }
+  main .form_box .form_buttons {
+    align-items: flex-end;
+    margin-bottom: 9px; }
 
 #sort_button {
   background: url("../images/catalog/sort_icon.svg") no-repeat 0 9px;
@@ -604,7 +612,7 @@ main .form_box {
 
 .button {
   border-radius: 20px;
-  background: #d9a06b;
+  background: #A67C52;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
   font-size: 15px;
   font-family: Gilroy500, sans-serif;
@@ -719,9 +727,12 @@ header .top_bar {
           display: block; }
         header .top_bar .first_level li:hover .sub {
           visibility: visible;
-          opacity: 1; }
-      header .top_bar .first_level li:has(ul.sub):hover:after {
-        visibility: visible; }
+          opacity: 1;
+          z-index: 10; }
+      header .top_bar .first_level li:has(ul.sub):hover {
+        border-bottom: none; }
+        header .top_bar .first_level li:has(ul.sub):hover:after {
+          visibility: visible; }
     header .top_bar .first_level .sub {
       position: absolute;
       left: 0;
@@ -771,16 +782,21 @@ header .filter_on_main {
 header .form_box {
   background: #fff;
   border-radius: 10px;
-  padding: 20px 30px;
-  max-width: 1000px;
+  padding: 0 30px 20px;
+  max-width: 1026px;
   position: absolute;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  padding-left: 54px; }
+  border: 1px solid rgba(0, 0, 0, 0.12); }
+  header .form_box label {
+    display: block;
+    text-align: center; }
   header .form_box .btn {
     border-radius: 4px;
     background: #a67c52;
-    width: 173px;
+    width: 97px;
     color: #fff; }
+  header .form_box .form_buttons {
+    align-items: flex-end;
+    margin-bottom: 9px; }
 
 .top_main {
   min-height: 300px;
@@ -797,6 +813,8 @@ header .form_box {
   .top_main .container {
     position: relative;
     z-index: 2; }
+  .top_main .top-menu {
+    z-index: 3; }
   .top_main .slogan {
     padding: 100px 0 160px;
     text-align: center; }
@@ -823,6 +841,8 @@ header .form_box {
 
 .section {
   padding: 100px 0; }
+  .section.general_types {
+    padding-top: 150px; }
   .section.blue {
     background: linear-gradient(109deg, #131224 -15.84%, #101b2c 123.26%);
     padding: 100px 0;
@@ -837,6 +857,8 @@ header .form_box {
 .estate_types {
   padding-top: 40px;
   padding-bottom: 90px; }
+  .estate_types .estate_box {
+    width: 19%; }
   .estate_types .figure {
     display: block;
     position: relative;

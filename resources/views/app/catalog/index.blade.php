@@ -19,15 +19,15 @@
         </div>
         @if(count($objectTypes))
         <div class="container text-center estate_types">
-            <div class="row gx-2">
-                <div class="col-2">
+
+                <div class="estate_box">
                     <a href="{{ route('catalog.show') }}?is_premium={{ \Domain\Entities\Object\Enums\IsPremium::Yes }}" class="figure">
                         <img src="{{ asset('app/images/estate-types/type1.jpg') }}" alt="" />
                         <strong class="estate_type_title">недвижимость от wellican</strong>
                     </a>
                 </div>
                 @foreach($objectTypes as $objectType)
-                <div class="col-2">
+                <div class="estate_box">
                     <a href="{{ route('object_type.show', ['alias' => $objectType->alias]) }}" class="figure">
                         @if($objectType->image)
                             <img src="{{ $objectType->image->url }}" alt="{{ $objectType->image->alt }}" title="{{ $objectType->image->title }}" />
@@ -37,7 +37,7 @@
                 </div>
                 @endforeach
             </div>
-        </div>
+
         @endif
         @include('includes.object.list', ['objects' => $objects])
     </main>

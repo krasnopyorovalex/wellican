@@ -42,7 +42,7 @@
                     </li>
                     <li><a href="{{ route('page.show', ['alias' => 'catalog']) }}">Объекты в продаже</a></li>
                     <li><a href="/">Услуги </a></li>
-                    <li><a href="/">Все об ипотеке</a></li>
+                    <li><a href="/ipoteka">Все об ипотеке</a></li>
                     <li><a href="{{ route('page.show', ['alias' => 'contacts']) }}">Контакты</a></li>
                 </ul>
                 <div class="favorites">

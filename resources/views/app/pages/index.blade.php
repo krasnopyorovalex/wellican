@@ -27,7 +27,10 @@
         <div class="col-xl-12">
             <div class="filter_on_main">
                 <div class="form_box">
-                    @include('includes.forms.search', ['selectedObjectType' => false, 'url' => route('page.show', ['alias' => 'catalog'])])
+                    <div class="container">
+                        @include('includes.forms.search', ['selectedObjectType' => false, 'url' => route('page.show', ['alias' => 'catalog'])])
+                    </div>
+
                 </div>
             </div>
 
@@ -37,7 +40,7 @@
 @endsection
 
 @section('content')
-    <div class="section white">
+    <div class="section white general_types">
         <div class="container-fluid">
             <div class="row">
                 <div class="section_head">
@@ -46,11 +49,20 @@
                 </div>
             </div>
         </div>
+
+
+
         @if(count($objectTypes))
             <div class="container text-center estate_types">
-                <div class="row gx-2">
+                <div class="row justify-content-between gx-2">
+                    <div class="estate_box">
+                        <a href="{{ route('catalog.show') }}?is_premium={{ \Domain\Entities\Object\Enums\IsPremium::Yes }}" class="figure">
+                            <img src="{{ asset('app/images/estate-types/type1.jpg') }}" alt="" />
+                            <strong class="estate_type_title">недвижимость от wellican</strong>
+                        </a>
+                    </div>
                     @foreach($objectTypes as $objectType)
-                        <div class="col-2">
+                        <div class="estate_box">
                             <a href="{{ route('object_type.show', ['alias' => $objectType->alias]) }}" class="figure">
                                 @if($objectType->image)
                                     <img src="{{ $objectType->image->url }}" alt="{{ $objectType->image->alt }}" title="{{ $objectType->image->title }}" />

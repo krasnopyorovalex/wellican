@@ -159,6 +159,12 @@ function initObjectViewScripts() {
 }
 
 function addListenerToAdditionalFilters() {
+    const additional_filters_button_box = document.getElementById(
+        "additional_filters_button_box",
+    );
+    if (checkUrlIsMain()) {
+        additional_filters_button_box.hidden = true;
+    }
     const additional_filters_button = document.querySelector(
         "#additional_filters_button",
     );
@@ -201,7 +207,7 @@ function initFiltersBox() {
             "#input_property_type",
         );
 
-        const changeVisibleFilterBox = (event) => {
+        const changeVisibleFilterBox = (event: Event) => {
             resetBoxes();
 
             const elTarget = event.target as HTMLFormElement;
@@ -234,18 +240,19 @@ function initFiltersBox() {
 
         resetBoxes();
 
+        initMultiSelectedScript();
+
         const propertyTypeValue = Number(selectElement.value);
 
         if (isNaN(propertyTypeValue)) {
             isChooseEstateType = null;
         } else {
             isChooseEstateType = !!propertyTypeValue;
-            //  switchFilters(selectElement.value);
+            setTimeout(() => triggerEvent(selectElement, 'change'));
         }
 
         selectElement.addEventListener("change", changeVisibleFilterBox);
 
-        initMultiSelectedScript();
     }
 }
 
@@ -299,6 +306,16 @@ function initSlideshowsOnMain() {
             interval: 10000,
             ride: "carousel",
         });
+    }
+}
+
+function checkUrlIsMain(): boolean {
+    return window.location.pathname === "/";
+}
+
+function triggerEvent(el: HTMLFormElement, eventType: string) {
+    if ('createEvent' in document) {
+        el.dispatchEvent(new CustomEvent(eventType));
     }
 }
 

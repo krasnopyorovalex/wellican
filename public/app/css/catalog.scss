@@ -65,11 +65,17 @@
 
 main {
     .estate_types {
+        display: flex;
+        justify-content: space-between;
         .figure {
             height: 181px;
             img {
                 margin-top: -60px;
             }
+        }
+
+        .estate_box {
+            width: 18%;
         }
     }
 
@@ -81,8 +87,12 @@ main {
         .btn {
             border-radius: 4px;
             background: #a67c52;
-            width: 143px;
+            width: 133px;
             color: #fff;
+        }
+        .form_buttons {
+            align-items: flex-end;
+            margin-bottom: 9px;
         }
     }
 }

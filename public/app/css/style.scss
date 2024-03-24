@@ -7,7 +7,7 @@
 
 .button {
     border-radius: 20px;
-    background: #d9a06b;
+    background: #A67C52;
     box-shadow:
         0 3px 1px -2px rgba(0, 0, 0, 0.2),
         0px 2px 2px 0px rgba(0, 0, 0, 0.14),
@@ -228,17 +228,24 @@ header {
     .form_box {
         background: #fff;
         border-radius: 10px;
-        padding: 20px 30px;
-        max-width: 1000px;
+        padding: 0 30px 20px;
+        max-width: 1026px;
         position: absolute;
         border: 1px solid rgba(0, 0, 0, 0.12);
-        padding-left: 54px;
+        label {
+            display: block;
+            text-align: center;
+        }
 
         .btn {
             border-radius: 4px;
             background: #a67c52;
-            width: 173px;
+            width: 97px;
             color: #fff;
+        }
+        .form_buttons {
+            align-items: flex-end;
+            margin-bottom: 9px;
         }
     }
 }
@@ -303,6 +310,10 @@ header {
 .section {
     padding: 100px 0;
 
+    &.general_types {
+        padding-top: 150px;
+    }
+
     &.blue {
         background: linear-gradient(109deg, #131224 -15.84%, #101b2c 123.26%);
         padding: 100px 0;
@@ -329,6 +340,9 @@ header {
 .estate_types {
     padding-top: 40px;
     padding-bottom: 90px;
+    .estate_box {
+        width: 19%;
+    }
     .figure {
         display: block;
         position: relative;
