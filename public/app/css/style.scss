@@ -401,6 +401,7 @@ header {
 .best_propose {
     padding-top: 40px;
     .objects {
+        max-height: 664px;
         .object {
             overflow: hidden;
             border-radius: 24px;
@@ -410,7 +411,8 @@ header {
                 height: 100%;
             }
             img {
-                max-width: 100%;
+                //max-width: 100%;
+                width: 100%;
             }
             .desc {
                 position: absolute;
@@ -438,19 +440,24 @@ header {
             }
             &:nth-child(2) {
                 grid-area: object-2;
+
             }
             &:nth-child(3) {
                 grid-area: object-3;
+
             }
 
             &:nth-child(4) {
                 grid-area: object-4;
+
             }
             &:nth-child(5) {
                 grid-area: object-5;
+
             }
             &:nth-child(6) {
                 grid-area: object-6;
+
             }
         }
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Dashboard - Wellikan</title>
+    <title>Dashboard - Wellican</title>
     <link rel="shortcut icon" href="{{ asset('app/images/favicon.ico') }}" type="image/x-icon" />
     <link rel="shortcut icon" type="image/png" href="{{ asset('app/images/favi.png') }}"/>
     <link rel="stylesheet" href="{{ asset('dashboard/compiled/css/app.css') }}" />
@@ -16,10 +16,10 @@
     <div id="sidebar">
         <div class="sidebar-wrapper active">
             <div class="sidebar-header position-relative">
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-center align-items-center">
                     <div class="logo">
                         <a href="{{ route('admin.home') }}">
-                            <img src="{{ asset('dashboard/compiled/svg/logo.svg') }}" alt="Wellikan" srcset="" />
+                            <img src="{{ asset('dashboard/compiled/svg/logo.svg') }}" alt="Wellican" srcset="" />
                         </a>
                     </div>
                     <div class="theme-toggle d-flex gap-2 align-items-center mt-2"></div>
@@ -146,7 +146,7 @@
         <footer>
             <div class="footer clearfix mb-0 text-muted">
                 <div class="float-start">
-                    <p>{{ date('Y') }} &copy; Wellikan</p>
+                    <p>{{ date('Y') }} &copy; Wellican</p>
                 </div>
                 <div class="float-end"></div>
             </div>

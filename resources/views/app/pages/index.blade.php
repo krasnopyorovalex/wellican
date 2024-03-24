@@ -93,7 +93,7 @@
                                         @if(isset($premiumObject->images[0])) <img src="{{ asset($premiumObject->images[0]->url) }}" alt="{{ $premiumObject->images[0]->alt }}" />@endif
                                         <strong class="desc">
                                             <span>{{ $premiumObject->name }}</span>
-                                            <label>в продаже</label>
+                                            <label>{{ $premiumObject->label->name }}</label>
                                         </strong>
                                     </a>
                                 </div>

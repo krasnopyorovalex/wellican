@@ -216,3 +216,26 @@ main {
         cursor: pointer;
     }
 }
+
+.form_box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 30px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+
+    label {
+        display: block;
+        text-align: center;
+    }
+
+    .btn {
+        border-radius: 4px;
+        background: #a67c52;
+        width: 133px;
+        color: #fff;
+    }
+    .form_buttons {
+        align-items: flex-end;
+        margin-bottom: 9px;
+    }
+}
