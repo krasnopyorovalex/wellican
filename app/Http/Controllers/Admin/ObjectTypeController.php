@@ -8,7 +8,7 @@ use App\Domain\Entities\ObjectType\Requests\ObjectTypeRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ObjectType\SortableObjectTypeRequest;
 use App\Http\Requests\Admin\ObjectType\StoreObjectTypeRequest;
-use App\Http\Requests\Admin\ObjectType\UpdateObjectLabelRequest;
+use App\Http\Requests\Admin\ObjectType\UpdateObjectTypeRequest;
 use Domain\Contracts\Persistence\Storage;
 use Domain\Entities\Image\ImageService;
 use Domain\Entities\ObjectType\ObjectType;
@@ -73,7 +73,7 @@ final class ObjectTypeController extends Controller
         return view(sprintf(self::ROUTE_PLACEHOLDER, 'edit'), ['objectType' => $objectType]);
     }
 
-    public function update(UpdateObjectLabelRequest $request, int $id): \Illuminate\Foundation\Application|Redirector|RedirectResponse|Application
+    public function update(UpdateObjectTypeRequest $request, int $id): \Illuminate\Foundation\Application|Redirector|RedirectResponse|Application
     {
         $payload = $this->storage->update(
             new UpdateCommand(

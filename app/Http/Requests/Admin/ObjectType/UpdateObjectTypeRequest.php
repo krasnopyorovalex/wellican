@@ -17,7 +17,7 @@ class UpdateObjectTypeRequest extends StoreObjectTypeRequest
     public function rules(): array
     {
         return array_merge(parent::rules(), [
-            'alias' => ['required', 'max:255', 'string', Rule::unique('locations')->ignore($this->id)],
+            'alias' => ['required', 'max:255', 'string', Rule::unique('object_types', 'alias')->ignore($this->alias, 'alias')],
         ]);
     }
 }

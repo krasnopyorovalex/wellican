@@ -24,7 +24,7 @@ use Illuminate\Routing\Redirector;
 
 final class LocationController extends Controller
 {
-    private const ROUTE_PLACEHOLDER = 'admin.locations.%s';
+    private const string ROUTE_PLACEHOLDER = 'admin.locations.%s';
 
     public function __construct(private readonly Storage $storage)
     {
