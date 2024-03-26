@@ -310,6 +310,23 @@ main .form_box {
   transition: none;
   cursor: pointer; }
 
+.form_box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 30px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.12); }
+  .form_box label {
+    display: block;
+    text-align: center; }
+  .form_box .btn {
+    border-radius: 4px;
+    background: #a67c52;
+    width: 133px;
+    color: #fff; }
+  .form_box .form_buttons {
+    align-items: flex-end;
+    margin-bottom: 9px; }
+
 #object_view {
   background: #fff;
   padding: 32px 40px 40px;
@@ -902,6 +919,7 @@ header .form_box {
 .best_propose {
   padding-top: 40px; }
   .best_propose .objects {
+    max-height: 664px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -915,7 +933,8 @@ header .form_box {
         position: relative;
         height: 100%; }
       .best_propose .objects .object img {
-        max-width: 100%; }
+        object-fit: cover;
+        width: 100%; }
       .best_propose .objects .object .desc {
         position: absolute;
         bottom: 0;

@@ -185,7 +185,7 @@ function initFiltersBox() {
         }
         else {
             isChooseEstateType = !!propertyTypeValue;
-            setTimeout(() => triggerEvent(selectElement, 'change'));
+            setTimeout(() => triggerEvent(selectElement, "change"));
         }
         selectElement.addEventListener("change", changeVisibleFilterBox);
     }
@@ -193,6 +193,7 @@ function initFiltersBox() {
 function initMultiSelectedScript() {
     const multi_selected_box_list = document.querySelectorAll(".multi_selected_box");
     if (multi_selected_box_list.length) {
+        triggerSelectCheckBoxes();
         multi_selected_box_list.forEach((multi_selected_box) => {
             const allCheckboxesLabels = multi_selected_box.querySelectorAll(".form-check-label");
             const selected_area = multi_selected_box.querySelector(".selected_area");
@@ -232,12 +233,58 @@ function initSlideshowsOnMain() {
         });
     }
 }
+// Проверка текущая страница главная
 function checkUrlIsMain() {
     return window.location.pathname === "/";
 }
 function triggerEvent(el, eventType) {
-    if ('createEvent' in document) {
+    if ("createEvent" in document) {
         el.dispatchEvent(new CustomEvent(eventType));
+    }
+}
+// Тригерим подсчет выбранных чекбоксов в выпадающем списке
+function triggerSelectCheckBoxes() {
+    const multi_selected_box_list = document.querySelectorAll(".multi_selected_box");
+    if (multi_selected_box_list.length) {
+        const allCheckboxesLabels = document.querySelectorAll(".form-check-label");
+        [...allCheckboxesLabels].forEach((el) => {
+            const inputCheckbox = el.firstElementChild;
+            if (inputCheckbox.checked) {
+                setTimeout(() => triggerEvent(inputCheckbox, "change"));
+            }
+        });
+    }
+}
+// Сбрасываем все поля формы
+function addListenerToFormResetBt() {
+    const reset_button = document.querySelector("#reset_button");
+    if (reset_button) {
+        const resetForm = (e) => {
+            const additional_filters_button = document.querySelector("#additional_filters_button");
+            e.preventDefault();
+            const form_box = document.querySelector(".form_box");
+            if (form_box) {
+                const form_select_query_list = form_box.querySelectorAll(".form-select");
+                const form_control_query_list = form_box.querySelectorAll(".form-control");
+                const allCheckboxesLabels = document.querySelectorAll(".form-check-label");
+                [...form_select_query_list].forEach((selectEl) => {
+                    selectEl.selectedIndex = 0;
+                });
+                [...form_control_query_list].forEach((inputEl) => {
+                    inputEl.value = "";
+                });
+                [...allCheckboxesLabels].forEach((el) => {
+                    const inputCheckbox = el.firstElementChild;
+                    if (inputCheckbox.checked) {
+                        inputCheckbox.checked = false;
+                        setTimeout(() => triggerEvent(inputCheckbox, "change"));
+                    }
+                });
+            }
+            triggerEvent(additional_filters_button, 'click');
+            isChooseEstateType = false;
+        };
+        reset_button.addEventListener("click", resetForm);
     }
 }
 (() => {
@@ -248,11 +295,5 @@ function triggerEvent(el, eventType) {
     initObjectViewScripts();
     initFiltersBox();
     addListenerToAdditionalFilters();
-    const reset_button = document.querySelector('#reset_button');
-    reset_button.addEventListener('click', (e) => {
-        e.preventDefault();
-        console.log(reset_button);
-        const input_property_type = document.querySelector('#input_property_type');
-        input_property_type.selectedIndex = 0;
-    });
+    addListenerToFormResetBt();
 })();

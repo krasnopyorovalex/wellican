@@ -248,11 +248,10 @@ function initFiltersBox() {
             isChooseEstateType = null;
         } else {
             isChooseEstateType = !!propertyTypeValue;
-            setTimeout(() => triggerEvent(selectElement, 'change'));
+            setTimeout(() => triggerEvent(selectElement, "change"));
         }
 
         selectElement.addEventListener("change", changeVisibleFilterBox);
-
     }
 }
 
@@ -261,6 +260,7 @@ function initMultiSelectedScript() {
         ".multi_selected_box",
     );
     if (multi_selected_box_list.length) {
+        triggerSelectCheckBoxes();
         multi_selected_box_list.forEach((multi_selected_box) => {
             const allCheckboxesLabels =
                 multi_selected_box.querySelectorAll(".form-check-label");
@@ -271,6 +271,7 @@ function initMultiSelectedScript() {
 
             allCheckboxesLabels.forEach((label: HTMLElement) => {
                 const inputCheckbox = label.firstElementChild;
+
                 inputCheckbox.addEventListener("change", (ev) => {
                     const elTarget = ev.target as HTMLFormElement;
 
@@ -309,13 +310,82 @@ function initSlideshowsOnMain() {
     }
 }
 
+// Проверка текущая страница главная
 function checkUrlIsMain(): boolean {
     return window.location.pathname === "/";
 }
 
-function triggerEvent(el: HTMLFormElement, eventType: string) {
-    if ('createEvent' in document) {
+function triggerEvent(el: Element, eventType: string) {
+    if ("createEvent" in document) {
         el.dispatchEvent(new CustomEvent(eventType));
+    }
+}
+
+// Тригерим подсчет выбранных чекбоксов в выпадающем списке
+function triggerSelectCheckBoxes() {
+    const multi_selected_box_list = document.querySelectorAll(
+        ".multi_selected_box",
+    );
+
+    if (multi_selected_box_list.length) {
+        const allCheckboxesLabels =
+            document.querySelectorAll(".form-check-label");
+
+        [...allCheckboxesLabels].forEach((el) => {
+            const inputCheckbox = el.firstElementChild as HTMLFormElement;
+            if (inputCheckbox.checked) {
+                setTimeout(() => triggerEvent(inputCheckbox, "change"));
+            }
+        });
+    }
+}
+
+// Сбрасываем все поля формы
+function addListenerToFormResetBt() {
+    const reset_button = document.querySelector("#reset_button");
+
+    if (reset_button) {
+        const resetForm = (e: Event) => {
+            const additional_filters_button = document.querySelector(
+                "#additional_filters_button",
+            );
+            e.preventDefault();
+            const form_box = document.querySelector(".form_box");
+            if (form_box) {
+                const form_select_query_list =
+                    form_box.querySelectorAll(".form-select");
+                const form_control_query_list =
+                    form_box.querySelectorAll(".form-control");
+                const allCheckboxesLabels =
+                    document.querySelectorAll(".form-check-label");
+
+                [...form_select_query_list].forEach(
+                    (selectEl: HTMLSelectElement) => {
+                        selectEl.selectedIndex = 0;
+                    },
+                );
+                [...form_control_query_list].forEach(
+                    (inputEl: HTMLInputElement) => {
+                        inputEl.value = "";
+                    },
+                );
+
+                [...allCheckboxesLabels].forEach((el) => {
+                    const inputCheckbox =
+                        el.firstElementChild as HTMLInputElement;
+
+                    if (inputCheckbox.checked) {
+                        inputCheckbox.checked = false;
+                        setTimeout(() => triggerEvent(inputCheckbox, "change"));
+                    }
+                });
+            }
+
+            triggerEvent(additional_filters_button, 'click');
+            isChooseEstateType = false;
+        };
+
+        reset_button.addEventListener("click", resetForm);
     }
 }
 
@@ -327,21 +397,5 @@ function triggerEvent(el: HTMLFormElement, eventType: string) {
     initObjectViewScripts();
     initFiltersBox();
     addListenerToAdditionalFilters();
-
-
-
-
-    const reset_button = document.querySelector('#reset_button');
-
-    reset_button.addEventListener('click', (e) => {
-        e.preventDefault();
-        console.log(reset_button);
-
-        const input_property_type: HTMLFormElement = document.querySelector('#input_property_type');
-
-        input_property_type.selectedIndex = 0;
-
-    })
-
-
+    addListenerToFormResetBt();
 })();
