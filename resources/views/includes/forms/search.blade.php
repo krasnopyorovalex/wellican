@@ -72,7 +72,7 @@
 
     <div id="additional_filters_button_box" class="row pt-3">
         <div class="col-md-12">
-            <button id="additional_filters_button">Показать расширенный поиск</button>
+            <button id="additional_filters_button">Показать рассширенный поиск</button>
         </div>
     </div>
 

@@ -346,10 +346,14 @@ function addListenerToFormResetBt() {
 
     if (reset_button) {
         const resetForm = (e: Event) => {
+            e.preventDefault();
             const additional_filters_button = document.querySelector(
                 "#additional_filters_button",
             );
-            e.preventDefault();
+            const additional_filters: HTMLElement = document.querySelector(
+                ".additional_filters",
+            );
+
             const form_box = document.querySelector(".form_box");
             if (form_box) {
                 const form_select_query_list =
@@ -381,8 +385,12 @@ function addListenerToFormResetBt() {
                 });
             }
 
-            triggerEvent(additional_filters_button, 'click');
-            isChooseEstateType = false;
+            if (additional_filters) {
+                additional_filters_button.innerHTML =
+                    "Показать рассширенный поиск";
+                additional_filters.hidden = true;
+                isChooseEstateType = false;
+            }
         };
 
         reset_button.addEventListener("click", resetForm);
