@@ -875,7 +875,13 @@ header .form_box {
   padding-top: 40px;
   padding-bottom: 90px; }
   .estate_types .estate_box {
-    width: 19%; }
+    width: 20%;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: transform .2s; }
+    .estate_types .estate_box:hover {
+      transform: scale(1.1);
+      z-index: 99; }
   .estate_types .figure {
     display: block;
     position: relative;
