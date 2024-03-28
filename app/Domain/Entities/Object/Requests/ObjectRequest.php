@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Domain\Entities\Object\Requests;
 
-use App\Domain\Entities\Object\ValueObjects\SelectCols;
+use Domain\Entities\Object\ValueObjects\SelectCols;
 use Domain\Contracts\Http\Request;
 
 /**
@@ -17,8 +17,6 @@ final class ObjectRequest extends Request
     protected string $name;
 
     protected string $alias;
-
-    protected string $articul;
 
     protected float $square;
 
@@ -49,7 +47,6 @@ final class ObjectRequest extends Request
         return [
             'name' => $this->name,
             'alias' => $this->alias,
-            'articul' => $this->articul,
             'square' => $this->square,
             'price' => $this->price,
             'type_purchase' => $this->typePurchase,

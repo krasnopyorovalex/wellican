@@ -11,6 +11,7 @@ use App\Domain\Services\Search\Filters\Items\SquareFromFilter;
 use App\Domain\Services\Search\Filters\Items\SquareToFilter;
 use Domain\Contracts\Persistence\Search;
 use Domain\Persistence\Storage\CommandHandler;
+use Domain\Services\Search\Filters\Items\ArticulFilter;
 use Domain\Services\Search\Filters\Items\IsPremiumFilter;
 use Domain\Services\Search\Filters\Items\LocationIdFilter;
 use Domain\Services\Search\Filters\Items\NameFilter;
@@ -40,6 +41,7 @@ final class SearchProvider extends ServiceProvider
             $stackFilters->setFilter(new PriceToFilter());
             $stackFilters->setFilter(new SquareFromFilter());
             $stackFilters->setFilter(new SquareToFilter());
+            $stackFilters->setFilter(new ArticulFilter());
             $stackFilters->setFilter(new BetweenFilter());
 
             return new MySqlSearch(new CommandHandler(), $stackFilters);

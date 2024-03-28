@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Domain\Entities\Object;
 
+use App\Observers\ObjectObserver;
 use Database\Factories\ObjectsFactory;
 use Domain\Entities\FilterOption\FilterOption;
 use Domain\Entities\Location\Location;
@@ -16,14 +17,20 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 
 /**
  * @property int $id
  * @property string $name
+ * @property string $articul
+ * @property int $type_id
+ * @property string $price
+ * @property float $square
  * @property ObjectType $type
  * @property array<ObjectImage> $images
  * @property array<FilterOption> $filterOptions
  */
+#[ObservedBy([ObjectObserver::class])]
 final class Objects extends Model
 {
     use HasFactory;

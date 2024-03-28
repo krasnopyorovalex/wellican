@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => $page->title, 'description' => $page->description, 'keywords' => $page->keywords)
+@extends('layouts.app', ['title' => $page->title, 'description' => $page->description, 'keywords' => $page->keywords])
 
 @section('content')
     <main>
@@ -7,7 +7,7 @@
                 <div class="col-xl-12">
                     <div class="breadcrumbs_box">
                         <ul>
-                            <li><a href="{{ route('page.show') }}">Главная</a></li>
+                            <li><a href="{{ route('home') }}">Главная</a></li>
                             <li class="active">{{ $page->name }}</li>
                         </ul>
                     </div>

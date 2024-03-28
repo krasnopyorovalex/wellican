@@ -27,7 +27,7 @@
                 </a>
                 <ul class="first_level">
                     <li>
-                        <a href="{{ route('page.show', ['alias' => 'catalog']) }}">Типы недвижимости</a>
+                        <a href="#">Типы недвижимости</a>
                         @if(count($objectTypes))
                             <ul class="sub">
                                 @foreach($objectTypes as $objectType)
@@ -41,8 +41,8 @@
                         @endif
                     </li>
                     <li><a href="{{ route('page.show', ['alias' => 'catalog']) }}">Объекты в продаже</a></li>
-                    <li><a href="/">Услуги </a></li>
-                    <li><a href="/ipoteka">Все об ипотеке</a></li>
+                    <li><a href="{{ route('page.show', ['alias' => 'uslugi']) }}">Услуги </a></li>
+                    <li><a href="{{ route('page.show', ['alias' => 'vse-ob-ipoteke']) }}">Все об ипотеке</a></li>
                     <li><a href="{{ route('page.show', ['alias' => 'contacts']) }}">Контакты</a></li>
                 </ul>
                 <div class="favorites">

@@ -27,10 +27,14 @@
                     Тип недвижимости
                 </option>
                 @foreach($objectTypes as $objectType)
-                <option data-alias="{{$objectType->alias}}" value="{{ $objectType->id }}"
-                        @if(request('type_id') == $objectType->id || ($selectedObjectType && $selectedObjectType->id === $objectType->id))selected @endif>
-                {{ $objectType->name }}
-                </option>
+                    <option
+                        data-alias="{{$objectType->alias}}"
+                        value="{{ $objectType->id }}"
+                        @if(request('type_id') == $objectType->id || ($selectedObjectType && $selectedObjectType->id === $objectType->id))selected @endif
+                        @if($selectedObjectType)disabled @endif
+                    >
+                        {{ $objectType->name }}
+                    </option>
                 @endforeach
             </select>
         </div>
@@ -69,50 +73,27 @@
             </div>
     </div>
 
-
-    <div id="additional_filters_button_box" class="row pt-3">
-        <div class="col-md-12">
-            <button id="additional_filters_button">Показать рассширенный поиск</button>
-        </div>
-    </div>
-
-    <div class="additional_filters">
-
-
-        @foreach($objectTypes as $objectType)
-            <div class="box" id="{{ $objectType->alias }}">
-                <div class="row">
-
-<!--                    @if($loop->index === 0)-->
-<!--                        <div class="col-md-3">-->
-<!--                            <label>Стоимость, ₽</label>-->
-<!--                            <div class="input-group mb-2">-->
-<!--                                <input type="number" name="price_from" class="form-control" placeholder="От"-->
-<!--                                       value="{{ request('price_from') }}">-->
-<!--                                <input type="number" name="price_to" class="form-control" placeholder="До"-->
-<!--                                       value="{{ request('price_to') }}">-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-md-2">-->
-<!--                            <label>Площадь, м<sup>2</sup></label>-->
-<!--                            <div class="input-group mb-2">-->
-<!--                                <input type="number" name="square_from" class="form-control" placeholder="От"-->
-<!--                                       value="{{ request('square_from') }}">-->
-<!--                                <input type="number" name="square_to" class="form-control" placeholder="До"-->
-<!--                                       value="{{ request('square_to') }}">-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    @endif-->
-
-                    @if($objectType->filters)
-                        @foreach($objectType->filters as $filter)
-                            @includeWhen(count($filter->options), sprintf('includes.forms.options.%s', $filter->tpl), ['filter' => $filter])
-                        @endforeach
-                    @endif
-                </div>
+    @if($showAdditionalFilters)
+        <div id="additional_filters_button_box" class="row pt-3">
+            <div class="col-md-12">
+                <button id="additional_filters_button">Показать расширенный поиск</button>
             </div>
-        @endforeach
-    </div>
+        </div>
+
+        <div class="additional_filters">
+            @foreach($objectTypes as $objectType)
+                <div class="box" id="{{ $objectType->alias }}">
+                    <div class="row">
+                        @if($objectType->filters)
+                            @foreach($objectType->filters as $filter)
+                                @includeWhen(count($filter->options), sprintf('includes.forms.options.%s', $filter->tpl), ['filter' => $filter])
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    @endif
 </form>
 
 

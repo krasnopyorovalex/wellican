@@ -1,4 +1,4 @@
-@extends('layouts.app', ['headerClass' => 'top_main'])
+@extends('layouts.app', ['headerClass' => 'top_main', 'title' => $page->title, 'description' => $page->description, 'keywords' => $page->keywords])
 
 @section('slogan')
 
@@ -28,12 +28,10 @@
             <div class="filter_on_main">
                 <div class="form_box">
                     <div class="container">
-                        @include('includes.forms.search', ['selectedObjectType' => false, 'url' => route('page.show', ['alias' => 'catalog'])])
+                        @include('includes.forms.search', ['selectedObjectType' => false, 'showAdditionalFilters' => false, 'url' => route('page.show', ['alias' => 'catalog'])])
                     </div>
-
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -49,9 +47,6 @@
                 </div>
             </div>
         </div>
-
-
-
         @if(count($objectTypes))
             <div class="container text-center estate_types">
                 <div class="row justify-content-between gx-2">
@@ -90,7 +85,9 @@
                             @foreach($premiumObjects as $premiumObject)
                                 <div class="object">
                                     <a href="{{ route('object.show', $premiumObject->alias) }}" class="figure">
-                                        @if(isset($premiumObject->images[0])) <img src="{{ asset($premiumObject->images[0]->url) }}" alt="{{ $premiumObject->images[0]->alt }}" />@endif
+                                        @if(isset($premiumObject->images[0]))
+                                            <img src="{{ asset($premiumObject->images[0]->url) }}" alt="{{ $premiumObject->images[0]->alt }}" />
+                                        @endif
                                         <strong class="desc">
                                             <span>{{ $premiumObject->name }}</span>
                                             <label>{{ $premiumObject->label->name }}</label>

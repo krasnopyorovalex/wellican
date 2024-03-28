@@ -19,7 +19,7 @@ return new class() extends Migration
             $table->unsignedSmallInteger('location_id');
             $table->unsignedSmallInteger('label_id');
             $table->string('alias')->unique();
-            $table->string('articul', 32)->unique();
+            $table->char('articul', 9)->unique();
             $table->string('name');
             $table->unsignedInteger('price'); //max => 4_294_967_295, занимает 4 байта
             $table->enum('type_purchase', array_column(TypePurchase::cases(), 'value'));

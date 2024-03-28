@@ -10,9 +10,26 @@
     <section class="section">
         <div class="row">
             <div class="col-12 mb-2">
-                <a href="{{ route('admin.objects.create') }}" class="btn icon icon-left btn-primary">
-                    Добавить
-                </a>
+                <div class="row">
+                    <div class="col-md-2">
+                        <a href="{{ route('admin.objects.create') }}" class="btn icon icon-left btn-primary">
+                            Добавить
+                        </a>
+                    </div>
+                    <div class="col-md-10">
+                        <form action="{{ route('admin.search') }}" class="form" method="get">
+                            <div class="row">
+                                <div class="col-8"></div>
+                                <div class="col-2 form-group">
+                                    <input type="text" class="form-control" name="articul" value="{{ request('articul') }}" placeholder="Артикул" maxlength="9" minlength="9"/>
+                                </div>
+                                <button type="submit" class="btn btn-primary col-2 mb-3">
+                                    Найти
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             @if(session()->has('message'))
                 <div class="col-12">

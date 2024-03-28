@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Entities\Object\ValueObjects;
+namespace Domain\Entities\Object\ValueObjects;
 
 final class SelectCols
 {

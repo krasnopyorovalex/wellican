@@ -41,12 +41,8 @@
                                     <div class="tab-pane fade show active" id="general" role="tabpanel"
                                          aria-labelledby="general-tab">
                                         <div class="row mt-3">
-                                            <div class="col-md-9 col-12">
+                                            <div class="col-md-12 col-12">
                                                 @input(['name' => 'address', 'label' => 'Адрес', 'entity' => $object])
-                                            </div>
-
-                                            <div class="col-md-3 col-12">
-                                                @input(['name' => 'articul', 'label' => 'Артикул', 'entity' => $object])
                                             </div>
 
                                             <div class="col-md-6 col-12">

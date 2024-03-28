@@ -19,5 +19,5 @@
             </div>
         </div>
     </div>
-    @include('includes.object.list', ['objects' => $objects, 'selectedObjectType' => $objectType])
+    @include('includes.object.list', ['objects' => $objects, 'selectedObjectType' => $objectType, 'showAdditionalFilters' => true])
 @endsection

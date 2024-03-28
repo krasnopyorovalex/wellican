@@ -22,12 +22,8 @@
                             <form class="form" method="post" action="{{ route('admin.objects.store') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-md-9 col-12">
+                                    <div class="col-md-12 col-12">
                                         @input(['name' => 'address', 'label' => 'Адрес'])
-                                    </div>
-
-                                    <div class="col-md-3 col-12">
-                                        @input(['name' => 'articul', 'label' => 'Артикул'])
                                     </div>
 
                                     <div class="col-md-6 col-12">
