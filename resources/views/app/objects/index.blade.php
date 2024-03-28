@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => $object->name, 'description' => $object->name, 'keywords' => $object->name])
+@extends('layouts.app', ['title' => $object->title, 'description' => $object->description, 'keywords' => $object->keywords])
 
 @section('content')
     <main>
@@ -28,7 +28,7 @@
                 <div class="col-xl-12">
                     <div id="object_view">
                         <div class="top__object_view">
-                            <a class="to_back" href="{{ route('page.show', ['alias' => 'catalog']) }}">
+                            <a class="to_back" href="{{ request()->headers->get('referer') ?: route('page.show', ['alias' => 'catalog']) }}">
                                 Вернуться к списку
                             </a>
                             <h1>{{ $object->name }}</h1>
@@ -119,7 +119,7 @@
                                             @foreach($object->filterOptions as $filterOption)
                                             <li>
                                                 <span class="option_key">{{ $filterOption->filter->name }}</span>
-                                                <span class="option_value">{{ $filterOption->name }}</span>
+                                                <span class="option_value">{{ $filterOption->value }}</span>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -181,31 +181,25 @@
                             </div>
                         </div>
 
-                        <div class="similar_objects">
-                            <div class="head">
-                                Похожие объекты в продаже:
-                            </div>
-                            <div class="list">
-                                <div class="obj">
-                                    <a href="#">
-                                        <img src="{{ asset('app/images/catalog/gal1.jpg') }}" alt="" />
-                                        <span>3-х комнатная квартира в Симферополе</span>
-                                    </a>
+                        @if(count($relatedObjects))
+                            <div class="similar_objects">
+                                <div class="head">
+                                    Похожие объекты в продаже:
                                 </div>
-                                <div class="obj">
-                                    <a href="#">
-                                        <img src="{{ asset('app/images/catalog/gal2.jpg') }}" alt="" />
-                                        <span>Частный дом в коттеджном посёлке</span>
-                                    </a>
-                                </div>
-                                <div class="obj">
-                                    <a href="#">
-                                        <img src="{{ asset('app/images/catalog/gal3.jpg') }}" alt="" />
-                                        <span>Частный дом в коттеджном посёлке</span>
-                                    </a>
+                                <div class="list">
+                                    @foreach($relatedObjects as $relatedObject)
+                                        <div class="obj">
+                                            <a href="{{ route('object.show', ['alias' => $relatedObject->alias]) }}">
+                                                @if(isset($relatedObject->images[0]))
+                                                    <img src="{{ asset($relatedObject->images[0]->url) }}" alt="{{ $relatedObject->images[0]->alt }}" />
+                                                @endif
+                                                <span>{{ $relatedObject->name }}</span>
+                                            </a>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>

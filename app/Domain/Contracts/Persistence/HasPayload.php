@@ -2,7 +2,7 @@
 
 namespace App\Domain\Contracts\Persistence;
 
-use App\Domain\Entities\Object\ValueObjects\Payload;
+use Domain\Entities\Object\ValueObjects\Payload;
 
 interface HasPayload
 {

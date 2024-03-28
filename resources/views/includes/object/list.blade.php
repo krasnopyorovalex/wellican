@@ -2,7 +2,7 @@
     <div class="row gx-2">
         <div class="col-xl-12">
             <div class="form_box">
-                @include('includes.forms.search', ['selectedObjectType' => $selectedObjectType ?? false])
+                @include('includes.forms.search', ['selectedObjectType' => $selectedObjectType ?? false, 'showAdditionalFilters' => $showAdditionalFilters ?? false])
             </div>
             <div class="sort_box">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="sort_button" data-bs-toggle="dropdown" aria-expanded="false">

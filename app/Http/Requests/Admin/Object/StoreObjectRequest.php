@@ -26,7 +26,6 @@ class StoreObjectRequest extends AdminRequest
         return [
             'name' => ['required', 'max:255', 'string'],
             'alias' => ['required', 'max:255', 'string', 'unique:objects'],
-            'articul' => ['required', 'max:32', 'string', 'unique:objects'],
             'price' => ['required', 'numeric', 'gte:0', 'lte:4294967295'],
             'square' => ['required', 'regex:/^\d{1,8}(\.\d{1})?$/'],
             'type_purchase' => ['required', Rule::enum(TypePurchase::class)],

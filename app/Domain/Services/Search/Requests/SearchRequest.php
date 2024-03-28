@@ -13,6 +13,8 @@ final class SearchRequest implements Searchable
 {
     private string $name;
 
+    private string $articul;
+
     private int $priceFrom;
 
     private int $priceTo;
@@ -56,6 +58,7 @@ final class SearchRequest implements Searchable
     {
         return array_filter([
             'name' => $this->name ?? false,
+            'articul' => $this->articul ?? false,
             'price_from' => $this->priceFrom ?? false,
             'price_to' => $this->priceTo ?? false,
             'square_from' => $this->squareFrom ?? false,

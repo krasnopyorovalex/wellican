@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'Каталог', 'description' => 'Описание', 'keywords' => ''])
+@extends('layouts.app', ['title' => $catalog->title, 'description' => $catalog->description, 'keywords' => $catalog->keywords])
 
 @section('content')
     <main>
@@ -19,7 +19,6 @@
         </div>
         @if(count($objectTypes))
         <div class="container text-center estate_types">
-
                 <div class="estate_box">
                     <a href="{{ route('catalog.show') }}?is_premium={{ \Domain\Entities\Object\Enums\IsPremium::Yes }}" class="figure">
                         <img src="{{ asset('app/images/estate-types/type1.jpg') }}" alt="" />
@@ -37,8 +36,7 @@
                 </div>
                 @endforeach
             </div>
-
         @endif
-        @include('includes.object.list', ['objects' => $objects])
+        @include('includes.object.list', ['objects' => $objects, 'showAdditionalFilters' => true])
     </main>
 @endsection

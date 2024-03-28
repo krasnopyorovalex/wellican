@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Domain\Services\Search\Queries;
 
-use App\Domain\Entities\Object\ValueObjects\SelectCols;
 use Domain\Contracts\Persistence\Command;
 use Domain\Contracts\Persistence\DatabaseResource;
 use Domain\Entities\Object\Objects;
+use Domain\Entities\Object\ValueObjects\SelectCols;
 use Domain\Persistence\Storage\Resources\PaginatorResource;
 use Domain\Services\Search\Contracts\Searchable;
 use Domain\Services\Search\Filters\StackFilters;

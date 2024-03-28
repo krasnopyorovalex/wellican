@@ -12,6 +12,7 @@ class SearchRequest extends FormRequest
             'name' => ['max:255', 'string', 'nullable'],
             'type_id' => ['int', 'nullable'],
             'location_id' => ['int', 'nullable'],
+            'articul' => ['required', 'string', 'size:9'],
         ];
     }
 }

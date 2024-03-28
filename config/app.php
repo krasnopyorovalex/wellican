@@ -190,4 +190,5 @@ return [
 
     'currency_icon' => env('CURRENCY_ICON', ''),
 
+    'articul_prefix' => env('ARTICUL_PREFIX', 'WLC'),
 ];

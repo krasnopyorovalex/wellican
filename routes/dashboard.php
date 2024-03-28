@@ -23,6 +23,7 @@ Route::pattern('filterId', '[\d]+');
 
 Route::group(['prefix' => '_root', 'middleware' => 'auth', 'as' => 'admin.'], static function () {
     Route::get('', HomeController::class)->name('home');
+    Route::get('search', SearchController::class)->name('search');
 
     Route::resource('locations', LocationController::class)->parameters(['locations' => 'id']);
     Route::resource('pages', PageController::class)->parameters(['pages' => 'id']);
