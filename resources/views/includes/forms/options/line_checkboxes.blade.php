@@ -1,4 +1,4 @@
-<div class="col-md-3">
+<div class="col col-md-3">
     <label for="f-{{ $filter->id }}">{{ $filter->name }}</label>
     <div class="flats_types_box">
         @foreach($filter->options as $option)

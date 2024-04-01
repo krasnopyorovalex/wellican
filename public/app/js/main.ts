@@ -1,3 +1,5 @@
+'use strict';
+
 let isChooseEstateType: boolean = null;
 
 // Разукрашиваем элемент в заголовке типов недвижимсоти
@@ -159,12 +161,6 @@ function initObjectViewScripts() {
 }
 
 function addListenerToAdditionalFilters() {
-    const additional_filters_button_box = document.getElementById(
-        "additional_filters_button_box",
-    );
-    if (checkUrlIsMain()) {
-        additional_filters_button_box.hidden = true;
-    }
     const additional_filters_button = document.querySelector(
         "#additional_filters_button",
     );

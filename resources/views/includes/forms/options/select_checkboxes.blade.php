@@ -1,4 +1,4 @@
-<div class="col-md-2">
+<div class="col col-md-2">
     <label>{{ $filter->name }}</label>
     <div class="multi_selected_box">
         <button class="selected_area" type="button" data-bs-config='{"delay":0, "autoClose":"outside"}' data-bs-toggle="dropdown" aria-expanded="false">

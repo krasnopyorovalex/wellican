@@ -1,4 +1,4 @@
-<div class="col-md-3">
+<div class="col col-md-3">
     <label>{{ $filter->name }}</label>
     <div class="input-group mb-2">
         <input
