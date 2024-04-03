@@ -69,7 +69,7 @@ final class SearchRequest implements Searchable
             'location_id' => $this->locationId ?? false,
             'is_premium' => $this->isPremium ?? false,
             'options' => $this->options ?? false,
-            'between' => $this->between ?? false,
+            'between' => isset($this->between) ? array_filter($this->between, fn ($i) => $i['from'] || $i['to']) : false,
         ]);
     }
 
