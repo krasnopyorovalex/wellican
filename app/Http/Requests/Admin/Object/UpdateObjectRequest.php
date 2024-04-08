@@ -20,7 +20,8 @@ class UpdateObjectRequest extends StoreObjectRequest
         return array_merge(parent::rules(), [
             'alias' => ['required', 'max:255', 'string', Rule::unique('objects')->ignore($this->id)],
             'filters' => ['array', 'nullable'],
-            'filters.*' => ['numeric', 'nullable'],
+            'filters.*' => ['array', 'nullable'],
+            'filters.*.*' => ['numeric', 'nullable'],
         ]);
     }
 }
