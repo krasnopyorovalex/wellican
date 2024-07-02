@@ -402,4 +402,5 @@ function addListenerToFormResetBt() {
     initFiltersBox();
     addListenerToAdditionalFilters();
     addListenerToFormResetBt();
+    console.log('test');
 })();
