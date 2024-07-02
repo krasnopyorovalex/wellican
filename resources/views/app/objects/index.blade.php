@@ -116,10 +116,10 @@
                                     <div class="option_box">
                                         <strong class="option_head">Характеристики</strong>
                                         <ul class="option_items_list">
-                                            @foreach($object->filterOptions as $filterOption)
+                                            @foreach($object->filterOptions->groupBy('filter.name') as $filter => $options)
                                             <li>
-                                                <span class="option_key">{{ $filterOption->filter->name }}</span>
-                                                <span class="option_value">{{ $filterOption->value }}</span>
+                                                <span class="option_key">{{ $filter }}</span>
+                                                <span class="option_value">{{ $options->implode('value', ', ') }}</span>
                                             </li>
                                             @endforeach
                                         </ul>

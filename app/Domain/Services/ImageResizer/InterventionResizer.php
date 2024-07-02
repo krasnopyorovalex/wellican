@@ -6,6 +6,7 @@ namespace Domain\Services\ImageResizer;
 
 use Domain\Contracts\Image\Resizer;
 use Domain\Services\ImageResizer\ValueObjects\ResizeConfig;
+use Domain\Services\ImageResizer\ValueObjects\Size;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManager;
 
@@ -22,12 +23,15 @@ final readonly class InterventionResizer implements Resizer
         $filename = pathinfo($uploadImage->basename, PATHINFO_FILENAME);
 
         $absolutePath = Storage::path(sprintf('%s', $uploadImage->directory));
-
         $source = sprintf('%s%s', $absolutePath, $uploadImage->basename);
-        $thumb = sprintf('%s%s', $absolutePath, str_replace($filename, $filename.'_thumb', $uploadImage->basename));
 
-        $this->imageManager->read($source)
-            ->coverDown($config->getWidth(), $config->getHeight())
-            ->save($thumb);
+        foreach ($config->getSizes() as $size) {
+            /** @var Size $size */
+            $image = sprintf('%s%s', $absolutePath, str_replace($filename, $filename.$size->getPostfix() , $uploadImage->basename));
+
+            $this->imageManager->read($source)
+                ->coverDown($size->getWidth(), $size->getHeight())
+                ->save($image);
+        }
     }
 }

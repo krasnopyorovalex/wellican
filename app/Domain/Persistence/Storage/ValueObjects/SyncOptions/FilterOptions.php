@@ -18,8 +18,10 @@ final class FilterOptions implements SyncOptions
     {
         $values = [];
 
-        foreach (array_filter($this->options) as $key => $value) {
-            $values[$value] = ['filter_id' => $key];
+        foreach (array_filter($this->options) as $key => $options) {
+            foreach ($options as $option) {
+                $values[$option] = ['filter_id' => $key];
+            }
         }
 
         return $values;

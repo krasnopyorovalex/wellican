@@ -14,6 +14,7 @@ use Domain\Entities\ObjectImage\ObjectImage;
 use Domain\Entities\ObjectImage\Requests\ObjectImageRequest;
 use Domain\Persistence\Storage\Resources\SingleRecourse;
 use Domain\Services\ImageResizer\ValueObjects\ResizeConfig;
+use Domain\Services\ImageResizer\ValueObjects\Size;
 use Illuminate\Http\UploadedFile;
 
 readonly class StoreObjectImageCommand implements Command
@@ -33,7 +34,10 @@ readonly class StoreObjectImageCommand implements Command
         $imageUpload = $this->uploader->upload($this->uploadedFile, ObjectImagePath::pathWithObject($this->object->id));
 
         $this->resizer->resize(
-            new ResizeConfig($imageUpload, config('images.thumb.width'), config('images.thumb.height'))
+            new ResizeConfig($imageUpload, [
+                new Size(config('images.thumb.width'), config('images.thumb.height'), '_thumb'),
+                new Size(config('images.origin.width'), config('images.origin.height')),
+            ])
         );
 
         $position = $builder->where('object_id', $this->object->id)->max('position') + 1;

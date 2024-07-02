@@ -24,7 +24,7 @@ final class OptionsFilter extends Filter
             ->select('object_id')
             ->whereIn('filter_option_id', $filterOptions)
             ->groupBy('object_id')
-            ->havingRaw('COUNT(`object_id`) = '.count($value))
+            ->havingRaw('COUNT(distinct `filter_id`) = '.count($value))
             ->get();
 
         $collection->count()

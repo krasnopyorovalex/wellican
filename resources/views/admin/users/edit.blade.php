@@ -57,7 +57,7 @@
                                                         </div>
                                                         <div class="col-md-6 col-12">
                                                             <fieldset class="form-group">
-                                                                <label for="permissions">Дополнительные разрешени</label>
+                                                                <label for="permissions">Дополнительные разрешения</label>
                                                                 <select class="form-select choices multiple-remove" id="permissions" name="permissions[]" multiple>
                                                                     <optgroup label="Список разрешений">
                                                                         @foreach($permissions->whereNotIn('id', $user->getPermissionsViaRoles()->pluck('id')) as $permission)

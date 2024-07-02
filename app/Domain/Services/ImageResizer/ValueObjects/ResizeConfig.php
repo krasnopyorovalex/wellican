@@ -8,12 +8,8 @@ use Domain\Services\ImageUploader\DataTransferObjects\FileUpload;
 
 final readonly class ResizeConfig
 {
-    public function __construct(
-        private FileUpload $imageUpload,
-        private int $width,
-        private int $height,
-    ) {
-
+    public function __construct(private FileUpload $imageUpload, private array $sizes)
+    {
     }
 
     public function getImageUpload(): FileUpload
@@ -21,13 +17,8 @@ final readonly class ResizeConfig
         return $this->imageUpload;
     }
 
-    public function getWidth(): int
+    public function getSizes(): array
     {
-        return $this->width;
-    }
-
-    public function getHeight(): int
-    {
-        return $this->height;
+        return $this->sizes;
     }
 }
