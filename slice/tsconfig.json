@@ -1,0 +1,8 @@
+{
+    "files": ["app/ts/main.ts"],
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "target": "es2015"
+    }
+}

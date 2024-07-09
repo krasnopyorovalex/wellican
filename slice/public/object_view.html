@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Wellican</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link href="../public/css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="top_bar">
+                        <a class="logo" href="index.html"
+                            ><img src="../public/images/logo.svg" alt=""
+                        /></a>
+                        <ul class="first_level">
+                            <li>
+                                <a href="catalog.html">Типы недвижимости</a>
+                                <ul class="sub">
+                                    <li><a href="/">Коттеджные посёлки</a></li>
+                                    <li>
+                                        <a href="/">Многоквартирные дома</a>
+                                    </li>
+                                    <li><a href="/">Новостройки</a></li>
+                                    <li>
+                                        <a href="/">Комерческая недвижимость</a>
+                                    </li>
+                                    <li><a href="/">Земельные участки</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/">Объекты в продаже</a></li>
+                            <li><a href="/">Услуги </a></li>
+                            <li><a href="/">Все об ипотеке</a></li>
+                            <li><a href="page_view.html">Контакты</a></li>
+                        </ul>
+                        <div class="favorites">
+                            <span class="phone"
+                                ><img
+                                    src="../public/images/top_phone_icon.svg"
+                                    alt=""
+                                />
+                                +7 (978) 939-33-33</span
+                            >
+                            <a href="/"
+                                ><img
+                                    src="../public/images/comparison_icon.svg"
+                                    alt=""
+                            /></a>
+                            <a href="/"
+                                ><img
+                                    src="../public/images/favorites_icon.svg"
+                                    alt=""
+                            /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumbs_box">
+                            <ul>
+                                <li><a href="index.html">Главная</a></li>
+                                <li>
+                                    <a href="catalog.html"
+                                        >Каталог недвижимости</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="catalog.html">Котеджные поселки</a>
+                                </li>
+                                <li class="active">
+                                    Частный дом в коттеджном посёлке
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--      object view      -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div id="object_view">
+                            <div class="top__object_view">
+                                <a class="to_back" href="catalog.html">
+                                    Вернуться к списку
+                                </a>
+                                <h1>
+                                    Частный дом в коттеджном посёлке, 200 м2 в
+                                    коттеджном посёлке, 200 м2 в коттеджном
+                                    посёлке, 200 м2
+                                </h1>
+
+                                <strong class="article"
+                                    >Арт. 3812402-4656</strong
+                                >
+                                <div class="location">
+                                    Крым, Симферопольский район, село
+                                    Строгановка <span>На карте</span>
+                                </div>
+                                <div class="buttons">
+                                    <button
+                                        onclick="addFavorite()"
+                                        class="favorite"
+                                    >
+                                        Добавить в избраное
+                                    </button>
+                                    <button
+                                        onclick="addToCompare()"
+                                        class="compare"
+                                    >
+                                        Сравнить
+                                    </button>
+                                    <button onclick="share()" class="share">
+                                        Подельтся ссылкой
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="middle__object_view">
+                                <!--               Left PArt                 -->
+                                <div class="left_part_object_view">
+                                    <div class="is_wellican_chose">
+
+                                    </div>
+
+                                    <div class="main_photo">
+
+                                        <div id="carouselObjectView" class="carousel slide">
+                                            <div class="carousel-indicators">
+                                                <button type="button" data-bs-target="#carouselObjectView" data-bs-slide-to="0" aria-label="Slide 1"></button>
+                                                <button type="button" data-bs-target="#carouselObjectView" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                <button type="button" data-bs-target="#carouselObjectView" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                <button type="button" data-bs-target="#carouselObjectView" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                                <button type="button" data-bs-target="#carouselObjectView" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                            </div>
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item">
+                                                    <a data-fslightbox="carousel-gallery" href="images/object_view/photo_2023-09-01_19-15-03.jpg">
+                                                        <img
+                                                            src="images/object_view/photo_2023-09-01_19-15-03.jpg"
+                                                            alt=""
+                                                        />
+                                                    </a>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <a data-fslightbox="carousel-gallery" href="images/object_view/photo_2023-09-01_19-15-04.jpg">
+                                                        <img
+                                                            src="images/object_view/photo_2023-09-01_19-15-04.jpg"
+                                                            alt=""
+                                                        />
+                                                    </a>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <a data-fslightbox="carousel-gallery" href="images/object_view/photo_2023-09-01_19-15-05.jpg">
+                                                        <img
+                                                            src="images/object_view/photo_2023-09-01_19-15-05.jpg"
+                                                            alt=""
+                                                        />
+                                                    </a>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <a data-fslightbox="carousel-gallery" href="images/object_view/photo_2023-09-01_19-15-06.jpg">
+                                                        <img
+                                                            src="images/object_view/photo_2023-09-01_19-15-06.jpg"
+                                                            alt=""
+                                                        />
+                                                    </a>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <a data-fslightbox="carousel-gallery" href="images/object_view/photo_2023-09-01_19-15-07.jpg">
+                                                        <img
+                                                            src="images/object_view/photo_2023-09-01_19-15-07.jpg"
+                                                            alt=""
+                                                        />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselObjectView" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselObjectView" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+
+
+                                    </div>
+
+
+
+                                    <div class="shorts">
+
+                                        <a data-fslightbox="shorts-gallery" href="images/object_view/photo_2023-09-01_19-15-03.jpg">
+                                            <img
+                                                src="images/object_view/photo_2023-09-01_19-15-03.jpg"
+                                                alt=""
+                                            />
+                                        </a>
+
+
+                                        <a data-fslightbox="shorts-gallery" href="images/object_view/photo_2023-09-01_19-15-04.jpg">
+                                            <img
+                                                src="images/object_view/photo_2023-09-01_19-15-04.jpg"
+                                                alt=""
+                                            />
+                                        </a>
+
+                                        <a data-fslightbox="shorts-gallery" href="images/object_view/photo_2023-09-01_19-15-05.jpg">
+                                            <img
+                                                src="images/object_view/photo_2023-09-01_19-15-05.jpg"
+                                                alt=""
+                                            />
+                                        </a>
+
+                                        <a data-fslightbox="shorts-gallery" href="images/object_view/photo_2023-09-01_19-15-06.jpg">
+                                            <img
+                                                src="images/object_view/photo_2023-09-01_19-15-06.jpg"
+                                                alt=""
+                                            />
+                                        </a>
+
+                                        <a data-fslightbox="shorts-gallery" href="images/object_view/photo_2023-09-01_19-15-07.jpg">
+                                            <img
+                                                src="images/object_view/photo_2023-09-01_19-15-07.jpg"
+                                                alt=""
+                                            />
+                                        </a>
+
+                                    </div>
+                                    <div class="description">
+                                        Продается 2-эт. таунхаус в КП
+                                        Черноморская Ривьера, общей площадью 65
+                                        кв.м., участок 2 сот. Открыты продажи
+                                        Оазис комплекс "Черноморская Ривьера" от
+                                        застройщика. Расположен в п. Оленевка
+                                        Республики Крым. <br /><br />
+                                        О комплексе: <br />К продаже
+                                        предлагаются 2-этажные дома площадью 65
+                                        кв.м. с эксплуатируемой крышей, на
+                                        которой вы можете загорать и провожать
+                                        закаты, любуясь видом на море. Каждый
+                                        блок отличаются продуманной планировкой,
+                                        высоким качеством дизайнерской отделки и
+                                        полностью меблирован. В дома проведены
+                                        все необходимые коммуникации. К каждому
+                                        дому примыкает земельный участок с
+                                        собственным парковочным местом и зоной
+                                        барбекю. Высококачественная отделка
+                                        фасада из комбинаций
+                                        материалов. Территория комплекса
+                                        огорожена. Есть детская площадка, зоны
+                                        для отдыха, бассейн, участки украшены
+                                        ландшафтным дизайн.
+                                    </div>
+                                    <div class="options">
+                                        <div class="option_box">
+                                            <strong class="option_head"
+                                                >О доме</strong
+                                            >
+                                            <ul class="option_items_list">
+                                                <li>
+                                                    <span class="option_key"
+                                                        >Площадь</span
+                                                    >
+                                                    <span class="option_value"
+                                                        >200 м2</span
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <span class="option_key"
+                                                        >Количество этажей</span
+                                                    >
+                                                    <span class="option_value"
+                                                        >1</span
+                                                    >
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="option_box">
+                                            <strong class="option_head"
+                                                >Об участке</strong
+                                            >
+                                            <ul class="option_items_list">
+                                                <li>
+                                                    <span class="option_key"
+                                                        >Площадь</span
+                                                    >
+                                                    <span class="option_value"
+                                                        >3 сот.</span
+                                                    >
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="option_box">
+                                            <strong class="option_head"
+                                                >Коммуникации и удобства</strong
+                                            >
+                                            <ul class="option_items_list">
+                                                <li>
+                                                    <span class="option_key"
+                                                        >Канализация</span
+                                                    >
+                                                    <span class="option_value"
+                                                        >Есть</span
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <span class="option_key"
+                                                        >Водоснабжение</span
+                                                    >
+                                                    <span class="option_value"
+                                                        >Есть</span
+                                                    >
+                                                </li>
+                                                <li>
+                                                    <span class="option_key"
+                                                        >Электричество</span
+                                                    >
+                                                    <span class="option_value"
+                                                        >Есть</span
+                                                    >
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div
+                                        id="map"
+                                        style="width: 100%; height: 300px"
+                                        data-longitude="44.869998" data-latitude="34.344011"
+                                    ></div>
+                                </div>
+                                <!--    End of   Left PArt        -->
+
+                                <!--              Right Part                  -->
+                                <div class="right_part_object_view">
+                                    <!--               Здесь будет интеграция с амо црм                     -->
+                                    <div class="consultation">
+                                        <div class="head text-center">
+                                            Консультация по объекту
+                                        </div>
+                                        <span class="desc text-center"
+                                            >Мы перезвоним вам или ответим в
+                                            удобном для вас чате, расскажем
+                                            подробнее об интеерсущем вас
+                                            объекте</span
+                                        >
+
+                                        <form class="row">
+                                            <div class="col-md-12">
+                                                <input
+                                                    class="form-control"
+                                                    type="text"
+                                                    placeholder="Введите номер телефона"
+                                                    aria-label="default input"
+                                                />
+                                            </div>
+
+                                            <div
+                                                class="col-md-12 text-lg-center"
+                                            >
+                                                <button
+                                                    type="submit"
+                                                    class="button middle"
+                                                >
+                                                    связаться с нами
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!--               Здесь будет интеграция с амо црм                     -->
+                                    <div class="mortgage_box">
+                                        <div class="head text-center">
+                                            Ипотека по объекту
+                                        </div>
+                                        <span class="desc text-center"
+                                            >10 минут на предварительное решение
+                                            по ипотеке</span
+                                        >
+                                        <strong>Ставки от 5,75%</strong>
+                                        <button class="button middle">
+                                            Оформить ипотеку
+                                        </button>
+                                    </div>
+
+                                    <!--               news-promotions                     -->
+                                    <div class="news_promotions">
+                                        <div class="head">
+                                            Акционные предложения
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <a href="#"
+                                                    >Квартиры в ЖК Прибой в
+                                                    первой линии Ялты со скидкой
+                                                    12% до 23.12.2023</a
+                                                >
+                                                <span>12.01.2024</span>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    >Последний котедж в
+                                                    котеджном посёлке “Лучи” со
+                                                    скидкой в 20%
+                                                </a>
+                                                <span>12.01.2024</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!--               end Of  news-promotions                      -->
+                                </div>
+                                <!--              End of Right Part                  -->
+                            </div>
+
+                            <div class="similar_objects">
+                                <div class="head">
+                                    Похожие объекты в продаже:
+                                </div>
+                                <div class="list">
+                                    <div class="obj">
+                                        <a href="#">
+                                            <img
+                                                src="images/catalog/gal1.jpg"
+                                                alt=""
+                                            />
+                                            <span
+                                                >3-х комнатная квартира в
+                                                Симферополе
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="obj">
+                                        <a href="#">
+                                            <img
+                                                src="images/catalog/gal2.jpg"
+                                                alt=""
+                                            />
+                                            <span
+                                                >Частный дом в коттеджном
+                                                посёлке
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="obj">
+                                        <a href="#">
+                                            <img
+                                                src="images/catalog/gal3.jpg"
+                                                alt=""
+                                            />
+                                            <span
+                                                >Частный дом в коттеджном
+                                                посёлке
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--      end of object view      -->ъ
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_content">
+                            Телефон: <br />
+                            <strong>+7 (978) 939-33-33</strong>
+                            <span>Крым, Красные пещеры</span>
+                            <div>
+                                <a href="#"
+                                    ><img src="../public/images/footer/vk.svg"
+                                /></a>
+                                <a href="#"
+                                    ><img
+                                        src="../public/images/footer/whats.svg"
+                                /></a>
+                                <a href="#"
+                                    ><img
+                                        src="../public/images/footer/viber.svg"
+                                /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copy">© 2024, Wellican Бюро недвижимости</div>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="../public/js/fslightbox.js"
+        ></script>
+
+        <script
+            src="https://api-maps.yandex.ru/2.1/?apikey=2c7dfd64-dd0a-4736-9189-cfd109a61260&lang=ru_RU"
+            type="text/javascript"
+        ></script>
+        <script src="../public/js/main.js"></script>
+    </body>
+</html>

@@ -148,4 +148,15 @@ return [
 
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Limits
+    |--------------------------------------------------------------------------
+    */
+    'per_page' => env('PER_PAGE', 10),
+    'per_page_admin' => env('PER_PAGE_ADMIN', 10),
+
+    'news_count_in_sidebar' => env('NEWS_COUNT_IN_SIDEBAR', 2),
+
+    'when_querying_for_longer_than' => env('WHEN_QUERYING_FOR_LONGER_THAN', 500),
 ];

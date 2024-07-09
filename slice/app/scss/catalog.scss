@@ -1,0 +1,212 @@
+.head_title_box {
+    overflow: hidden;
+}
+
+.head_title {
+    text-transform: uppercase;
+    position: relative;
+    font-family: Gilroy500, sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-size: 30px;
+    line-height: 57px;
+}
+
+.head_title:before,
+.head_title:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    border-bottom: 1px solid #d0c1a0;
+    width: 100vw;
+    margin: 0 20px;
+}
+.head_title:before {
+    right: 100%;
+}
+.head_title:after {
+    left: 100%;
+}
+
+.breadcrumbs_box {
+    padding-top: 60px;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        li {
+            color: rgba(255, 255, 255, 0.40);
+            font-size: 14px;
+            a {
+                color: rgba(255, 255, 255, 0.40);
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            &.active {
+                color: #fff;
+            }
+
+            &:after {
+                content: '/';
+                display: inline-block;
+                padding: 0 8px;
+            }
+
+            &:last-of-type {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+
+
+
+    }
+}
+
+main {
+    .estate_types {
+        .figure {
+            height: 181px;
+            img {
+                margin-top: -60px;
+            }
+        }
+    }
+
+    .form_box {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px 30px;
+
+
+        .btn {
+            border-radius: 4px;
+            background: #A67C52;
+            width: 173px;
+            color: #fff;
+        }
+    }
+}
+
+
+
+#sort_button {
+    background: url("../images/catalog/sort_icon.svg") no-repeat 0 9px;
+    color: #fff;
+    border: none;
+    background-size: 15px;
+    padding-left: 23px;
+    font-size: 14px;
+}
+
+.sort_box {
+    text-align: right;
+    padding-top: 65px;
+}
+
+.objects_list {
+    padding-top: 11px;
+    .object {
+        display: flex;
+        min-height: 300px;
+        background: #fff;
+        font-size: 18px;
+        color: #000;
+        margin-bottom: 60px;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    .gallery {
+        width: 600px;
+        position: relative;
+    }
+
+    .is_wellican_chose {
+        width: 77px;
+        height: 94px;
+        position: absolute;
+        z-index: 99999;
+        left: 40px;
+        top: 0;
+        background: url("../images/catalog/wellican_chose.png") no-repeat center center;
+    }
+
+    .description {
+        flex: 1;
+        padding-left: 50px;
+        padding-top: 30px;
+        position: relative;
+    }
+    .more {
+        font-size: 14px;
+        display: block;
+        border-radius: 4px 4px 0px 0px;
+        background: #A67C52;
+        position: absolute;
+        bottom: 0;
+        left: 50px;
+        padding: 8px 22px;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .head {
+        display: flex;
+        a {
+            color: #000;
+        }
+    }
+
+    .indicators {
+        display: flex;
+        padding-right: 25px;
+        margin-left: auto;
+        button {
+            width: 33px;
+            height: 33px;
+            border: none;
+            margin-left: 21px;
+        }
+        .favorite {
+            background: url("../images/catalog/favorite_icon.svg") no-repeat center center;
+        }
+        .compare {
+            background: url("../images/catalog/compare_icon.svg") no-repeat center center;
+        }
+    }
+    .area {
+
+        strong {
+            font-weight: normal;
+            font-family: Gilroy500, sans-serif;
+        }
+    }
+    .location {
+        background: url("../images/catalog/location_icon.svg") no-repeat left center;
+        padding-left: 25px;
+        margin: 25px 0;
+    }
+    .text {
+        padding-bottom: 73px;
+        padding-right: 30px;
+    }
+}
+
+
+#cat_objects {
+    .carousel {
+        height: 100%;
+    }
+    .carousel-inner {
+        height: 100%;
+    }
+    .carousel-item {
+        height: 100%;
+        transition: none;
+        cursor: pointer;
+    }
+}
