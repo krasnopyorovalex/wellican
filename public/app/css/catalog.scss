@@ -198,8 +198,13 @@ main {
         margin: 25px 0;
     }
     .text {
-        padding-bottom: 73px;
+        margin-bottom: 73px;
         padding-right: 30px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* number of lines to show */
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
     }
 }
 
